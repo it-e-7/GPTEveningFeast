@@ -28,6 +28,8 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		String abc = "abc";
+		
 		return "home";
 	}
 	
