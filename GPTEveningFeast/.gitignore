@@ -171,4 +171,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+Wallet_eveningfeastDB/
+
 # End of https://www.toptal.com/developers/gitignore/api/java,windows,macos,eclipse,maven

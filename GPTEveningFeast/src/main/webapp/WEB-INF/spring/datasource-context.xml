@@ -26,11 +26,7 @@
 			value="classpath:mybatis-config.xml" />
 		<property name="mapperLocations">
 			<list>
-			<!--  
-				<value>classpath:mappers/Book.xml</value>
-				<value>classpath:mappers/Member.xml</value>
-				<value>classpath:mappers/Point.xml</value>
-			 -->
+				<value>classpath:mappers/UserMapper.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -40,15 +36,17 @@
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
-	
+
 	<!-- transaction을 처리하기 위한 Bean을 등록해야 해요! -->
 	<bean id="transactionManager"
-	      class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	      <constructor-arg ref="dataSource"></constructor-arg>
-    </bean>
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
 
 
-
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="kosa.hdit5.evenapp.mapper" />
+	</bean>
 
 
 </beans>
