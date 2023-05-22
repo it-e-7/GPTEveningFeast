@@ -54,7 +54,7 @@
 	<!-- 일반적으로 Servlet WebApplicationContext 이 DI container는 Controller와 View 
 		관련된 처리를 담당해요! -->
 	<context:component-scan
-		base-package="my.spring.springweb" use-default-filters="false">
+		base-package="kosa.hdit5.evenapp" use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>

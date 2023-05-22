@@ -18,7 +18,7 @@
 
    <!-- Root Context: defines shared resources visible to all other web components -->
    <context:component-scan
-      base-package="my.spring.springweb">
+      base-package="kosa.hdit5.evenapp">
       <context:exclude-filter 
          type="annotation"
          expression="org.springframework.stereotype.Controller" />
