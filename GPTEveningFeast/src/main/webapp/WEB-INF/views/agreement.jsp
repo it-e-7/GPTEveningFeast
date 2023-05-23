@@ -27,7 +27,7 @@
 <input type="checkbox" name="secondAgree" id="secondAgree" value="secondYes">
 <label for="secondAgree"> [필수] 개인정보 수집·이용 동의</label><br><br>
 
-<button onclick="agreeNext()">다음</button>
+<button onclick="agree()">다음</button>
 <a href="/evenapp/resources/signup/signup.html">취소</a>
 
 <script>

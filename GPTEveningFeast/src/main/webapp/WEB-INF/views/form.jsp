@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +11,14 @@
 	
 </script>
 <script src="/evenapp/resources/js/signup.js"></script>
+
+<script src="<c:url value='/resources/js/signup.js'/>"></script>
 </head>
 <body>
 	<h1>현대식품관 회원가입</h1>
 
-
-	아이디
-	<input type="text" name="userId" onchange="changeId()"> 이름
-	<input type="text" name="userName">
+	아이디<input type="text" name="userId" onchange="changeId()"> 
+	이름<input type="text" name="userName">
 
 	<button onclick="validateUniqueUserId()" type="button">중복확인</button>
 	<br>
@@ -38,7 +40,5 @@
 	<br>
 	<a href="/evenapp/resources/signup/signup.html">취소</a>
 	<button onclick="submitForm()">가입하기</button>
-
-
 </body>
 </html>
