@@ -55,8 +55,9 @@ public class SignupController {
 	@GetMapping(value = "form")
 	public String signupAgreementHandler() {
 		
-		
 		return "redirect:/resources/signup/form.html";
+
+			
 	}
 	
 	//중복확인 버튼 처리

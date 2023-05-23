@@ -68,3 +68,21 @@ function checkPw(){
 	
 }
 
+function agreeNext() {
+	  const firstAgree = document.getElementById("firstAgree").checked;
+	  const secondAgree = document.getElementById("secondAgree").checked;
+
+	  if (firstAgree && secondAgree) {
+	    $.ajax({
+	      url: '/evenapp/signup/form',
+	      type: 'GET',
+	      success: function(response) {
+	        alert('약관에 동의하셨습니다.');
+	        // 페이지 이동
+	        window.location.href = '/evenapp/signup/form'; // 이동할 URL을 여기에 입력
+	      }
+	    });
+	  } else {
+	    alert('모든 약관에 동의하셔야 합니다.');
+	  }
+	}
