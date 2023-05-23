@@ -13,7 +13,7 @@
 
 	<insert id="insertUser" parameterType="User">
 	<![CDATA[
-         INSERT INTO "User" (user_id, user_pw, user_name,user_birth, user_sex,user_address) 
+         INSERT INTO "User" ("user_id", "user_pw", "user_name", "user_birth", "user_sex", "user_address") 
          VALUES (#{userId}, #{userPw}, #{userName},#{userBirth},#{userSex},#{userAddress}) 
 	]]>
 	</insert>

@@ -3,14 +3,15 @@ package kosa.hdit5.evenapp.controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import kosa.hdit5.evenapp.service.SignupService;
 import kosa.hdit5.evenapp.vo.UserVO;
@@ -21,6 +22,15 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public class SignupController {
 
 	Logger log = LogManager.getLogger("case3");
+	
+	//세션 날리기
+//	public String closeSession(SessionStatus status){
+//	    status.setComplete();
+//	    return "redirect:/";
+//	}
+	
+	
+	
 	
 	@Autowired
 	private SignupService service;
@@ -47,26 +57,28 @@ public class SignupController {
 	public String signupAgreementHandler() {
 		return "redirect:/resources/signup/form.html";
 	}
+	
 	//중복확인 버튼 처리
-	@PostMapping(value = "validation")
-	@ResponseBody
-	public String validation(@RequestParam("userId") String userId) {
+	@PostMapping(value = "validation", produces = "text/plain;charset=UTF-8")
+	public ResponseEntity<String> validation(@RequestParam("userId") String userId) {
 		log.debug(userId);
 		
 		boolean check = service.validateUniqueUserId(userId); 
 		
-		if(check) {
-			return "success";
-		} else {
-			return "failed";
-		}
-		
+		return ResponseEntity.ok(check ? "아이디 사용 가능" : "아이디 중복");
 	}
+	
 
 	//회원가입 완료 처리 및 회원가입 성공 페이지로 이동 
 	@PostMapping(value = "success")
 	public String signupFormHandler(@ModelAttribute(value = "userInfo") UserVO user) {
 		
+		
+		boolean test = service.createUser(user);
+
+		log.debug(user);
+		
+		log.debug(test);
 		
 		if (user.getUserSex().equals("여성"))
 			log.debug("female");
