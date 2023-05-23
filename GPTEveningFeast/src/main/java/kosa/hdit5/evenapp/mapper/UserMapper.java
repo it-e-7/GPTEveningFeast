@@ -12,4 +12,5 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public interface UserMapper {
 	
 	public List<UserVO> selectAllUser();
+	public UserVO getUser(UserVO vo);
 }
