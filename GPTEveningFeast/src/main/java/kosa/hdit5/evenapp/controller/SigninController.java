@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.SigninService;
 import kosa.hdit5.evenapp.vo.UserVO;
 
@@ -29,11 +30,13 @@ public class SigninController {
 		return new UserVO();
 	}
 
+	@Auth(role = Auth.Role.UNAUTH)
 	@GetMapping
 	public String signinGetHandler() {
 		return "signin";
 	}
 	
+	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping
 	@ResponseBody
 	public HashMap<String, Object> signinPostHandler(@ModelAttribute("signinUser") UserVO vo, Model model) {

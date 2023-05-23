@@ -30,26 +30,18 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-<!--
-	<interceptors>
-		 <interceptor> <mapping path="/**"/> <beans:bean class="my.spring.springweb.interceptor.MyInterceptor" 
-			/> </interceptor> 
-		<interceptor>
-			<mapping path="/interceptor/login" />
-			<beans:bean
-				class="my.spring.springweb.interceptor.LoginInterceptor" />
-		</interceptor>
 
+	<interceptors>
 		<interceptor>
 			<mapping path="/**" />
-			<exclude-mapping path="/interceptor/login" />
 			<exclude-mapping path="/resources/**" />
+<!--  			<exclude-mapping path="/evenapp/signin" />  -->
 			<beans:bean
-				class="my.spring.springweb.interceptor.AuthInterceptor" />
+				class="kosa.hdit5.evenapp.interceptor.AuthInterceptor" />
 		</interceptor>
 		
 	</interceptors>
--->
+
 	<aop:aspectj-autoproxy />
 	<!-- 일반적으로 Servlet WebApplicationContext 이 DI container는 Controller와 View 
 		관련된 처리를 담당해요! -->

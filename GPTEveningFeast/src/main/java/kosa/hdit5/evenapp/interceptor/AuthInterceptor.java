@@ -25,23 +25,40 @@ public class AuthInterceptor implements HandlerInterceptor{
 
 		Auth auth = handlerMethod.getMethodAnnotation(Auth.class);
 
+		// Auth 어노테이션이 안붙어있으면 모든 사용자가 접근 가능
 		if (auth == null) {
 			return true;
 		}
 
-		// 세션 확인 후 로그인 화면으로 이동시키기
+		// 세션 확인
 		HttpSession session = request.getSession(false);
-
-		if (session == null) {
-			response.sendRedirect("/evenapp/signin");
-			return false;
-		}
-
-		UserVO user = (UserVO) session.getAttribute("signinUser");
-		// 세션은 있으나 로그인 안됨
-		if (user == null) {
-			response.sendRedirect("/evenapp/signin");
-			return false;
+		
+		// 인증된 유저만 접근 가능한 경우
+		if(auth.role().toString().equals("AUTH")) {
+			// 세션이 아예 없는 경우
+			if(session == null) {
+				response.sendRedirect("/evenapp/signin");
+				return false;
+			}
+			UserVO user = (UserVO) session.getAttribute("signinUser");
+			
+			// 세션은 있으나 로그인이 안된 경우
+			if(user.getUserId() == null) {
+				response.sendRedirect("/evenapp/signin");
+				return false;
+			}
+		} 
+		
+		// 인증 안된 유저만 접근 가능한 경우 ex) 로그인, 회원가입
+		else if(auth.role().toString().equals("UNAUTH")) {
+			// 세션이 있고 로그인한 상태면 접근 불가능
+			if(session != null) {
+				UserVO user = (UserVO) session.getAttribute("signinUser");
+				if(user.getUserId() != null) {
+					response.sendRedirect("/evenapp");
+					return false;
+				}
+			}
 		}
 
 		return true;
