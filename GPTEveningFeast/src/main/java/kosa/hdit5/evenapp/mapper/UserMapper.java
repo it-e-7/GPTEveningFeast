@@ -10,6 +10,10 @@ import kosa.hdit5.evenapp.vo.UserVO;
 @Repository
 @Mapper
 public interface UserMapper {
-	
+
 	public List<UserVO> selectAllUser();
+
+	public int insertUser(UserVO user);
+	
+	public UserVO selectOneUser(String userId);
 }
