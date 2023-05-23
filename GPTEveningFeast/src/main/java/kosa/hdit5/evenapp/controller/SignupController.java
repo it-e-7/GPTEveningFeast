@@ -31,7 +31,6 @@ public class SignupController {
 	
 	
 	
-	
 	@Autowired
 	private SignupService service;
 	
@@ -55,6 +54,8 @@ public class SignupController {
 	//회원정보 입력 페이지로 이동
 	@GetMapping(value = "form")
 	public String signupAgreementHandler() {
+		
+		
 		return "redirect:/resources/signup/form.html";
 	}
 	
@@ -65,14 +66,13 @@ public class SignupController {
 		
 		boolean check = service.validateUniqueUserId(userId); 
 		
-		return ResponseEntity.ok(check ? "아이디 사용 가능" : "아이디 중복");
+		return ResponseEntity.ok(check ? "success" : "failed");
 	}
 	
 
 	//회원가입 완료 처리 및 회원가입 성공 페이지로 이동 
 	@PostMapping(value = "success")
 	public String signupFormHandler(@ModelAttribute(value = "userInfo") UserVO user) {
-		
 		
 		boolean test = service.createUser(user);
 
