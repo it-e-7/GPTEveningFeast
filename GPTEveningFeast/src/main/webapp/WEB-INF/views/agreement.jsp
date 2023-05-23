@@ -9,8 +9,8 @@
 <body>
 <h1>현대식품관 회원가입</h1>
 
-<a href="/evenapp/signup/agreement">다음</a>
-<a href="/evenapp/resources/signup/signupbutton.html">취소</a>
+<a href="/evenapp/signup/form">다음</a>
+<a href="/evenapp/resources/signup/signup.html">취소</a>
 
 </body>
 </html>

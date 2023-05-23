@@ -17,7 +17,7 @@
 	<!-- 타입 별칭은 자바 타입에 대한 좀더 짧은 이름을 설정하기 위해 사용합니다. 오직 XML 설정에서만 사용되며, 타이핑을 줄이기 
 		위해 사용합니다. -->
 	<typeAliases>
-		<typeAlias alias="User" type="kosa.hdit5.evenapp.vo.UserVO" />
+		<typeAlias alias="User" type="kosa.hdit5.evenapp.vo.UserVO" /> 
 
 	</typeAliases>
 

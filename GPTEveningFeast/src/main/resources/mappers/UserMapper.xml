@@ -8,9 +8,7 @@
 	<select id="selectAllUser" resultType="User">
 	<![CDATA[
 		SELECT * FROM "User"
-	]]>
-	
-		
+	]]>		
 	</select>
 
 </mapper>  
