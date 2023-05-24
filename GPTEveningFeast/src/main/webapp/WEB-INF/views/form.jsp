@@ -11,8 +11,6 @@
 	
 </script>
 <script src="/evenapp/resources/js/signup.js"></script>
-
-<script src="<c:url value='/resources/js/signup.js'/>"></script>
 </head>
 <body>
 	<h1>현대식품관 회원가입</h1>

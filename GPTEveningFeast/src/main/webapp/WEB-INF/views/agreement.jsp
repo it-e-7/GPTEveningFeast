@@ -31,12 +31,7 @@
 <a href="/evenapp/resources/signup/signup.html">취소</a>
 
 <script>
-  $(document).ready(function() {
-    $("#allAgree").click(function() {
-      var isChecked = $(this).prop("checked");
-      $("input[type='checkbox']").prop("checked", isChecked);
-    });
-  });
+  
 </script>
 
 </body>

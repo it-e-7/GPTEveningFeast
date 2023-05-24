@@ -49,6 +49,12 @@ function submitForm() {
 			},
 			success: function(response) {
 				alert('회원가입 성공!');
+				window.location.href = '/evenapp/resources/signup/success.html';
+			},
+			error : function(response) {
+				console.log(response);
+				alert('회원가입 실패: 알 수 없는 이유로 회원가입에 실패했습니다. 다시 시도하세요.');
+				location.href = '/evenapp/signup';
 			}
 		});
 	} else if (next === false) {
@@ -76,7 +82,7 @@ function agree() {
 	      url: '/evenapp/signup/agreement',
 	      type: 'POST',
 	      data: {
-	        agree: true
+	        agreement: true
 	      },
 	      success: function(response) {
 	        alert('약관에 동의하셨습니다.');
@@ -87,3 +93,10 @@ function agree() {
 	    alert('모든 약관에 동의하셔야 합니다.');
 	  }
 	}
+
+$(document).ready(function() {
+    $("#allAgree").click(function() {
+      var isChecked = $(this).prop("checked");
+      $("input[type='checkbox']").prop("checked", isChecked);
+    });
+  });

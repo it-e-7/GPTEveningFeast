@@ -9,7 +9,7 @@ import kosa.hdit5.evenapp.vo.UserVO;
 @Service
 public class SignupServiceImpl implements SignupService {
 	@Autowired
-	UserMapper mapper;
+	private UserMapper mapper;
 
 	@Override
 	public boolean createUser(UserVO user) {
