@@ -2,8 +2,6 @@ function clickSignin() {
 	const userId = $('input[name="userId"]').val();
 	const userPw = $('input[name="userPw"]').val();
 	
-	console.log(userId, userPw);
-	
 	$.ajax({
 		url: "/evenapp/signin",
 		method: "POST",

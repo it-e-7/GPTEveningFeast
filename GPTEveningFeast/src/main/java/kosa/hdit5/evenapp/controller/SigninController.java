@@ -39,7 +39,7 @@ public class SigninController {
 	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping
 	@ResponseBody
-	public HashMap<String, Object> signinPostHandler(@ModelAttribute("signinUser") UserVO vo, Model model) {
+	public HashMap<String, Object> signinPostHandler(UserVO vo, Model model) {
 		UserVO result = service.getUser(vo);
 		model.addAttribute("signinUser", result);
 		

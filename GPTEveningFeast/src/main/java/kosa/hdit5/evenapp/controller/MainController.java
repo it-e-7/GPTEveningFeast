@@ -28,9 +28,14 @@ public class MainController {
 	}
 	
 	@GetMapping
-	public String mainHandler() {
+	public String mainHandler(@ModelAttribute("signinUser") UserVO vo) {
 		
-		log.debug(service.getAllUser());
+		if(vo.getUserId() == null) {
+			log.debug("로그인하지 않은 유저가 접속했습니다");
+		} else {
+			log.debug("로그인 유저 : " + vo.getUserId() + ", " + vo.getUserName());
+		}
+		
 		
 		return "home";
 	}
