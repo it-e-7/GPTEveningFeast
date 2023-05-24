@@ -10,6 +10,13 @@
 		SELECT * FROM "User"
 	]]>
 	</select>
+	
+	<select id="getUser" parameterType="User" resultType="User">
+	<![CDATA[
+		SELECT * FROM "User" WHERE "user_id" = #{userId} AND "user_pw" = #{userPw}
+	]]>
+
+	</select>
 
 	<insert id="insertUser" parameterType="User">
 	<![CDATA[
