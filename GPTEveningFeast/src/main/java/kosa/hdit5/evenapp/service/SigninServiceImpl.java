@@ -10,7 +10,7 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public class SigninServiceImpl implements SigninService {
 
 	@Autowired
-	UserMapper mapper;
+	private UserMapper mapper;
 	
 	@Override
 	public UserVO getUser(UserVO vo) {

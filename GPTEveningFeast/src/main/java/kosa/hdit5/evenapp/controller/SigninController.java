@@ -23,7 +23,7 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public class SigninController {
 	
 	@Autowired
-	SigninService service;
+	private SigninService service;
 	
 	@ModelAttribute("signinUser")
 	public UserVO createSigninUser() {
@@ -45,11 +45,8 @@ public class SigninController {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		if(result != null) {
-			map.put("result", "success");
-		} else {
-			map.put("result", "failed");
-		}
+		map.put("result", result == null ? "failed" : "success");
+
 		return map;
 	}
 }
