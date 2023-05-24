@@ -15,6 +15,22 @@
 	<![CDATA[
 		SELECT * FROM "User" WHERE "user_id" = #{userId} AND "user_pw" = #{userPw}
 	]]>
+
 	</select>
+
+	<insert id="insertUser" parameterType="User">
+	<![CDATA[
+         INSERT INTO "User" ("user_id", "user_pw", "user_name", "user_birth", "user_sex", "user_address") 
+         VALUES (#{userId}, #{userPw}, #{userName},#{userBirth},#{userSex},#{userAddress}) 
+	]]>
+	</insert>
+
+	<select id="selectOneUser" resultType="User">
+	<![CDATA[
+		SELECT * FROM "User" WHERE "user_id"=#{userId}
+	]]>
+	</select>
+
+
 
 </mapper>  
