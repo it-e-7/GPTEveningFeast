@@ -30,7 +30,7 @@ public class MainController {
 	@Autowired
 	ProductService productService; 
 
-  @Autowired
+	@Autowired
 	CategoryService categoryService;
 	
 	@GetMapping
@@ -55,7 +55,7 @@ public class MainController {
 		List<ProductVO> list = productService.getRandomProduct();
 		
 		model.addAttribute("random", list);
-		return "mainpage";
+		return "main";
 	}
 
 }

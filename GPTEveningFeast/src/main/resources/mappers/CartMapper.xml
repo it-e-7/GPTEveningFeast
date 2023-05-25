@@ -6,19 +6,9 @@
 
 <mapper namespace="kosa.hdit5.evenapp.mapper.CartMapper">
 
-	<insert id="insertProductToCart"> 
-		<![CDATA[ INSERT INTO "Cart" VALUES 
-		(#{userId}, #{productId}, #{productCnt}) ]]> 
-	</insert>
-
-
 	<select id="insertOrUpdateCart" statementType="CALLABLE">
 		{call InsertOrUpdateCart(
-		#{userId, mode=IN, jdbcType=VARCHAR,javaType=java.lang.String},
-		#{productId, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String},
-		#{productCount, mode=IN, jdbcType=NUMERIC, javaType=java.lang.Integer})}
+		#{userId}, #{productId},#{productCnt})}
 	</select>
-
-
 
 </mapper>  

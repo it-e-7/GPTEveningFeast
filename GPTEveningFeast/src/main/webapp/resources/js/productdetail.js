@@ -1,11 +1,13 @@
 function increment() {
 	let quantityInput = $('input[name="product_count"]');
 	quantityInput.val(+quantityInput.val() + 1);
+	printPrice();
 }
 
 function decrement() {
 	let quantityInput = $('input[name="product_count"]');
 	quantityInput.val(quantityInput.val() - 1 < 0 ? 0 : quantityInput.val() - 1);
+	printPrice();
 }
 
 

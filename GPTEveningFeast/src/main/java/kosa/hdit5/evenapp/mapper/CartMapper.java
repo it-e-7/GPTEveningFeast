@@ -8,7 +8,7 @@ import kosa.hdit5.evenapp.vo.CartVO;
 @Repository
 @Mapper
 public interface CartMapper {
-	public int insertProductToCart(CartVO vo); 
+	
 	public void insertOrUpdateCart(CartVO vo); 
-
+	
 }

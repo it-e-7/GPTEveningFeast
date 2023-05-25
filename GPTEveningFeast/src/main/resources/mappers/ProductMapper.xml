@@ -18,7 +18,7 @@
 	]]>
 	</select>
 
-	<select id="selectProductDetail" parameterType="Product"
+	<select id="selectProductDetail" parameterType="String"
 		resultType="Product">
 	<![CDATA[
 	  SELECT *

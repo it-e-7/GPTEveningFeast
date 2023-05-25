@@ -29,7 +29,7 @@ public class ProductDetailController {
 		model.addAttribute("productDetail", vo);
 		
 
-		return "productdetailpage";
+		return "productdetail";
 	}
 
 }

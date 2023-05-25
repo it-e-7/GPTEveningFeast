@@ -13,16 +13,8 @@ public class CartServiceImpl implements CartService{
 	private CartMapper mapper;
 
 	@Override
-	public int createCart(CartVO vo) {
-		return mapper.insertProductToCart(vo);
-	}
-
-	@Override
 	public void insertOrUpdateCart(CartVO vo) {
 		mapper.insertOrUpdateCart(vo);
 	}
 	
-	
-	
-
 }
