@@ -8,15 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.ellipsis {
-	display: block;
-	width: 300px; /* 너비는 원하는 크기로 조절하세요. */
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-</style>
 </head>
 <body>
 	<h2>오늘의 추천 상품</h2>

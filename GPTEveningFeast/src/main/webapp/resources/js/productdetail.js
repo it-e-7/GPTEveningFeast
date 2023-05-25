@@ -30,3 +30,15 @@ function cart(productId) {
 function orderPage() {
 	
 }
+
+function printPrice(){
+    calculateTotalPrice();
+    document.getElementById('product_cnt').addEventListener('change', calculateTotalPrice);
+}
+
+function calculateTotalPrice(){
+    let price = document.getElementById('product_price').innerText.replace(/,/g, '').replace('원', '');
+    let count = document.getElementById('product_cnt').value;
+    let total = parseFloat(price) * count;
+    document.getElementById('total_price').innerText = total.toLocaleString() + '원';
+}
