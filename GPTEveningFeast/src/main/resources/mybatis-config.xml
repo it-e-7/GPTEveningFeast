@@ -20,6 +20,9 @@
 		<typeAlias alias="User" type="kosa.hdit5.evenapp.vo.UserVO" /> 
 		<typeAlias alias="Product" type="kosa.hdit5.evenapp.vo.ProductVO" /> 
 		<typeAlias alias="Cart" type="kosa.hdit5.evenapp.vo.CartVO" />
+		<typeAlias alias="Category" type="kosa.hdit5.evenapp.vo.CategoryVO" />
+		<typeAlias alias="Section" type="kosa.hdit5.evenapp.vo.SectionVO" />
+
 	</typeAliases>
 
 </configuration>	
