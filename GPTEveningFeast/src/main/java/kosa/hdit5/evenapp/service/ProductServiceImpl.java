@@ -20,18 +20,12 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public List<ProductVO> getRandomProduct() {
-
-		List<ProductVO> vo = mapper.selectRandomProduct();
-		return vo;
+		return mapper.selectRandomProduct();
 	}
 
 	@Override
 	public ProductVO getProductDetail(String productId) {
-	
-		ProductVO vo = mapper.selectProductDetail(productId);
-//		log.debug("service {}", vo);
-		
-		return vo;
+		return mapper.selectProductDetail(productId);
 	}
 	
 

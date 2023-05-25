@@ -20,16 +20,13 @@ public class ProductDetailController {
 	
 	@Autowired
 	ProductService service;
-	
 
 	@GetMapping("{productId}")
 	public String productDetailGetHandler(@PathVariable("productId") String productId, Model model) {
 		
 		ProductVO vo = service.getProductDetail(productId);
 		model.addAttribute("productDetail", vo);
-		
 
 		return "productdetail";
 	}
-
 }

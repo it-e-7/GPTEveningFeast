@@ -23,10 +23,8 @@ function cart(productId) {
 		},
 		success: function(response){
 			console.log(response)
-	
 		}
 	})
-	
 }
 
 function orderPage() {
