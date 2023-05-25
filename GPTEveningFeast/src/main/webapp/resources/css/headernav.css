@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.header-nav-container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
