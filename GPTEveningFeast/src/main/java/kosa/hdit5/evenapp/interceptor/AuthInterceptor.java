@@ -21,8 +21,10 @@ public class AuthInterceptor implements HandlerInterceptor{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
+		log.debug(handler);
+		
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
-
+		
 		Auth auth = handlerMethod.getMethodAnnotation(Auth.class);
 
 		// Auth 어노테이션이 안붙어있으면 모든 사용자가 접근 가능
@@ -54,6 +56,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 			// 세션이 있고 로그인한 상태면 접근 불가능
 			if(session != null) {
 				UserVO user = (UserVO) session.getAttribute("signinUser");
+				
 				if(user != null && user.getUserId() != null) {
 					response.sendRedirect("/evenapp");
 					return false;
