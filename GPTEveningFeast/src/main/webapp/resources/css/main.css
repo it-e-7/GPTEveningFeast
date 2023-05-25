@@ -1,1 +1,21 @@
 @charset "UTF-8";
+
+/* 상세페이지 - 상품 수량 버튼 */
+.quantity-selector {
+	display: flex;
+	align-items: center;
+}
+
+.quantity-selector button {
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.quantity-selector input {
+	width: 50px;
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 5px;
+}

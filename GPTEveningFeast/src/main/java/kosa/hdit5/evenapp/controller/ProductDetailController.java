@@ -16,9 +16,11 @@ import kosa.hdit5.evenapp.vo.ProductVO;
 @RequestMapping("product")
 public class ProductDetailController {
 
+	Logger log = LogManager.getLogger("case3");
+	
 	@Autowired
 	ProductService service;
-	Logger log = LogManager.getLogger("case3");
+	
 
 	@GetMapping("{productId}")
 	public String productDetailGetHandler(@PathVariable("productId") String productId, Model model) {
@@ -26,7 +28,6 @@ public class ProductDetailController {
 		ProductVO vo = service.getProductDetail(productId);
 		model.addAttribute("productDetail", vo);
 		
-//		log.debug("controller {} {}", productId, vo);
 
 		return "productdetailpage";
 	}

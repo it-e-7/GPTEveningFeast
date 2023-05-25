@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService{
 	public ProductVO getProductDetail(String productId) {
 	
 		ProductVO vo = mapper.selectProductDetail(productId);
-		log.debug("service {}", vo);
+//		log.debug("service {}", vo);
 		
 		return vo;
 	}
