@@ -23,7 +23,7 @@
 
 		<button onclick="decrement(); printPrice();">-</button>
 		<input id="product_cnt" type="number" value="1" min="1"
-			name="product_count">
+			name="product_count" disabled>
 		<button onclick="increment(); printPrice();">+</button>
 
 		<p id="product_price">
