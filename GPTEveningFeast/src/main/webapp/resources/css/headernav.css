@@ -7,3 +7,8 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+.category-popup {
+	position: absolute;
+	top: 100%;
+}
