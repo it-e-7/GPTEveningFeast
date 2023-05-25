@@ -18,6 +18,8 @@
 		위해 사용합니다. -->
 	<typeAliases>
 		<typeAlias alias="User" type="kosa.hdit5.evenapp.vo.UserVO" /> 
+		<typeAlias alias="Category" type="kosa.hdit5.evenapp.vo.CategoryVO" />
+		<typeAlias alias="Section" type="kosa.hdit5.evenapp.vo.SectionVO" />
 
 	</typeAliases>
 
