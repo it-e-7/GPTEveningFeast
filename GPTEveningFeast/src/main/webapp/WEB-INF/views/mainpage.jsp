@@ -24,9 +24,9 @@
 		<tr>
 			<c:forEach var="vo" items="${random}" varStatus="status">
 				<c:if test="${status.count <= 3}">
-
+					
 					<td>
-					<a href="/product/${vo.productId}">
+					<a href="/evenapp/product/${vo.productId}">
 							<table>
 
 								<tr>

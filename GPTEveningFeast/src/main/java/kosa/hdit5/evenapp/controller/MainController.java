@@ -52,9 +52,11 @@ public class MainController {
 		List<ProductVO> list = productService.getRandomProduct();
 		
 		model.addAttribute("random", list);
-		log.debug(list);
+//		log.debug(list);
 		return "mainpage";
 	}
+
+	
 	
 
 }

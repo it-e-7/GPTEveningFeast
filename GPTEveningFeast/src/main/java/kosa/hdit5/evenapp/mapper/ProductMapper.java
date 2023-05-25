@@ -12,4 +12,6 @@ import kosa.hdit5.evenapp.vo.ProductVO;
 public interface ProductMapper {
 
 	public List<ProductVO> selectRandomProduct();
+	
+	public ProductVO selectProductDetail(String productId);
 }

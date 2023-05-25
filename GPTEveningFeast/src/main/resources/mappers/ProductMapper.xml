@@ -17,4 +17,15 @@
 		WHERE ROWNUM <= 3
 	]]>
 	</select>
+
+	<select id="selectProductDetail" parameterType="Product"
+		resultType="Product">
+	<![CDATA[
+	  SELECT *
+	  FROM "Product" p JOIN "Product_detail" d 
+	  ON p."product_id" = d."product_id"
+	  WHERE p."product_id" = #{productId}
+	]]>
+	</select>
+
 </mapper>  

@@ -14,4 +14,5 @@ public class ProductVO {
 	private String productImgUrl;
 	private int sectId;
 	private int ctgrId;
+	private String detail;
 }
