@@ -44,3 +44,7 @@ a {
 .productContainer .product_cnt {
 	width : 6ch;
 }
+
+.purchaseButton {
+    float: right;
+}
