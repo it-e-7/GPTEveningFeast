@@ -1,19 +1,20 @@
 package kosa.hdit5.evenapp.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kosa.hdit5.evenapp.service.CategoryService;
 import kosa.hdit5.evenapp.service.MainService;
+import kosa.hdit5.evenapp.service.ProductService;
+import kosa.hdit5.evenapp.vo.ProductVO;
 import kosa.hdit5.evenapp.vo.CategoryVO;
 import kosa.hdit5.evenapp.vo.UserVO;
 
@@ -26,6 +27,9 @@ public class MainController {
 	@Autowired
 	MainService service; 
 	
+	@Autowired
+	ProductService productService; 
+
 	@Autowired
 	CategoryService categoryService;
 	
@@ -44,6 +48,14 @@ public class MainController {
 		}
 		
 		return "home";
+	}
+	
+	@GetMapping("main")
+	public String mainProductRandomHandler(Model model) {
+		List<ProductVO> list = productService.getRandomProduct();
+		
+		model.addAttribute("random", list);
+		return "main";
 	}
 
 }

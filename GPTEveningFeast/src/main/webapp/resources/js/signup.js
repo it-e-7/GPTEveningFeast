@@ -69,10 +69,9 @@ function checkPw(){
 	const pw1 = $('input[name="userPw"]').val();
 	const pw2 = $('input[name="pwCheck"]').val();
 	
-	if (pw1===pw2)
-		pwNext = true;
-	
+	pwNext = (pw1===pw2)
 }
+
 function agree() {
 	  const firstAgree = document.getElementById("firstAgree").checked;
 	  const secondAgree = document.getElementById("secondAgree").checked;

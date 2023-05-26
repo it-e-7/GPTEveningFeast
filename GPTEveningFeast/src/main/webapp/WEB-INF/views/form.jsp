@@ -21,9 +21,9 @@
 	<button onclick="validateUniqueUserId()" type="button">중복확인</button>
 	<br>
 	<br> 비밀번호
-	<input type="password" name="userPw">
+	<input type="password" name="userPw" oninput="checkPw()">
 	<br> 비밀번호 확인
-	<input type="password" name="pwCheck" onchange="checkPw()">
+	<input type="password" name="pwCheck" oninput="checkPw()">
 	<br>
 	<br> 생년월일 및 성별
 	<input type="date" name="userBirth">

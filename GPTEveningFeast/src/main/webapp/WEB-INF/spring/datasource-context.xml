@@ -27,6 +27,8 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:mappers/UserMapper.xml</value>
+				<value>classpath:mappers/ProductMapper.xml</value>
+				<value>classpath:mappers/CartMapper.xml</value>
 				<value>classpath:mappers/CategoryMapper.xml</value>
 			</list>
 		</property>

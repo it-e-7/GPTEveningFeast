@@ -19,7 +19,7 @@ import kosa.hdit5.evenapp.vo.UserVO;
 @Controller
 @RequestMapping("signin")
 public class SigninController {
-	
+
 	@Autowired
 	private SigninService service;
 
@@ -28,16 +28,17 @@ public class SigninController {
 	public String signinGetHandler() {
 		return "signin";
 	}
-	
+
 	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping
 	@ResponseBody
 	public HashMap<String, Object> signinPostHandler(UserVO vo, HttpSession session) {
 		UserVO result = service.getUser(vo);
+
 		session.setAttribute("signinUser", result);
-		
+
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		
+
 		map.put("result", result == null ? "failed" : "success");
 
 		return map;

@@ -15,7 +15,7 @@ import kosa.hdit5.evenapp.vo.CategoryVO;
 public class CategoryController {
 
 	@Autowired
-	CategoryService service;
+	private CategoryService service;
 	
 	@GetMapping
 	public List<CategoryVO> getCategoryHandler() {

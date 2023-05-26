@@ -50,6 +50,7 @@ public class SignupController {
 	public String signupButtonHandler() {
 		return "agreement";
 	}
+	
 	//약관 동의 후 세션 생성
 	@PostMapping(value = "agreement")
 	public String signupAgreementHandler(@RequestParam("agreement") boolean agreement, Model model) {
@@ -71,6 +72,7 @@ public class SignupController {
 			return "redirect:/resources/signup/signup.html";
 		}
 	}
+	
 	//중복확인 버튼 처리
 	@PostMapping(value = "validation", produces = "text/plain;charset=UTF-8")
 	public ResponseEntity<String> validation(@RequestParam("userId") String userId) {
@@ -95,9 +97,5 @@ public class SignupController {
 			status.setComplete();
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("failed");
 		}
-		
-		
-
 	}
-
 }
