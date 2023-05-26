@@ -6,8 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/evenapp/resources/css/main.css" />
+
 </head>
 <body>
 	<h2>오늘의 추천 상품</h2>

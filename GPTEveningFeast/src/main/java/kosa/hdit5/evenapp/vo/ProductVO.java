@@ -15,4 +15,5 @@ public class ProductVO {
 	private int sectId;
 	private int ctgrId;
 	private String detail;
+	private int productCnt;
 }

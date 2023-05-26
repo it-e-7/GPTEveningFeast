@@ -13,20 +13,22 @@
 	crossorigin="anonymous"></script>
 <script src="/evenapp/resources/js/productdetail.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="/evenapp/resources/css/main.css" />
 
 <body>
 	<div class="quantity-selector">
-		<p id="product_name">${productDetail.productName}</p>
+    <p id="product_name">${productDetail.productName}</p>
 
-		<button onclick="decrement()">-</button>
-		<input id="product_cnt" type="number" value="1" min="1" name="product_count" disabled>
-		<button onclick="increment()">+</button>
+    <button onclick="decrement()">-</button>
+    <input id="product_cnt" type="number" value="1" min="1" name="product_count" disabled>
+    <button onclick="increment()">+</button>
 
-		<p id="product_price">
-			<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" />원
-		</p>
-	</div>
+    <p id="product_price">
+        <fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" />원
+    </p>
+</div>
+
+
 
 	<p id="total_price">
 		<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" />원
