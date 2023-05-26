@@ -50,13 +50,11 @@
 					</div>
 					<div class="ellipsis" >
 					<p id="product_price_${loop.index}">
-						<fmt:formatNumber value="${vo.productPrice}" pattern="#,###" />
-						원
-						</p>
+						<fmt:formatNumber value="${vo.productPrice}" pattern="#,###" /> 원
+					</p>
 					<p id="total_price_${loop.index}">
-						<fmt:formatNumber value="${vo.productPrice * vo.productCnt}" pattern="#,###" />
-						원
-						</p>
+						<fmt:formatNumber value="${vo.productPrice * vo.productCnt}" pattern="#,###" /> 원
+					</p>
 					</div>
 				</div>
 			</div>
