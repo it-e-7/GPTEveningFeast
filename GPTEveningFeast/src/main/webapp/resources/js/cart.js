@@ -62,6 +62,19 @@ function totalPricePrint() {
     $('.orderButton').text("주문하기 " + selectedCount);
 }
 
+
+function deleteCartProduct(productId) {
+	console.log(productId);
+	$.ajax({
+	      url: '/evenapp/cart/delete',
+	      type: 'POST',
+	      data: {
+	    	  productId
+	      }
+	 });
+}
+
+
 $(document).ready(function() {
 	totalPricePrint();
 	

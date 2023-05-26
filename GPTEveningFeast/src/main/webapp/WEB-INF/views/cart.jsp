@@ -60,8 +60,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="deleteButton">X</div>
-			<button class="purchaseButton">바로구매</button>
+			<button class="deleteButton" onclick="deleteCartProduct('${vo.productId}')">X</button>
+			<button class="purchaseButton" href="/evenapp/order">바로구매</button>
 		</div>
 	</c:forEach>
 		

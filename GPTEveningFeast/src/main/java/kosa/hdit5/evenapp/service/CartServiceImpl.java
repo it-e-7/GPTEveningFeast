@@ -24,5 +24,10 @@ public class CartServiceImpl implements CartService{
 	public List<ProductVO> selectProductFromCart(String userId) {
 		return mapper.selectProductFromCart(userId);
 	}
+
+	@Override
+	public int deleteCartProduct(String productId) {
+		return mapper.deleteCartProduct(productId);
+	}
 	
 }

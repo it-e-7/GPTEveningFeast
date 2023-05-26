@@ -14,5 +14,6 @@ public interface CartMapper {
 	
 	public void insertOrUpdateCart(CartVO vo);
 	public List<ProductVO> selectProductFromCart(String userId);
+	public int deleteCartProduct(String productId);
 	
 }

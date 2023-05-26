@@ -18,4 +18,8 @@
 	  	WHERE c."user_id" = #{userId} and
             p."product_id" = c."product_id"
 	</select>
+	
+	<delete id="deleteCartProduct">
+		DELETE "Cart" WHERE "product_id"=#{productId}
+	</delete>
 </mapper>  
