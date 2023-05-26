@@ -7,7 +7,7 @@
 
 	<!-- 일반적으로 설정파일들은 src/main/resources 안에 들어가 있고 이 경로는 classpath안에 포함되어 있어요! -->
 	<context:property-placeholder
-		location="classpath:config/database.properties" />
+		location="classpath:config/*.properties" />
 
 	<!-- 데이터베이스 연결에 대한 DataSource를 bean으로 등록해야 해요! -->
 	<bean id="dataSource"
@@ -48,7 +48,8 @@
 
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="kosa.hdit5.evenapp.mapper" />
+		<property name="basePackage"
+			value="kosa.hdit5.evenapp.mapper" />
 	</bean>
 
 

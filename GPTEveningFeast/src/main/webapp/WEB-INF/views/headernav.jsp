@@ -16,11 +16,11 @@
 				<ul class="ctgr"></ul>
 			</nav>
 		</div>
-		<form>
+		<form action="gpt" method="post">
 			<input type="text" placeholder="GPT 검색" name="searchParam"> <input
 				type="submit" value="검색">
 		</form>
-		<form>
+		<form action="search" method="post">
 			<input type="text" placeholder="기본 검색" name="searchParam"> <input
 				type="submit" value="검색">
 		</form>

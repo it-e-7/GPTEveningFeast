@@ -35,11 +35,11 @@
 		<interceptor>
 			<mapping path="/**" />
 			<exclude-mapping path="/resources/**" />
-<!--  			<exclude-mapping path="/evenapp/signin" />  -->
+			<!-- <exclude-mapping path="/evenapp/signin" /> -->
 			<beans:bean
 				class="kosa.hdit5.evenapp.interceptor.AuthInterceptor" />
 		</interceptor>
-		
+
 	</interceptors>
 
 	<aop:aspectj-autoproxy />

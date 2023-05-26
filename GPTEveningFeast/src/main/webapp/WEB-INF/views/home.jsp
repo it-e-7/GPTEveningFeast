@@ -12,7 +12,6 @@
 	<%@ include file="/WEB-INF/views/headernav.jsp"%>
 	<h1>Hello world!</h1>
 
-	<P>The time on the server is ${serverTime}.</P>
 	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>
