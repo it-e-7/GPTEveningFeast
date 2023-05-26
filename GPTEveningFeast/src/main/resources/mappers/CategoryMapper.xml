@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kosa.hdit5.evenapp.mapper.CategoryMapper">
+
+	<resultMap type="Category" id="CategoryResult">
+		<result column="ctgr_id" property="ctgrId"/>
+		<result column="name" property="name"/>
+		<collection property="sections" column="ctgr_id" javaType="java.util.ArrayList" ofType="Section" select="selectSectionList"></collection>
+	</resultMap>
+
+	<select id="selectAllCategory" resultMap="CategoryResult">
+		<![CDATA[
+			SELECT * FROM "Category"
+		]]>
+	</select>
+	
+	<select id="selectSectionList" parameterType="map" resultType="Section" >
+		<![CDATA[
+			SELECT * FROM "Section" WHERE "ctgr_id" = #{ctgrId}
+		]]>
+	</select>
+
+	<select id="selectOneCategory" parameterType="String" resultMap="CategoryResult">
+		<![CDATA[
+			SELECT * FROM "Category" WHERE "ctgr_id"=#{ctgrId}
+		]]>
+	</select>
+</mapper>

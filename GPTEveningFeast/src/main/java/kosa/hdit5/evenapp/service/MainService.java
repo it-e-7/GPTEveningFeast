@@ -7,4 +7,5 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public interface MainService {
 
 	public List<UserVO> getAllUser();
+
 }
