@@ -13,7 +13,7 @@
 	
 	<select id="getUser" parameterType="User" resultType="User">
 	<![CDATA[
-		SELECT * FROM "User" WHERE "user_id" = #{userId} AND "user_pw" = #{userPw}
+		SELECT * FROM "User" WHERE "user_id" = #{userId}
 	]]>
 
 	</select>
