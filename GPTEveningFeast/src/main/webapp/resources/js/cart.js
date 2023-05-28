@@ -64,11 +64,14 @@ function deleteCartProduct(productId) {
 	      data: {
 	    	  productId
 	      },
-	success: function(response) {
-		alert('해당 상품을 삭제하였습니다!!');
-		window.location.href = 'cart';
-	},
-      });
+
+	      success: function(response) {
+	    	  console.log(response)
+	    	  if (response="success")
+		        alert('상품이 삭제되었습니다.');
+		        window.location.href = 'cart';
+		  }
+	 });
 }
 
 

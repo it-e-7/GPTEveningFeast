@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,24 +43,23 @@ public class CartController {
 	
 	@GetMapping()
 	public String moveCartPageHandler(HttpSession session, Model model) {
-	//	UserVO user = (UserVO) session.getAttribute("signinUser");
+		UserVO user = (UserVO) session.getAttribute("signinUser");
 	
-	//	List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
+//		List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
 		List<ProductVO> vo = service.selectProductFromCart("tt");
-		
-		log.debug("controller {}", vo);
+
 		model.addAttribute("cartInfo", vo);
 		
 		return "cart";
 	}
 	
-	@PostMapping("delete")
-	public String deleteCartProductHandler(@RequestParam("productId") String productId) {
-		log.debug("controller {}", productId);
+	@PostMapping(value="delete", produces = "text/plain;charset=UTF-8")
+	public ResponseEntity<String> deleteCartProductHandler(@RequestParam("productId") String productId) {
 		
-		service.deleteCartProduct(productId);
+		int check = service.deleteCartProduct(productId);
+		log.debug("controller {} {}", check, productId);
 		
-		return "redirect:/cart";
+		return ResponseEntity.ok(check==1 ? "success" : "failed");
 	}
 
 }
