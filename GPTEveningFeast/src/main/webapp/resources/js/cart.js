@@ -12,20 +12,13 @@ function calculateTotalPrice(index) {
 	document.getElementById(`total_price_${index}`).innerText = total.toLocaleString() + '원';
 }
 /*
-function increment(index) {
-	let quantityInput = $(`#product_cnt_${index}`);
-	quantityInput.val(+quantityInput.val() + 1);
-	printPrice(index);
-}
-
-function decrement(index) {
-	let quantityInput = $(`#product_cnt_${index}`);
-	if (quantityInput.val() > 1) {
-		quantityInput.val(quantityInput.val() - 1);
-	}
-	printPrice(index);
-}
-*/
+ * function increment(index) { let quantityInput = $(`#product_cnt_${index}`);
+ * quantityInput.val(+quantityInput.val() + 1); printPrice(index); }
+ * 
+ * function decrement(index) { let quantityInput = $(`#product_cnt_${index}`);
+ * if (quantityInput.val() > 1) { quantityInput.val(quantityInput.val() - 1); }
+ * printPrice(index); }
+ */
 function increment(index) {
     let quantityInput = document.getElementById(`product_cnt_${index}`);
     let quantity = Number(quantityInput.value);
@@ -70,8 +63,12 @@ function deleteCartProduct(productId) {
 	      type: 'POST',
 	      data: {
 	    	  productId
-	      }
-	 });
+	      },
+	success: function(response) {
+		alert('해당 상품을 삭제하였습니다!!');
+		window.location.href = 'cart';
+	},
+      });
 }
 
 

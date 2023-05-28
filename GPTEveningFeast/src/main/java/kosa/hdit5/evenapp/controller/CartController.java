@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kosa.hdit5.evenapp.service.CartService;
 import kosa.hdit5.evenapp.vo.CartVO;
 import kosa.hdit5.evenapp.vo.ProductVO;
-import kosa.hdit5.evenapp.vo.UserVO;
 
 @Controller
 @RequestMapping("cart")
