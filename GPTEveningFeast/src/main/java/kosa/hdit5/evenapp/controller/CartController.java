@@ -32,11 +32,10 @@ public class CartController {
 	@PostMapping()
 	public void createCartHandler(HttpSession session, CartVO vo, Model model) {
 
-		log.debug("create controller {}", vo);
-	//	UserVO user = (UserVO) session.getAttribute("signinUser");
-	//	vo.setUserId(user.getUserId());
-		vo.setUserId("tt");
-		
+		UserVO user = (UserVO) session.getAttribute("signinUser");
+		vo.setUserId(user.getUserId());
+//		vo.setUserId("tt");
+
 		service.insertOrUpdateCart(vo);
 		model.addAttribute("cart", vo);
 		
@@ -46,9 +45,9 @@ public class CartController {
 	public String moveCartPageHandler(HttpSession session, Model model) {
 		UserVO user = (UserVO) session.getAttribute("signinUser");
 	
-//		List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
-		List<ProductVO> vo = service.selectProductFromCart("tt");
+		List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
 
+		model.addAttribute("userInfo", user.getUserId());
 		model.addAttribute("cartInfo", vo);
 		
 		return "cart";
@@ -58,7 +57,6 @@ public class CartController {
 	public ResponseEntity<String> deleteCartProductHandler(@RequestParam("productId") String productId) {
 		
 		int check = service.deleteCartProduct(productId);
-		log.debug("controller {} {}", check, productId);
 		
 		return ResponseEntity.ok(check==1 ? "success" : "failed");
 	}

@@ -4,7 +4,6 @@ function printPrice(index) {
 }
 
 
-
 function calculateTotalPrice(index) {
 	let price = document.getElementById(`product_price_${index}`).innerText.replace(/,/g, '').replace('원', '');
 	let count = document.getElementById(`product_cnt_${index}`).value;
@@ -74,12 +73,49 @@ function deleteCartProduct(productId) {
 	 });
 }
 
+const cart = []
+
+function moveToOrder(){
+
+	updateCartProduct();
+	
+	$.ajax({
+		url: '/evenapp/order',
+		type: 'POST',
+		contentType: 'application/json',
+		data: JSON.stringify(cart),
+		success : function(response) {
+			console.log("success")
+			window.location.href = 'order'
+		}
+	});
+		
+}
+
+function updateCartProduct() {
+	let product;
+	
+	$('.productCheckbox:checked').each(function() {
+		product = new Object();
+		
+        const productIndex = $(this).closest('.productContainer').attr("index");
+        product.productId = $('#product_id_' + productIndex).val();
+        product.productCnt = parseInt($('#product_cnt_' + productIndex).val());
+        
+        cart.push(product);
+    });
+	
+	cart.forEach(function(object, index){
+		console.log(object.productId + ", " + object.productCnt);
+	})
+}
+
 
 $(document).ready(function() {
 	totalPricePrint();
 	
 	$("#allCheck").click(function() {
-	      var isChecked = $(this).prop("checked");
+	      let isChecked = $(this).prop("checked");
 	      $("input[type='checkbox']").prop("checked", isChecked);
 	      totalPricePrint();
 	    });

@@ -24,15 +24,19 @@
 	<!-- 총 상품금액 및 주문하기 버튼 -->
 	<div class="totalAmount">
 		<p>총 상품금액: <fmt:formatNumber value="${totalProductAmount}" pattern="#,###" /> 원</p>
-		<button class="orderButton">주문하기 
+		<button class="orderButton" onclick="moveToOrder()">주문하기 
 			${fn:length(cartInfo)}
 		</button>
 	</div>
 	<br>
+	
 	<input type="checkbox" name="allCheck" id="allCheck" checked>
+	
 	<label for="allCheck">전체 선택</label><br><br>
 	
 	<c:forEach var="vo" items="${cartInfo}" varStatus="loop">
+		<input type=hidden id="product_id_${loop.index}" value="${vo.productId}">
+
 		<div class="productContainer" index="${loop.index}">
 			<div class="productInfo">
 				<a href="/evenapp/product/${vo.productId}"> 
@@ -43,8 +47,9 @@
 					<div class="ellipsis">${vo.productName}</div>
 					<div>
 						<button onclick="decrement(${loop.index})">-</button>
-						<input class="product_cnt" id="product_cnt_${loop.index}" type="number"
-							value="${vo.productCnt}" min="1" name="product_count" disabled>
+						<input class="product_cnt" id="product_cnt_${loop.index}" 
+							type="number" value="${vo.productCnt}" min="1" 
+							name="product_count" disabled>
 						<button onclick="increment(${loop.index})">+</button>
 					</div>
 					<div class="ellipsis" >

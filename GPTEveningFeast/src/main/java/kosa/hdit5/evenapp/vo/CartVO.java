@@ -12,5 +12,6 @@ public class CartVO {
 	private String productId;
 	private int productCnt;
 	private String userId;
+	private String productName;
 
 }
