@@ -24,6 +24,9 @@ function cart(productId) {
 		},
 		success: function(response){
 			console.log(response)
+		},
+		error: function(err) {
+			console.log(err);
 		}
 	})
 }

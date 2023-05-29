@@ -30,14 +30,17 @@ public class CartController {
 	private CartService service;
 
 	@PostMapping()
-	public void createCartHandler(HttpSession session, CartVO vo, Model model) {
+	public ResponseEntity<String> createCartHandler(HttpSession session, CartVO vo) {
 
 		UserVO user = (UserVO) session.getAttribute("signinUser");
 		vo.setUserId(user.getUserId());
-//		vo.setUserId("tt");
 
-		service.insertOrUpdateCart(vo);
-		model.addAttribute("cart", vo);
+		try {
+			service.insertOrUpdateCart(vo);
+			return ResponseEntity.ok("success");
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().body("failed");
+		}
 		
 	}
 	

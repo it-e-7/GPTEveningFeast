@@ -6,7 +6,7 @@
 
 <mapper namespace="kosa.hdit5.evenapp.mapper.OrderMapper">
    <select id="selectPreOrderProduct" statementType="CALLABLE" resultType="Cart">
-       {call #{return_cart, mode=OUT, jdbcType=CURSOR, resultMap=Cart}= selectPreOrderProduct(#{arr_cart,jdbcType=ARRAY,typeHandler=CustomTypeHandler})}
+<!--        {call #{return_cart, mode=OUT, jdbcType=CURSOR, resultMap=Cart}= selectPreOrderProduct(#{arr_cart,jdbcType=ARRAY,typeHandler=CustomTypeHandler})} -->
    </select>
 </mapper>  
 
