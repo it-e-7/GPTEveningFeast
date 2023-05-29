@@ -29,17 +29,11 @@ public class MainController {
 	
 	@Autowired
 	ProductService productService; 
-
-	@Autowired
-	CategoryService categoryService;
 	
 	@GetMapping
 	public String mainHandler(HttpSession session) {
 		
 		UserVO user = (UserVO) session.getAttribute("signinUser");
-		List<CategoryVO> categoryList = categoryService.getCategoryList();
-		
-		log.debug(categoryList);
 		
 		if(user == null || user.getUserId() == null) {
 			log.debug("로그인하지 않은 유저가 접속했습니다");

@@ -11,10 +11,10 @@ import kosa.hdit5.evenapp.mapper.ProductMapper;
 import kosa.hdit5.evenapp.vo.ProductVO;
 
 @Service
-public class ProductServiceImpl implements ProductService{
-	
+public class ProductServiceImpl implements ProductService {
+
 	Logger log = LogManager.getLogger("case3");
-	
+
 	@Autowired
 	private ProductMapper mapper;
 
@@ -27,8 +27,10 @@ public class ProductServiceImpl implements ProductService{
 	public ProductVO getProductDetail(String productId) {
 		return mapper.selectProductDetail(productId);
 	}
-	
 
-
+	@Override
+	public List<ProductVO> getGPTProduct(String[] productList) {
+		return mapper.selectGPTProduct(productList);
+	}
 
 }

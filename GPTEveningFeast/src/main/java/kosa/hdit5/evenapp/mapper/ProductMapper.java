@@ -14,4 +14,6 @@ public interface ProductMapper {
 	public List<ProductVO> selectRandomProduct();
 	
 	public ProductVO selectProductDetail(String productId);
+
+	public List<ProductVO> selectGPTProduct(String[] productList);
 }

@@ -5,6 +5,7 @@
 .project
 pom.properties
 database.properties
+config.properties
 
 ### Eclipse ###
 .metadata

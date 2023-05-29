@@ -9,4 +9,5 @@ public interface ProductService {
 	
 	public ProductVO getProductDetail(String productId);
 	
+	public List<ProductVO> getGPTProduct(String[] productList);
 }

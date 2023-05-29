@@ -28,4 +28,14 @@
 	]]>
 	</select>
 
+	<select id="selectGPTProduct" resultType="Product">
+		<foreach collection="array" item="name" separator="UNION ALL">
+		<![CDATA[
+			SELECT *
+			FROM "Product"
+			WHERE ("product_name" LIKE '%' || #{name} || '%') AND ROWNUM <= 3
+		]]>
+		</foreach>
+	</select>
+
 </mapper>  
