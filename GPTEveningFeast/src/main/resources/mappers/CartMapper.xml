@@ -10,5 +10,16 @@
 		{call InsertOrUpdateCart(
 		#{userId}, #{productId},#{productCnt})}
 	</select>
-
+	
+	<select id="selectProductFromCart" resultType="Product">
+		SELECT p."product_id", p."product_name", p."product_price", p."product_img_url", c."product_cnt"
+	  	FROM "Product" p JOIN "Cart" c 
+	  	ON p."product_id" = c."product_id"
+	  	WHERE c."user_id" = #{userId} and
+            p."product_id" = c."product_id"
+	</select>
+	
+	<delete id="deleteCartProduct">
+		DELETE "Cart" WHERE "product_id"=#{productId}
+	</delete>
 </mapper>  

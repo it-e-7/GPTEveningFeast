@@ -6,6 +6,7 @@
 	align-items: center;
 }
 
+
 .quantity-selector button {
 	border: 1px solid #ddd;
 	background-color: #f8f8f8;
@@ -22,7 +23,10 @@
 
 
 /* 메인페이지 상품 글자 ... 표시 */
-
+a {
+      color: black;
+      text-decoration: none;
+  }
 .ellipsis {
 	display: block;
 	width: 300px; /* 너비는 원하는 크기로 조절하세요. */

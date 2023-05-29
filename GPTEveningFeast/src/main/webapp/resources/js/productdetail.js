@@ -6,10 +6,11 @@ function increment() {
 
 function decrement() {
 	let quantityInput = $('input[name="product_count"]');
-	quantityInput.val(quantityInput.val() - 1 < 0 ? 0 : quantityInput.val() - 1);
+	 if (quantityInput.val() > 1) {
+		 quantityInput.val(quantityInput.val() - 1 < 0 ? 0 : quantityInput.val() - 1);
+	}
 	printPrice();
 }
-
 
 function cart(productId) {
 	const productCnt = $('input[name="product_count"]').val();
@@ -27,6 +28,7 @@ function cart(productId) {
 	})
 }
 
+
 function orderPage() {
 	
 }
@@ -42,3 +44,7 @@ function calculateTotalPrice(){
     let total = parseFloat(price) * count;
     document.getElementById('total_price').innerText = total.toLocaleString() + '원';
 }
+
+
+
+
