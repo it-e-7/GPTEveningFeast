@@ -45,7 +45,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 			UserVO user = (UserVO) session.getAttribute("signinUser");
 			
 			// 세션은 있으나 로그인이 안된 경우
-			if(user.getUserId() == null) {
+			if(user == null || user.getUserId() == null) {
 				response.sendRedirect("/evenapp/signin");
 				return false;
 			}

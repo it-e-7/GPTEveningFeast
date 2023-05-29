@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.CartService;
 import kosa.hdit5.evenapp.vo.CartVO;
 import kosa.hdit5.evenapp.vo.ProductVO;
@@ -29,6 +30,7 @@ public class CartController {
 	@Autowired
 	private CartService service;
 
+	@Auth
 	@PostMapping()
 	public ResponseEntity<String> createCartHandler(HttpSession session, CartVO vo) {
 
@@ -44,6 +46,7 @@ public class CartController {
 		
 	}
 	
+	@Auth
 	@GetMapping()
 	public String moveCartPageHandler(HttpSession session, Model model) {
 		UserVO user = (UserVO) session.getAttribute("signinUser");
@@ -56,6 +59,7 @@ public class CartController {
 		return "cart";
 	}
 	
+	@Auth
 	@PostMapping(value="delete", produces = "text/plain;charset=UTF-8")
 	public ResponseEntity<String> deleteCartProductHandler(@RequestParam("productId") String productId) {
 		
