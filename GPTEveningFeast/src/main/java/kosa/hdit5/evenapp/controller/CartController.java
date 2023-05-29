@@ -28,11 +28,6 @@ public class CartController {
 
 	@Autowired
 	private CartService service;
-	
-	@GetMapping
-	public String getCartHandler() {
-		return "cart";
-	}
 
 	@PostMapping()
 	public void createCartHandler(HttpSession session, CartVO vo, Model model) {

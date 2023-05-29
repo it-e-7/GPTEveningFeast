@@ -29,10 +29,10 @@ public class OrderController {
 	
 	
 	@Autowired
-	private OrderService Service;
+	private OrderService service;
 	
 	@PostMapping
-	public String moveOrderPageHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
+	public String postOrderHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
 		
 		UserVO userInfo = (UserVO) session.getAttribute("signinUser");
 			
@@ -42,7 +42,7 @@ public class OrderController {
 		
 		log.debug("controller {} {}", userInfo.getUserId(), cart);
 		
-		List<CartVO> voList = Service.selectPreOrderProduct(cart);
+		List<CartVO> voList = service.selectPreOrderProduct(cart);
 		log.debug("controller {}", voList);
 		model.addAttribute("user", userInfo);
 		model.addAttribute("preOrderProduct", voList);

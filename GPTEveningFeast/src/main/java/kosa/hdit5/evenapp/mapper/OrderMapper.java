@@ -12,6 +12,5 @@ import kosa.hdit5.evenapp.vo.UserVO;
 @Repository
 @Mapper
 public interface OrderMapper {
-	public UserVO selectUserInfo(String userId); 
 	public List<CartVO> selectPreOrderProduct(@Param("arr_cart") List<CartVO> arr_cart);
 }
