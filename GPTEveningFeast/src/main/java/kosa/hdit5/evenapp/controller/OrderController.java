@@ -52,12 +52,16 @@ public class OrderController {
 	    model.addAttribute("preOrderProduct", voList);
 	    session.setAttribute("preOrderProduct", voList); // add this line
 	    
+	    log.debug("postOrderHandler {}", cart);
+	    
 	    return "success";
 	}   
 
 	
 	@GetMapping
 	public String orderHandler(@SessionAttribute("preOrderProduct") List<ProductVO> voList) {
+		
+		log.debug("orderHandler {}", voList);
 		return "order";
 	}
 }

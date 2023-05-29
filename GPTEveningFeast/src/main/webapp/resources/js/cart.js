@@ -103,6 +103,31 @@ function updateCartProduct() {
 }
 
 
+function quickOrder(index) {
+	const product = new Object();
+	const cart = []
+	
+    product.productId = $('#product_id_' + index).val();
+    product.productCnt = parseInt($('#product_cnt_'+index).val());
+    product.productName = $('#product-name').text();
+//    product.productPrice = product.productCnt * parseInt($('#product_price_' + productIndex).text().replace(',', ''), 10);
+    
+    cart.push(product);
+	
+	$.ajax({
+        url: '/evenapp/order',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(cart),
+        success: function(response) {
+        	if (response="success") {
+	            console.log(response);
+	            window.location.href = '/evenapp/order';
+        	}
+        }
+    });	
+}
+
 $(document).ready(function() {
 	totalPricePrint();
 	
