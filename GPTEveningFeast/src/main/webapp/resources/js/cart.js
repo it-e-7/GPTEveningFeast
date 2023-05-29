@@ -33,6 +33,8 @@ function decrement(index) {
     }
 }
 
+let totalPrice;
+
 function totalPricePrint() {
 	let totalProductAmount = 0;
     let selectedCount = 0;
@@ -44,6 +46,8 @@ function totalPricePrint() {
     });
     $('.totalAmount p').text("총 상품금액: " + totalProductAmount.toLocaleString() + " 원");
     $('.orderButton').text("주문하기 " + selectedCount);
+    
+    totalPrice = totalProductAmount;
 }
 
 
@@ -67,6 +71,7 @@ function deleteCartProduct(productId) {
 
 function moveToOrder() {
     let cart = updateCartProduct();
+
     $.ajax({
         url: '/evenapp/order',
         type: 'POST',
@@ -91,7 +96,6 @@ function updateCartProduct() {
         const productIndex = $(this).closest('.productContainer').attr("index");
         product.productId = $('#product_id_' + productIndex).val();
         product.productCnt = parseInt($('#product_cnt_' + productIndex).val());
-        
         cart.push(product);
     });
 	
@@ -110,8 +114,6 @@ function quickOrder(index) {
     product.productId = $('#product_id_' + index).val();
     product.productCnt = parseInt($('#product_cnt_'+index).val());
     product.productName = $('#product-name').text();
-//    product.productPrice = product.productCnt * parseInt($('#product_price_' + productIndex).text().replace(',', ''), 10);
-    
     cart.push(product);
 	
 	$.ajax({

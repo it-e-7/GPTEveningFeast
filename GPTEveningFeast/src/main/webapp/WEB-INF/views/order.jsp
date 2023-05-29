@@ -22,6 +22,13 @@
         <c:forEach var="vo" items="${preOrderProduct}">
             ${vo.productName} ${vo.productCnt}개<br>
         </c:forEach>
+        
+        <br>
+        <p>총 상품금액 </p>
+        <button onclick="orderButton()">
+        	주문하기<c:out value="${fn:length(preOrderProduct)}" />
+        </button>
+        
     
     <h2>결제수단</h2>
         <input type="radio" name="hpay" checked><label for="hpay">h Pay</label> 

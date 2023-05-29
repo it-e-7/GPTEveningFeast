@@ -47,12 +47,14 @@ public class OrderController {
 	    for (CartVO item : cart) {
 	        item.setUserId(userInfo.getUserId());
 	    }
+	    
+	    log.debug("postOrderHandler {}", cart);
 	   
 	    List<CartVO> voList = service.selectPreOrderProduct(cart);
 	    model.addAttribute("preOrderProduct", voList);
 	    session.setAttribute("preOrderProduct", voList); // add this line
 	    
-	    log.debug("postOrderHandler {}", cart);
+	    
 	    
 	    return "success";
 	}   
