@@ -73,27 +73,23 @@ function deleteCartProduct(productId) {
 	 });
 }
 
-const cart = []
-
-function moveToOrder(){
-
-	updateCartProduct();
-	
-	$.ajax({
-		url: '/evenapp/order',
-		type: 'POST',
-		contentType: 'application/json',
-		data: JSON.stringify(cart),
-		success : function(response) {
-			console.log("success")
-			window.location.href = 'order'
-		}
-	});
-		
+function moveToOrder() {
+    let cart = updateCartProduct();
+    $.ajax({
+        url: '/evenapp/order',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(cart),
+        success: function(response) {
+            console.log(response);
+            window.location.href = '/evenapp/order';
+        }
+    });
 }
 
 function updateCartProduct() {
 	let product;
+	const cart = []
 	
 	$('.productCheckbox:checked').each(function() {
 		product = new Object();
@@ -107,7 +103,9 @@ function updateCartProduct() {
 	
 	cart.forEach(function(object, index){
 		console.log(object.productId + ", " + object.productCnt);
-	})
+	});
+	
+	return cart;
 }
 
 
