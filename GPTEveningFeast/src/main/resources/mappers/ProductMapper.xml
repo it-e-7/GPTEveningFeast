@@ -46,5 +46,13 @@
 	  WHERE p."ctgr_id" = #{ctgrId} AND p."sect_id" = #{sectId}
 	]]>
 	</select>
+	
+	<select id="selectProductListBySearch" parameterType="String" resultType="Product">
+	<![CDATA[
+	  SELECT *
+	  FROM "Product" p 
+	  WHERE p."product_name" LIKE '%' || #{searchParam} || '%'
+	]]>
+	</select>
 
 </mapper>  

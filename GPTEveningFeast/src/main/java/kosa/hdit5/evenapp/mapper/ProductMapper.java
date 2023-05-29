@@ -19,4 +19,6 @@ public interface ProductMapper {
 	public List<ProductVO> selectGPTProduct(String[] productList);
 
 	public List<ProductVO> selectProductList(@Param("ctgrId") String ctgrId, @Param("sectId") String sectId);
+
+	public List<ProductVO> selectProductListBySearch(String searchParam);
 }
