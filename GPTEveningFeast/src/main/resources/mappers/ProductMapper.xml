@@ -38,4 +38,13 @@
 		</foreach>
 	</select>
 
+	<select id="selectProductList" parameterType="map"
+		resultType="Product">
+	<![CDATA[
+	  SELECT *
+	  FROM "Product" p 
+	  WHERE p."ctgr_id" = #{ctgrId} AND p."sect_id" = #{sectId}
+	]]>
+	</select>
+
 </mapper>  
