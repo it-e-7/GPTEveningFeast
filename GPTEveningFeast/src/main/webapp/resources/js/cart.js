@@ -10,14 +10,7 @@ function calculateTotalPrice(index) {
 	let total = parseFloat(price) * count;
 	document.getElementById(`total_price_${index}`).innerText = total.toLocaleString() + '원';
 }
-/*
- * function increment(index) { let quantityInput = $(`#product_cnt_${index}`);
- * quantityInput.val(+quantityInput.val() + 1); printPrice(index); }
- * 
- * function decrement(index) { let quantityInput = $(`#product_cnt_${index}`);
- * if (quantityInput.val() > 1) { quantityInput.val(quantityInput.val() - 1); }
- * printPrice(index); }
- */
+
 function increment(index) {
     let quantityInput = document.getElementById(`product_cnt_${index}`);
     let quantity = Number(quantityInput.value);
@@ -39,7 +32,6 @@ function decrement(index) {
         $('.productCheckbox').trigger('change');
     }
 }
-
 
 function totalPricePrint() {
 	let totalProductAmount = 0;
@@ -81,8 +73,10 @@ function moveToOrder() {
         contentType: 'application/json',
         data: JSON.stringify(cart),
         success: function(response) {
-            console.log(response);
-            window.location.href = '/evenapp/order';
+        	if (response="success") {
+	            console.log(response);
+	            window.location.href = '/evenapp/order';
+        	}
         }
     });
 }
