@@ -50,6 +50,12 @@ public class GPTController {
 			return "gpterror";
 		}
 		
-		
 	}
+	
+	@PostMapping("cart")
+	public String gptCartPostHandler(@RequestParam("productList[]") List<String> productList) {
+
+		return "cart";
+	}
+	
 }

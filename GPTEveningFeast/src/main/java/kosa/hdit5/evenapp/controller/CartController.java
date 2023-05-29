@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,6 +23,11 @@ public class CartController {
 
 	@Autowired
 	private CartService service;
+	
+	@GetMapping
+	public String getCartHandler() {
+		return "cart";
+	}
 
 	@PostMapping
 	public String createCartHandler(HttpSession session, CartVO vo, Model model) {

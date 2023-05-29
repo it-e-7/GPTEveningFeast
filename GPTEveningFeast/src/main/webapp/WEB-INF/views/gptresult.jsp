@@ -6,7 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GPT 추천 레시피</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+	crossorigin="anonymous"></script>
+<script src="/evenapp/resources/js/gptresult.js"></script>
 </head>
 <body>
 	<div>
@@ -25,19 +29,20 @@
 		<c:forEach items="${ GPTResult.recipe }" var="line">
 			<p>${ line }</p>
 		</c:forEach>
-		
+
 		<hr>
-		<button>관련상품 장바구니 담기</button>
+		<button onclick="cartGPT()">관련상품 장바구니 담기</button>
 		<p>관련상품 ${ fn:length(productResult) }건</p>
-		
+
 		<c:forEach items="${ productResult }" var="product">
-			<img src="${ product.productImgUrl }"/>
-			<p>${ product.productName }</p>
-			<p>${ product.productPrice }</p>
+			<a href="/evenapp/product/${ product.productId }">
+				<input type="checkbox" value="${ product.productId }" name="product"> 
+				<img src="${ product.productImgUrl }" />
+				<p>${ product.productName }</p>
+				<p>${ product.productPrice }</p>
+			</a>
 		</c:forEach>
 
 	</div>
-	${ GPTResult }
-	${ productResult }
 </body>
 </html>
