@@ -40,13 +40,20 @@ public class OrderController {
 			item.setUserId(userInfo.getUserId());
 		}
 		
-		log.debug("controller {} {}", userInfo.getUserId(), cart);
-		
 		List<CartVO> voList = service.selectPreOrderProduct(cart);
-		log.debug("controller {}", voList);
+		
+		
+//		log.debug("controller {}", voList);
+
 		model.addAttribute("user", userInfo);
 		model.addAttribute("preOrderProduct", voList);
 		
+		return "order";
+	}
+	
+	@GetMapping
+	public String orderHandler(Model model) {
+		log.debug("precart {}", model.getAttribute("preOrderProduct"));
 		return "order";
 	}
 	
