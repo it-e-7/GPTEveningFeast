@@ -9,18 +9,21 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/evenapp/resources/css/main.css" />
+<link rel="stylesheet" type="text/css"
+	href="/evenapp/resources/css/main.css" />
 
 </head>
 <body>
+	<%@ include file="/WEB-INF/views/header.jsp"%>
+	<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	
 	<h2>오늘의 추천 상품</h2>
 	<table>
 		<tr>
 			<c:forEach var="vo" items="${random}" varStatus="status">
 				<c:if test="${status.count <= 3}">
-					
-					<td>
-					<a href="/evenapp/product/${vo.productId}">
+
+					<td><a href="/evenapp/product/${vo.productId}">
 							<table>
 
 								<tr>
@@ -35,8 +38,7 @@
 								</tr>
 
 							</table>
-					</a>
-					</td>
+					</a></td>
 
 					<!-- VO 객체의 속성 -->
 				</c:if>

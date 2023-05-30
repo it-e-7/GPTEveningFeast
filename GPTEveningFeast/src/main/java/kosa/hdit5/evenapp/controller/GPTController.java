@@ -2,6 +2,8 @@ package kosa.hdit5.evenapp.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kosa.hdit5.evenapp.interceptor.annotation.Auth;
+import kosa.hdit5.evenapp.service.CartService;
 import kosa.hdit5.evenapp.service.ProductService;
 import kosa.hdit5.evenapp.util.ChatGPT;
 import kosa.hdit5.evenapp.vo.GPTResultVO;
 import kosa.hdit5.evenapp.vo.ProductVO;
+import kosa.hdit5.evenapp.vo.UserVO;
 
 @Controller
 @RequestMapping("gpt")
@@ -24,6 +29,9 @@ public class GPTController {
 	
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	CartService cartService;
 
 	@GetMapping
 	public String gptSearchGetHandler() {
@@ -52,9 +60,17 @@ public class GPTController {
 		
 	}
 	
+	@Auth
 	@PostMapping("cart")
-	public String gptCartPostHandler(@RequestParam("productList[]") List<String> productList) {
-
+	public String gptCartPostHandler(@RequestParam("productList[]") List<String> productList, HttpSession session) {
+		String userId = ((UserVO) session.getAttribute("signinUser")).getUserId();
+		
+		try {
+			cartService.insertOrUpdateGPTCart(userId, productList);
+		} catch(Exception err) {
+			err.printStackTrace();
+		}
+		
 		return "cart";
 	}
 	

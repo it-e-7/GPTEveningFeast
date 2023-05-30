@@ -1,5 +1,6 @@
 package kosa.hdit5.evenapp.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,17 @@ public class CartServiceImpl implements CartService{
 		return mapper.deleteCartProduct(productId);
 	}
 	
+	@Override
+	public void insertOrUpdateGPTCart(String userId, List<String> productList) {
+		List<CartVO> cartList = new ArrayList<CartVO>();
+		
+		for(String productId : productList) {
+			CartVO vo = new CartVO();
+			vo.setUserId(userId);
+			vo.setProductId(productId);
+			vo.setProductCnt(1);
+			cartList.add(vo);
+			mapper.insertOrUpdateCart(vo);
+		}
+	}
 }

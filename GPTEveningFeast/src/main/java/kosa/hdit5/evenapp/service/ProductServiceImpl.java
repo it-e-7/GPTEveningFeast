@@ -33,4 +33,13 @@ public class ProductServiceImpl implements ProductService {
 		return mapper.selectGPTProduct(productList);
 	}
 
+	@Override
+	public List<ProductVO> getProductList(String ctgrId, String sectId) {
+		return mapper.selectProductList(ctgrId, sectId);
+	}
+	
+	@Override
+	public List<ProductVO> getProductListBySearch(String searchParam) {
+		return mapper.selectProductListBySearch(searchParam);
+	}
 }

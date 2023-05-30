@@ -10,9 +10,13 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
 	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 	crossorigin="anonymous"></script>
+<script src="/evenapp/resources/js/common.js"></script>
 <script src="/evenapp/resources/js/gptresult.js"></script>
 </head>
 <body>
+	<%@ include file="/WEB-INF/views/header.jsp"%>
+	<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	
 	<div>
 		<h3>GPT의 추천</h3>
 		<h2>${ GPTResult.menu }</h2>
@@ -35,8 +39,8 @@
 		<p>관련상품 ${ fn:length(productResult) }건</p>
 
 		<c:forEach items="${ productResult }" var="product">
-			<a href="/evenapp/product/${ product.productId }">
-				<input type="checkbox" value="${ product.productId }" name="product"> 
+			<a href="/evenapp/product/${ product.productId }"> <input
+				type="checkbox" value="${ product.productId }" name="product">
 				<img src="${ product.productImgUrl }" />
 				<p>${ product.productName }</p>
 				<p>${ product.productPrice }</p>

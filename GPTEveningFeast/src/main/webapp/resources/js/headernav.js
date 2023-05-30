@@ -1,6 +1,6 @@
 const ctgrList = $('.ctgr');
 
-$.ajax({
+ajax({
 	url : "/evenapp/category",
 	method : "GET",
 	success : function(data) {

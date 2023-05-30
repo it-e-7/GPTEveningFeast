@@ -10,4 +10,8 @@ public interface ProductService {
 	public ProductVO getProductDetail(String productId);
 	
 	public List<ProductVO> getGPTProduct(String[] productList);
+
+	public List<ProductVO> getProductList(String ctgrId, String sectId);
+
+	public List<ProductVO> getProductListBySearch(String searchParam);
 }

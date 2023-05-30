@@ -61,7 +61,7 @@ function totalPricePrint() {
 
 function deleteCartProduct(productId) {
 	console.log(productId);
-	$.ajax({
+	ajax({
 	      url: '/evenapp/cart/delete',
 	      type: 'POST',
 	      data: {
@@ -69,7 +69,7 @@ function deleteCartProduct(productId) {
 	      },
 
 	      success: function(response) {
-	    	  console.log(response)
+	    	  console.log(response);
 	    	  if (response="success")
 		        alert('상품이 삭제되었습니다.');
 		        window.location.href = 'cart';

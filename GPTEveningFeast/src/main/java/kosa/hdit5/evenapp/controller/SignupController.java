@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.SignupService;
 import kosa.hdit5.evenapp.vo.UserVO;
 
@@ -46,18 +47,21 @@ public class SignupController {
 	}
 	
 	//로그인 첫화면으로 이동
+	@Auth(role = Auth.Role.UNAUTH)
 	@GetMapping
 	public String signupHandler() {
 		return "redirect:/resources/signup/signup.html";
 	}
 	
 	//약관동의 화면으로 이동
+	@Auth(role = Auth.Role.UNAUTH)
 	@GetMapping(value = "agreement")
 	public String signupButtonHandler() {
 		return "agreement";
 	}
 	
 	//약관 동의 후 세션 생성
+	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping(value = "agreement")
 	public String signupAgreementHandler(@RequestParam("agreement") boolean agreement, Model model) {
 
@@ -70,6 +74,7 @@ public class SignupController {
 	}
 
 	// 회원정보 입력 페이지로 이동
+	@Auth(role = Auth.Role.UNAUTH)
 	@GetMapping(value = "form")
 	public String signupFormPageHandler(@SessionAttribute("agreement") boolean agreement, Model model) {
 		if (agreement) {
@@ -80,6 +85,7 @@ public class SignupController {
 	}
 	
 	//중복확인 버튼 처리
+	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping(value = "validation", produces = "text/plain;charset=UTF-8")
 	public ResponseEntity<String> validation(@RequestParam("userId") String userId) {
 		
@@ -90,6 +96,7 @@ public class SignupController {
 	
 
 	//회원가입 완료 처리 및 회원가입 성공 페이지로 이동 
+	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping(value = "success")
 	public ResponseEntity signupFormHandler(@ModelAttribute(value = "userInfo") UserVO user, SessionStatus status) {
 		

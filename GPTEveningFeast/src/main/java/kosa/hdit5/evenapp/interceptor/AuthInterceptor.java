@@ -6,9 +6,13 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.vo.UserVO;
@@ -26,6 +30,13 @@ public class AuthInterceptor implements HandlerInterceptor{
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
 		
 		Auth auth = handlerMethod.getMethodAnnotation(Auth.class);
+		PostMapping post = handlerMethod.getMethodAnnotation(PostMapping.class);
+		GetMapping get = handlerMethod.getMethodAnnotation(GetMapping.class);
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		
+		ObjectMapper mapper = new ObjectMapper();
 
 		// Auth 어노테이션이 안붙어있으면 모든 사용자가 접근 가능
 		if (auth == null) {
@@ -39,14 +50,22 @@ public class AuthInterceptor implements HandlerInterceptor{
 		if(auth.role().toString().equals("AUTH")) {
 			// 세션이 아예 없는 경우
 			if(session == null) {
-				response.sendRedirect("/evenapp/signin");
+				if(post != null) {
+					response.getWriter().write(mapper.writeValueAsString("{\"redirect\":\"/evenapp/signin\", \"msg\":\"로그인을 해주세요\"}"));
+				} if(get != null) {
+					response.sendRedirect("/evenapp/signin");
+				}
 				return false;
 			}
 			UserVO user = (UserVO) session.getAttribute("signinUser");
 			
 			// 세션은 있으나 로그인이 안된 경우
 			if(user == null || user.getUserId() == null) {
-				response.sendRedirect("/evenapp/signin");
+				if(post != null) {
+					response.getWriter().write(mapper.writeValueAsString("{\"redirect\":\"/evenapp/signin\", \"msg\":\"로그인을 해주세요\"}"));
+				} if(get != null) {
+					response.sendRedirect("/evenapp/signin");
+				}
 				return false;
 			}
 		} 
@@ -58,7 +77,11 @@ public class AuthInterceptor implements HandlerInterceptor{
 				UserVO user = (UserVO) session.getAttribute("signinUser");
 				
 				if(user != null && user.getUserId() != null) {
-					response.sendRedirect("/evenapp");
+					if(post != null) {
+						response.getWriter().write(mapper.writeValueAsString("{\"redirect\":\"/evenapp\", \"msg\":\"이미 로그인한 상태입니다\"}"));
+					} if(get != null) {
+						response.sendRedirect("/evenapp");
+					}
 					return false;
 				}
 			}

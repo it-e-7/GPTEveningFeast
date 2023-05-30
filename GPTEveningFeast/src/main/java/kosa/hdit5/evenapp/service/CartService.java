@@ -10,5 +10,5 @@ public interface CartService {
 	public void insertOrUpdateCart(CartVO vo);
 	public List<ProductVO> selectProductFromCart(String userId);
 	public int deleteCartProduct(String productId);
-
+	public void insertOrUpdateGPTCart(String userId, List<String> productList);
 }

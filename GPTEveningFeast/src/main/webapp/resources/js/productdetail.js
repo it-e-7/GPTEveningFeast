@@ -15,7 +15,7 @@ function decrement() {
 function cart(productId) {
 	const productCnt = $('input[name="product_count"]').val();
 	
-	$.ajax({
+	ajax({
 		url: '/evenapp/cart',
 		type: 'POST',
 		data: {
@@ -23,7 +23,7 @@ function cart(productId) {
 			productCnt,
 		},
 		success: function(response){
-			console.log(response)
+			console.log(response);
 		},
 		error: function(err) {
 			console.log(err);

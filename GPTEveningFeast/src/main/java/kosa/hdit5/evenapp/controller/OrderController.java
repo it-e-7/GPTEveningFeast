@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.OrderService;
 import kosa.hdit5.evenapp.vo.CartVO;
 import kosa.hdit5.evenapp.vo.ProductVO;
@@ -39,7 +40,8 @@ public class OrderController {
 	public List<CartVO> createPreOrderProduct() {
 		return new ArrayList<CartVO>();
 	}
-	
+
+  @Auth
 	@PostMapping
 	@ResponseBody
 	public String postOrderHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
