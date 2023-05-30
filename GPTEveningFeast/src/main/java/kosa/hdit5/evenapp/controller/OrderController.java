@@ -79,4 +79,10 @@ public class OrderController {
 	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList, @ModelAttribute("price") int price) {
 		return "order";
 	}
+	
+	@Auth
+	@PostMapping("success")
+	public String successOrderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList, @ModelAttribute("price") int price) {
+		return "ordersuccess";
+	}
 }
