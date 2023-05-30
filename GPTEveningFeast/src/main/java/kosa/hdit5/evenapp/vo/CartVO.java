@@ -13,5 +13,4 @@ public class CartVO {
 	private int productCnt;
 	private String userId;
 	private String productName;
-
 }

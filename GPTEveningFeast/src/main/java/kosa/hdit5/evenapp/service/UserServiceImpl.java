@@ -7,7 +7,8 @@ import kosa.hdit5.evenapp.mapper.UserMapper;
 import kosa.hdit5.evenapp.vo.UserVO;
 
 @Service
-public class SignupServiceImpl implements SignupService {
+public class UserServiceImpl implements UserService {
+	
 	@Autowired
 	private UserMapper mapper;
 
@@ -22,5 +23,11 @@ public class SignupServiceImpl implements SignupService {
 		UserVO result = mapper.selectOneUser(userId);
 		return result == null ? true : false;
 	}
-
+	
+	@Override
+	public UserVO selectOneUser(String userId) {
+		UserVO result = mapper.selectOneUser(userId);
+		
+		return result;
+	}
 }

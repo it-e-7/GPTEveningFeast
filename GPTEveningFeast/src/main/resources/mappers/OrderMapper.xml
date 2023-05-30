@@ -5,15 +5,16 @@
 
 
 <mapper namespace="kosa.hdit5.evenapp.mapper.OrderMapper">
+
 	<select id="selectPreOrderProduct" resultType="Cart">
-		<foreach collection="cartList" item="items" separator="UNION ALL">
-		<![CDATA[
-			SELECT c."product_id", "product_name", "user_id", "product_cnt"
-			FROM "Cart" c JOIN "Product" p
-			ON c."product_id" = p."product_id"
-			WHERE c."user_id" = #{items.userId} 
-			  AND p."product_id" = #{items.productId}
-		]]>
+		<foreach collection="cartList" item="cartItem" separator="UNION ALL">
+			<![CDATA[
+				SELECT c."product_id", "product_name", "user_id", "product_cnt"
+				FROM "Cart" c JOIN "Product" p
+				ON c."product_id" = p."product_id"
+				WHERE c."user_id" = #{cartItem.userId} 
+				  AND p."product_id" = #{cartItem.productId}
+			]]>
 		</foreach>
 	</select>
 </mapper>  

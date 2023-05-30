@@ -5,15 +5,14 @@ ajax({
 	method : "GET",
 	success : function(data) {
 		data.forEach(ctgr => {
-			console.log(ctgr);
 			const li = $(`<li class="depth1"></li>`);
-			const a = $(`<a href="/evenapp/products?category=` + ctgr.ctgrId + `">` + ctgr.name + `</a>`);
+			const a = $(`<a href="/evenapp/product?category=` + ctgr.ctgrId + `">` + ctgr.name + `</a>`);
 			li.append(a);
 			
 			const ul2 = $(`<ul class="depth2"></ul>`);
 			ctgr.sections.forEach(section => {
 				const li2 = $(`<li></li>`);
-				const a2 = $(`<a href="/evenapp/products?category=` + ctgr.ctgrId + `&section=` + section.sectId + `">` + section.name + `</a>`);
+				const a2 = $(`<a href="/evenapp/product?category=` + ctgr.ctgrId + `&section=` + section.sectId + `">` + section.name + `</a>`);
 				
 				li2.append(a2);
 				ul2.append(li2);
@@ -23,4 +22,4 @@ ajax({
 			$('.ctgr').append(li);
 		})
 	}
-})
+});

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
-import kosa.hdit5.evenapp.service.SigninService;
+import kosa.hdit5.evenapp.service.UserService;
 import kosa.hdit5.evenapp.vo.UserVO;
 
 @Controller
@@ -22,7 +22,7 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public class SigninController {
 
 	@Autowired
-	private SigninService service;
+	private UserService service;
 
 	@Inject
 	private BCryptPasswordEncoder pwdEncoder;
@@ -37,17 +37,23 @@ public class SigninController {
 	@PostMapping
 	@ResponseBody
 	public HashMap<String, Object> signinPostHandler(UserVO vo, HttpSession session) {
-		UserVO result = service.getUser(vo);
-		boolean isPasswordMatch = (result != null) && pwdEncoder.matches(vo.getUserPw(), result.getUserPw());
+		try {
+			UserVO result = service.selectOneUser(vo.getUserId());
+			boolean isPasswordMatch = (result != null) && pwdEncoder.matches(vo.getUserPw(), result.getUserPw());
 
-		HashMap<String, Object> map = new HashMap<String, Object>();
+			HashMap<String, Object> map = new HashMap<String, Object>();
 
-		map.put("result", isPasswordMatch ? "success" : "failed");
+			map.put("result", isPasswordMatch ? "success" : "failed");
 
-		if (isPasswordMatch) {
-			session.setAttribute("signinUser", result);
+			if (isPasswordMatch) {
+				session.setAttribute("signinUser", result);
+			}
+
+			return map;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
-
-		return map;
+		
 	}
 }

@@ -1,9 +1,3 @@
-function redirect(response) {
-	if(response.redirect) {
-		location.href = response.redirect;
-	}
-}
-
 function ajax(config) {
 	const success = config.success;
 	config.success = (response) => {
@@ -19,10 +13,10 @@ function ajax(config) {
 			console.log(response);
 		}
 		
-		success(response);
+		if(success) {
+			success(response);
+		}
 	}
-	
-	console.log(config);
 	
 	$.ajax(config);
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoryVO {
+	
 	private int ctgrId;
 	private String name;
 	private List<SectionVO> sections;

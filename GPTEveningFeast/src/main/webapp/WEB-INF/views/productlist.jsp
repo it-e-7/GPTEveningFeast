@@ -14,7 +14,7 @@
 	<h1>상품 리스트 페이지</h1>
 	<p>${ category.name }</p>
 	<c:forEach var="section" items="${ category.sections }">
-		<a href="/evenapp/products?category=${ category.ctgrId }&section=${ section.sectId }">
+		<a href="/evenapp/product?category=${ category.ctgrId }&section=${ section.sectId }">
 			${ section.name }
 		</a>
 	</c:forEach>
