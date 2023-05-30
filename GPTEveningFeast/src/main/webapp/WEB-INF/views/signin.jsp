@@ -13,6 +13,8 @@
 </head>
 <body>
 
+	<%@ include file="/WEB-INF/views/header.jsp"%>
+
 	<p>로그인</p>
 	<p>아이디와 패스워드를 입력해주세요</p>
 	<input type="text" name="userId" placeholder="아이디">

@@ -14,10 +14,14 @@
 <script src="/evenapp/resources/js/signup.js"></script>
 </head>
 <body>
+	<%@ include file="/WEB-INF/views/header.jsp"%>
+	<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	
 	<h1>현대식품관 회원가입</h1>
 
-	아이디<input type="text" name="userId" onchange="changeId()"> 
-	이름<input type="text" name="userName">
+	아이디
+	<input type="text" name="userId" onchange="changeId()"> 이름
+	<input type="text" name="userName">
 
 	<button onclick="validateUniqueUserId()" type="button">중복확인</button>
 	<br>

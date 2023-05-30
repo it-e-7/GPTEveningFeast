@@ -11,6 +11,7 @@
 <body>
 	<%@ include file="/WEB-INF/views/header.jsp"%>
 	<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	
 	<h1>Hello world!</h1>
 
 	<%@ include file="/WEB-INF/views/footer.jsp"%>
