@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,8 +16,8 @@ import kosa.hdit5.evenapp.vo.CategoryVO;
 import kosa.hdit5.evenapp.vo.ProductVO;
 
 @Controller
-@RequestMapping("products")
-public class ProductListController {
+@RequestMapping("product")
+public class ProductController {
 
 	@Autowired
 	ProductService productService;
@@ -40,5 +41,18 @@ public class ProductListController {
 		}
 
 		return "productlist";
+	}
+	
+	@GetMapping("{productId}")
+	public String productDetailGetHandler(@PathVariable("productId") String productId, Model model) {
+
+		try {
+			ProductVO vo = productService.getProductDetail(productId);
+			model.addAttribute("productDetail", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "productdetail";
 	}
 }

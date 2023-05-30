@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
-import kosa.hdit5.evenapp.service.SigninService;
+import kosa.hdit5.evenapp.service.UserService;
 import kosa.hdit5.evenapp.vo.UserVO;
 
 @Controller
@@ -22,7 +22,7 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public class SigninController {
 
 	@Autowired
-	private SigninService service;
+	private UserService service;
 
 	@Inject
 	private BCryptPasswordEncoder pwdEncoder;

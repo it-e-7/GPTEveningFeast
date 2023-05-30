@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
-import kosa.hdit5.evenapp.service.SignupService;
+import kosa.hdit5.evenapp.service.UserService;
 import kosa.hdit5.evenapp.vo.UserVO;
 
 @SessionAttributes(value = { "userInfo", "agreement" } )
@@ -31,7 +31,7 @@ public class SignupController {
 	Logger log = LogManager.getLogger("case3");
 	
 	@Autowired
-	private SignupService service;
+	private UserService service;
 	
 	@Inject
 	private BCryptPasswordEncoder pwdEncoder;
