@@ -27,7 +27,7 @@ public class ProductController {
 
 	@GetMapping
 	public String getProductListHandler(@RequestParam("category") String ctgrId, 
-										@RequestParam("section") String sectId,
+										@RequestParam(defaultValue="", name="section") String sectId,
 										Model model) {
 		
 		try {

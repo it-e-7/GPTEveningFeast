@@ -13,11 +13,19 @@
 
 	<h1>상품 리스트 페이지</h1>
 	<p>${ category.name }</p>
-	<c:forEach var="section" items="${ category.sections }">
-		<a href="/evenapp/product?category=${ category.ctgrId }&section=${ section.sectId }">
-			${ section.name }
-		</a>
+	<ul>
+		<li>
+			<a href="/evenapp/product?category=${ category.ctgrId }">전체보기</a>
+		</li>
+		<c:forEach var="section" items="${ category.sections }">
+			<li>
+				<a href="/evenapp/product?category=${ category.ctgrId }&section=${ section.sectId }">
+					${ section.name }
+				</a>
+			</li>
 	</c:forEach>
+	</ul>
+	
 	<c:forEach var="product" items="${ productList }">
 		<a href="/evenapp/product/${ product.productId }">
 			<img src="${ product.productImgUrl }">

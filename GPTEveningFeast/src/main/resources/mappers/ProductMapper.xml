@@ -40,11 +40,12 @@
 
 	<select id="selectProductList" parameterType="map"
 		resultType="Product">
-		<![CDATA[
 		  SELECT *
 		  FROM "Product" p 
-		  WHERE p."ctgr_id" = #{ctgrId} AND p."sect_id" = #{sectId}
-		]]>
+		  WHERE p."ctgr_id" = #{ctgrId}
+		  <if test="sectId!=null and !sectId.equals('')">
+		  	AND p."sect_id" = #{sectId}
+		  </if>
 	</select>
 	
 	<select id="selectProductListBySearch" parameterType="String" resultType="Product">

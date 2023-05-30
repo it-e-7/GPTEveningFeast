@@ -10,6 +10,7 @@ ajax({
 			li.append(a);
 			
 			const ul2 = $(`<ul class="depth2"></ul>`);
+			ul2.append($(`<li><a href="/evenapp/product?category=` + ctgr.ctgrId + `"> 전체보기 </a></li>`))
 			ctgr.sections.forEach(section => {
 				const li2 = $(`<li></li>`);
 				const a2 = $(`<a href="/evenapp/product?category=` + ctgr.ctgrId + `&section=` + section.sectId + `">` + section.name + `</a>`);
