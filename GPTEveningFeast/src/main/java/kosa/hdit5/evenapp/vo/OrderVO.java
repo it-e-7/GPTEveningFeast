@@ -1,5 +1,7 @@
 package kosa.hdit5.evenapp.vo;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,11 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartVO {
-	
-	private String productId;
-	private int productCnt;
-	private String userId;
-	private String productName;
+public class OrderVO {
 
+	private List<CartVO> cart;
+	private int productPrice;
 }

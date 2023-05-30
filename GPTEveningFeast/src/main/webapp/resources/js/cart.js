@@ -69,10 +69,13 @@ function moveToOrder() {
     ajax({
         url: '/evenapp/order',
         type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(cart),
+        dataType: 'json',
+        contentType: 'application/json; charset=UTF-8',
+        data: JSON.stringify({cart:cart, productPrice:totalPrice}),
         success: function(response) {
-        	if (response="success") {
+        	
+        	console.log(response);
+        	if (response.status="success") {
 	            window.location.href = '/evenapp/order';
         	}
         }
@@ -90,6 +93,7 @@ function updateCartProduct() {
         const productIndex = $(this).closest('.productContainer').attr("index");
         product.productId = $(`#product_id_${productIndex}`).val();
         product.productCnt = parseInt($(`#product_cnt_${productIndex}`).val());
+        
         cart.push(product);
     });
 	

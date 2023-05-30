@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +35,8 @@
         </c:forEach>
         
         <br>
-        <p>총 상품금액 </p>
+        <p>총 상품금액</p>
+       		<fmt:formatNumber value="${price}" pattern="#,###" />원<br>
         <button onclick="orderButton()">
         	주문하기<c:out value="${fn:length(preOrderProduct)}" />
         </button>
