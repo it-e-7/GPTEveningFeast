@@ -44,4 +44,9 @@ public class OrderServiceImpl implements OrderService {
 		return result;
 	}
 
+	@Override
+	public int insertOrder(String userId) {
+		return orderMapper.insertOrder(userId);
+	}
+
 }

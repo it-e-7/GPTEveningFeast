@@ -37,7 +37,7 @@
         <br>
         <p>총 상품금액</p>
        		<fmt:formatNumber value="${price}" pattern="#,###" />원<br>
-        <button onclick="orderButton()">
+        <button onclick="successOrder()">
         	주문하기<c:out value="${fn:length(preOrderProduct)}" />
         </button>
         

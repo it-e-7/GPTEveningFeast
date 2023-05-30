@@ -22,6 +22,7 @@
 		<typeAlias alias="Cart" type="kosa.hdit5.evenapp.vo.CartVO" />
 		<typeAlias alias="Category" type="kosa.hdit5.evenapp.vo.CategoryVO" />
 		<typeAlias alias="Section" type="kosa.hdit5.evenapp.vo.SectionVO" />
+		<typeAlias alias="Order" type="kosa.hdit5.evenapp.vo.OrderVO" />
 	</typeAliases>
 
 </configuration>	

@@ -17,5 +17,14 @@
 			]]>
 		</foreach>
 	</select>
+	
+	<insert id="insertOrder" parameterType="Order"
+		useGeneratedKeys="true" keyProperty="orderId" keyColumn="order_id">
+		<![CDATA[
+			INSERT INTO "Order" ("date", "user_id") 
+			VALUES (sysdate, #{userId})
+		]]> 
+	</insert>
+	
 </mapper>  
 

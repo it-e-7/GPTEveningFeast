@@ -9,4 +9,6 @@ public interface OrderService {
 
 	public UserVO selectUserInfo(String userId);
 	public List<CartVO> selectPreOrderProduct(List<CartVO> arr_cart);
+	public int insertOrder(String userId);
+	
 }

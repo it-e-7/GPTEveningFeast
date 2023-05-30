@@ -13,4 +13,5 @@ import kosa.hdit5.evenapp.vo.CartVO;
 public interface OrderMapper {
 	
 	public List<CartVO> selectPreOrderProduct(Map<String, Object> params);
+	public int insertOrder(String userId);
 }

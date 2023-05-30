@@ -74,7 +74,7 @@ public class OrderController {
 	    
 	}
 	
-	
+	// 바로구매 기능
 	@Auth
 	@PostMapping("quick")
 	@ResponseBody
@@ -86,15 +86,27 @@ public class OrderController {
 		return "success";
 	} 
 	
+	// 주문하기 페이지 로드
 	@Auth
 	@GetMapping
 	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList, @ModelAttribute("price") int price) {
 		return "order";
 	}
 	
+	// 주문하기 완료
 	@Auth
 	@PostMapping("success")
-	public String successOrderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList, @ModelAttribute("price") int price) {
+	public String successOrderHandler(HttpSession session, 
+			@ModelAttribute("preOrderProduct") List<CartVO> voList, 
+			@ModelAttribute("price") int price) {
+		
+	    UserVO userInfo = (UserVO) session.getAttribute("signinUser");
+	    
+		int orderId = service.insertOrder(userInfo.getUserId());
+		
+		log.debug("orderId {}", orderId);
+	
+		
 		return "ordersuccess";
 	}
 }
