@@ -49,7 +49,7 @@
 						<button onclick="decrement(${loop.index})">-</button>
 						<input class="product_cnt" id="product_cnt_${loop.index}" 
 							type="number" value="${vo.productCnt}" min="1" 
-							name="product_count" disabled>
+							name="product_count" readonly>
 						<button onclick="increment(${loop.index})">+</button>
 					</div>
 					<div class="ellipsis" >

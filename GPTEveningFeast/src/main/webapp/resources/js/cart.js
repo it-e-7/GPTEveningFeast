@@ -15,10 +15,14 @@ function increment(index) {
     let quantityInput = document.getElementById(`product_cnt_${index}`);
     let quantity = Number(quantityInput.value);
     quantityInput.value = quantity + 1;
+    quantityInput.setAttribute('value', quantityInput.value);
     calculateTotalPrice(index);
 
     // 체크박스 상태 및 총 금액 업데이트
     $('.productCheckbox').trigger('change');
+    
+    console.log(document.getElementById(`product_cnt_${index}`))
+    
 }
 
 function decrement(index) {
@@ -31,6 +35,10 @@ function decrement(index) {
         // 체크박스 상태 및 총 금액 업데이트
         $('.productCheckbox').trigger('change');
     }
+    
+    quantityInput.setAttribute('value', quantityInput.value);
+    
+    console.log(document.getElementById(`product_cnt_${index}`))
 }
 
 let totalPrice;
@@ -86,13 +94,15 @@ function moveToOrder() {
     });
 }
 
+
 function updateCartProduct() {
 	let product;
 	const cart = []
 	
+	
 	$('.productCheckbox:checked').each(function() {
 		product = new Object();
-		
+
         const productIndex = $(this).closest('.productContainer').attr("index");
         product.productId = $('#product_id_' + productIndex).val();
         product.productCnt = parseInt($('#product_cnt_' + productIndex).val());
@@ -105,6 +115,7 @@ function updateCartProduct() {
 	
 	return cart;
 }
+
 
 
 function quickOrder(index) {

@@ -37,8 +37,18 @@ public class OrderServiceImpl implements OrderService {
 		
 		log.debug("service {} {}", arrCart);
 		
+		List<CartVO> result = orderMapper.selectPreOrderProduct(map);
 		
-		return orderMapper.selectPreOrderProduct(map);
+		for(CartVO cartItem : arrCart) {
+			for(CartVO resultItem : result) {
+				if(resultItem.getProductId().equals(cartItem.getProductId())) {
+					resultItem.setProductCnt(cartItem.getProductCnt());
+				}
+			}
+		}
+		
+		log.debug("test {}", result);
+		return result;
 	}
 
 }

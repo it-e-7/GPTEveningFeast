@@ -51,8 +51,10 @@ public class OrderController {
 	    log.debug("postOrderHandler {}", cart);
 	   
 	    List<CartVO> voList = service.selectPreOrderProduct(cart);
+	    
+	    
 	    model.addAttribute("preOrderProduct", voList);
-	    session.setAttribute("preOrderProduct", voList); // add this line
+//	    session.setAttribute("preOrderProduct", voList); // add this line
 	    
 	    
 	    
@@ -61,7 +63,7 @@ public class OrderController {
 
 	
 	@GetMapping
-	public String orderHandler(@SessionAttribute("preOrderProduct") List<ProductVO> voList) {
+	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList) {
 		
 		log.debug("orderHandler {}", voList);
 		return "order";
