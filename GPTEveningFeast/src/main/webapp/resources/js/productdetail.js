@@ -1,15 +1,15 @@
 function increment() {
 	let quantityInput = $('input[name="product_count"]');
 	quantityInput.val(+quantityInput.val() + 1);
-	printPrice();
+	calculateTotalPrice();
 }
 
 function decrement() {
 	let quantityInput = $('input[name="product_count"]');
-	 if (quantityInput.val() > 1) {
+	if (quantityInput.val() > 1) {
 		 quantityInput.val(quantityInput.val() - 1 < 0 ? 0 : quantityInput.val() - 1);
 	}
-	printPrice();
+	calculateTotalPrice();
 }
 
 function cart(productId) {
@@ -22,30 +22,14 @@ function cart(productId) {
 			productId,
 			productCnt,
 		},
-		success: function(response){
-			console.log(response);
-		},
-		error: function(err) {
-			console.log(err);
-		}
-	})
-}
-
-
-function orderPage() {
-	
-}
-
-function printPrice(){
-    calculateTotalPrice();
-    document.getElementById('product_cnt').addEventListener('change', calculateTotalPrice);
+	});
 }
 
 function calculateTotalPrice(){
-    let price = document.getElementById('product_price').innerText.replace(/,/g, '').replace('원', '');
-    let count = document.getElementById('product_cnt').value;
-    let total = parseFloat(price) * count;
-    document.getElementById('total_price').innerText = total.toLocaleString() + '원';
+    let price = +$('#product_price').text().replace(/,/g, '').replace('원', '');
+    let count = +$('#product_cnt').val();
+    let total = price * count;
+    $('#total_price').text(total.toLocaleString() + '원');
 }
 
 

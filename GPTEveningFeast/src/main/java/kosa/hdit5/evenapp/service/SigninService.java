@@ -4,5 +4,5 @@ import kosa.hdit5.evenapp.vo.UserVO;
 
 public interface SigninService {
 	
-	public UserVO getUser(UserVO vo);
+	public UserVO selectOneUser(String userId);
 }

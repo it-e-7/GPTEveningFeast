@@ -19,6 +19,12 @@ public class CategoryController {
 	
 	@GetMapping
 	public List<CategoryVO> getCategoryHandler() {
-		return service.getCategoryList();
+		try {
+			return service.getCategoryList();
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 }

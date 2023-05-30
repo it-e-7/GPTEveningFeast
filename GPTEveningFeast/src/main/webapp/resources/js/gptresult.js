@@ -12,7 +12,6 @@ function cartGPT() {
 			productList,
 		},
 		success: function(response) {
-			console.log(response);
 			location.href = "/evenapp/cart";
 		}
 	});

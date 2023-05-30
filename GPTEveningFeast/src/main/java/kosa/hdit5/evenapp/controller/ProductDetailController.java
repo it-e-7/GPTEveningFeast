@@ -24,9 +24,13 @@ public class ProductDetailController {
 	@GetMapping("{productId}")
 	public String productDetailGetHandler(@PathVariable("productId") String productId, Model model) {
 		
-		ProductVO vo = service.getProductDetail(productId);
-		model.addAttribute("productDetail", vo);
-
+		try {
+			ProductVO vo = service.getProductDetail(productId);
+			model.addAttribute("productDetail", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return "productdetail";
 	}
 }

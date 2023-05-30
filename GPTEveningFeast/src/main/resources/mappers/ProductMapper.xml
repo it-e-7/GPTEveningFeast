@@ -7,52 +7,51 @@
 <mapper namespace="kosa.hdit5.evenapp.mapper.ProductMapper">
 
 	<select id="selectRandomProduct" resultType="Product">
-	<![CDATA[
-		SELECT *
-		FROM (
-		    SELECT *
-		    FROM "Product"
-		    ORDER BY DBMS_RANDOM.RANDOM
-		)
-		WHERE ROWNUM <= 3
-	]]>
+		<![CDATA[
+			SELECT *
+			FROM (
+			    SELECT *
+			    FROM "Product"
+			    ORDER BY DBMS_RANDOM.RANDOM
+			)
+			WHERE ROWNUM <= 3
+		]]>
 	</select>
 
 	<select id="selectProductDetail" parameterType="String"
 		resultType="Product">
-	<![CDATA[
-	  SELECT *
-	  FROM "Product" p JOIN "Product_detail" d 
-	  ON p."product_id" = d."product_id"
-	  WHERE p."product_id" = #{productId}
-	]]>
+		<![CDATA[
+		  SELECT *
+		  FROM "Product" p JOIN "Product_detail" d 
+		  ON p."product_id" = d."product_id"
+		  WHERE p."product_id" = #{productId}
+		]]>
 	</select>
 
 	<select id="selectGPTProduct" resultType="Product">
 		<foreach collection="array" item="name" separator="UNION ALL">
-		<![CDATA[
-			SELECT *
-			FROM "Product"
-			WHERE ("product_name" LIKE '%' || #{name} || '%') AND ROWNUM <= 3
-		]]>
+			<![CDATA[
+				SELECT *
+				FROM "Product"
+				WHERE ("product_name" LIKE '%' || #{name} || '%') AND ROWNUM <= 3
+			]]>
 		</foreach>
 	</select>
 
 	<select id="selectProductList" parameterType="map"
 		resultType="Product">
-	<![CDATA[
-	  SELECT *
-	  FROM "Product" p 
-	  WHERE p."ctgr_id" = #{ctgrId} AND p."sect_id" = #{sectId}
-	]]>
+		<![CDATA[
+		  SELECT *
+		  FROM "Product" p 
+		  WHERE p."ctgr_id" = #{ctgrId} AND p."sect_id" = #{sectId}
+		]]>
 	</select>
 	
 	<select id="selectProductListBySearch" parameterType="String" resultType="Product">
-	<![CDATA[
-	  SELECT *
-	  FROM "Product" p 
-	  WHERE p."product_name" LIKE '%' || #{searchParam} || '%'
-	]]>
+		<![CDATA[
+		  SELECT *
+		  FROM "Product" p 
+		  WHERE p."product_name" LIKE '%' || #{searchParam} || '%'
+		]]>
 	</select>
-
 </mapper>  

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductVO {
+	
 	private String productId;
 	private String productName;
 	private int productPrice;

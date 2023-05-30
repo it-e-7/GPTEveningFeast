@@ -5,32 +5,16 @@
 
 <mapper namespace="kosa.hdit5.evenapp.mapper.UserMapper">
 
-	<select id="selectAllUser" resultType="User">
-	<![CDATA[
-		SELECT * FROM "User"
-	]]>
-	</select>
-	
-	<select id="getUser" parameterType="User" resultType="User">
-	<![CDATA[
-		SELECT * FROM "User" WHERE "user_id" = #{userId}
-	]]>
-
-	</select>
-
 	<insert id="insertUser" parameterType="User">
-	<![CDATA[
-         INSERT INTO "User" ("user_id", "user_pw", "user_name", "user_birth", "user_sex", "user_address") 
-         VALUES (#{userId}, #{userPw}, #{userName},#{userBirth},#{userSex},#{userAddress}) 
-	]]>
+		<![CDATA[
+	         INSERT INTO "User" ("user_id", "user_pw", "user_name", "user_birth", "user_sex", "user_address") 
+	         VALUES (#{userId}, #{userPw}, #{userName},#{userBirth},#{userSex},#{userAddress}) 
+		]]>
 	</insert>
 
 	<select id="selectOneUser" resultType="User">
-	<![CDATA[
-		SELECT * FROM "User" WHERE "user_id"=#{userId}
-	]]>
+		<![CDATA[
+			SELECT * FROM "User" WHERE "user_id"=#{userId}
+		]]>
 	</select>
-
-
-
 </mapper>  

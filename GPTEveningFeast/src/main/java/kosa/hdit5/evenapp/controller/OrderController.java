@@ -15,15 +15,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.OrderService;
 import kosa.hdit5.evenapp.vo.CartVO;
-import kosa.hdit5.evenapp.vo.ProductVO;
 import kosa.hdit5.evenapp.vo.UserVO;
 
 @Controller
@@ -50,25 +47,24 @@ public class OrderController {
 	        item.setUserId(userInfo.getUserId());
 	    }
 	    
-	    log.debug("postOrderHandler {}", cart);
-	   
-	    List<CartVO> voList = service.selectPreOrderProduct(cart);
+	    try {
+	    	List<CartVO> voList = service.selectPreOrderProduct(cart);
+		    
+		    model.addAttribute("preOrderProduct", voList);
+		    
+		    return "success";
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			return "failed";
+		}
 	    
-	    
-	    model.addAttribute("preOrderProduct", voList);
-//	    session.setAttribute("preOrderProduct", voList); // add this line
-	    
-	    
-	    
-	    return "success";
 	}   
 
 	
 	@Auth
 	@GetMapping
 	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList) {
-		
-		log.debug("orderHandler {}", voList);
 		return "order";
 	}
 }

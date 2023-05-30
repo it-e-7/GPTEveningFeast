@@ -51,10 +51,13 @@ public class CartController {
 	public String moveCartPageHandler(HttpSession session, Model model) {
 		UserVO user = (UserVO) session.getAttribute("signinUser");
 	
-		List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
-
-		model.addAttribute("userInfo", user.getUserId());
-		model.addAttribute("cartInfo", vo);
+		try {
+			List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
+			model.addAttribute("userInfo", user.getUserId());
+			model.addAttribute("cartInfo", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return "cart";
 	}
@@ -63,9 +66,16 @@ public class CartController {
 	@PostMapping(value="delete", produces = "text/plain;charset=UTF-8")
 	public ResponseEntity<String> deleteCartProductHandler(@RequestParam("productId") String productId) {
 		
-		int check = service.deleteCartProduct(productId);
+		try {
+			int check = service.deleteCartProduct(productId);
+			
+			return ResponseEntity.ok(check==1 ? "success" : "failed");
+		} catch(Exception e) {
+			e.printStackTrace();
+			
+			return ResponseEntity.internalServerError().body(e.getMessage());
+		}
 		
-		return ResponseEntity.ok(check==1 ? "success" : "failed");
 	}
 
 }

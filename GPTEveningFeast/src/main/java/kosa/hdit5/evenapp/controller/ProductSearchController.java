@@ -22,9 +22,13 @@ public class ProductSearchController {
 	@GetMapping
 	public String searchProductHandler(@RequestParam("searchParam") String searchParam, Model model) {
 		
-		List<ProductVO> productList = productService.getProductListBySearch(searchParam);
-		model.addAttribute("searchParam", searchParam);
-		model.addAttribute("productList", productList);
+		try {
+			List<ProductVO> productList = productService.getProductListBySearch(searchParam);
+			model.addAttribute("searchParam", searchParam);
+			model.addAttribute("productList", productList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return "searchresult";
 	}

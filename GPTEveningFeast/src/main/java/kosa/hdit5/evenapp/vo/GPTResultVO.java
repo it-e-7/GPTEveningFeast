@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GPTResultVO {
+	
 	private String menu;
 	private String[] recipe;
 	private Map<String, String> ingredients;

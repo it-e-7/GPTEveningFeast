@@ -29,11 +29,15 @@ public class ProductListController {
 										@RequestParam("section") String sectId,
 										Model model) {
 		
-		CategoryVO categoryVO = categoryService.getCategory(ctgrId);
-		List<ProductVO> productList = productService.getProductList(ctgrId, sectId);
-		
-		model.addAttribute("category", categoryVO);
-		model.addAttribute("productList", productList);
+		try {
+			CategoryVO categoryVO = categoryService.getCategory(ctgrId);
+			List<ProductVO> productList = productService.getProductList(ctgrId, sectId);
+			
+			model.addAttribute("category", categoryVO);
+			model.addAttribute("productList", productList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		return "productlist";
 	}

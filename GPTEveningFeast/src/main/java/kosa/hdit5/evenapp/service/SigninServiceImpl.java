@@ -13,8 +13,8 @@ public class SigninServiceImpl implements SigninService {
 	private UserMapper mapper;
 	
 	@Override
-	public UserVO getUser(UserVO vo) {
-		UserVO result = mapper.getUser(vo);
+	public UserVO selectOneUser(String userId) {
+		UserVO result = mapper.selectOneUser(userId);
 		
 		return result;
 	}

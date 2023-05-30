@@ -89,16 +89,23 @@ public class SignupController {
 	@PostMapping(value = "validation", produces = "text/plain;charset=UTF-8")
 	public ResponseEntity<String> validation(@RequestParam("userId") String userId) {
 		
-		boolean check = service.validateUniqueUserId(userId); 
+		try {
+			boolean check = service.validateUniqueUserId(userId); 
+			
+			return ResponseEntity.ok(check ? "success" : "failed");
+		} catch(Exception e) {
+			e.printStackTrace();
+			
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 		
-		return ResponseEntity.ok(check ? "success" : "failed");
 	}
 	
 
 	//회원가입 완료 처리 및 회원가입 성공 페이지로 이동 
 	@Auth(role = Auth.Role.UNAUTH)
 	@PostMapping(value = "success")
-	public ResponseEntity signupFormHandler(@ModelAttribute(value = "userInfo") UserVO user, SessionStatus status) {
+	public ResponseEntity<String> signupFormHandler(@ModelAttribute(value = "userInfo") UserVO user, SessionStatus status) {
 		
 		try {
 			user.setUserPw(pwdEncoder.encode(user.getUserPw()));
