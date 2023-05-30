@@ -43,14 +43,19 @@ public class OrderController {
 	@ResponseBody
 	public String postOrderHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
 	    UserVO userInfo = (UserVO) session.getAttribute("signinUser");
+	    
 	    for (CartVO item : cart) {
 	        item.setUserId(userInfo.getUserId());
 	    }
+	    
+	    log.debug("controller {}", cart);
 	    
 	    try {
 	    	List<CartVO> voList = service.selectPreOrderProduct(cart);
 		    
 		    model.addAttribute("preOrderProduct", voList);
+		    
+		    log.debug("controller voList{}", voList);
 		    
 		    return "success";
 		} catch (Exception e) {
@@ -67,4 +72,15 @@ public class OrderController {
 	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList) {
 		return "order";
 	}
+	
+	
+	@Auth
+	@PostMapping("quick")
+	@ResponseBody
+	public String quickOrderHandler(@RequestBody List<CartVO> cart, Model model) {
+		    
+		model.addAttribute("preOrderProduct", cart);
+		    
+		return "success";
+	}   
 }

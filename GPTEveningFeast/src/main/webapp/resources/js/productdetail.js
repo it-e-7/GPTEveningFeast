@@ -33,5 +33,26 @@ function calculateTotalPrice(){
 }
 
 
-
-
+function quickOrder() {
+	const product = new Object();
+	const cart = []
+	
+    product.productId = $('#product_id').val();
+    product.productCnt = +$('#product_cnt').val();
+    product.productName = $('#product_name').text();
+    product.productPrice = +$('#total_price').text().replace(/,/g, '').replace('원', '');
+    cart.push(product);
+    
+	ajax({
+        url: '/evenapp/order/quick',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(cart),
+        success: function(response) {
+        	if (response="success") {
+	            console.log(response);
+	            window.location.href = '/evenapp/order';
+        	}
+        }
+    });	
+}

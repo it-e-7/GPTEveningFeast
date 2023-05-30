@@ -97,7 +97,6 @@ function updateCartProduct() {
 }
 
 
-
 function quickOrder(index) {
 	const product = new Object();
 	const cart = []
