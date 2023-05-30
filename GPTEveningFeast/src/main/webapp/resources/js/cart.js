@@ -10,22 +10,19 @@ function calculateTotalPrice(index) {
 	let total = parseFloat(price) * count;
 	document.getElementById(`total_price_${index}`).innerText = total.toLocaleString() + '원';
 }
-/*
- * function increment(index) { let quantityInput = $(`#product_cnt_${index}`);
- * quantityInput.val(+quantityInput.val() + 1); printPrice(index); }
- * 
- * function decrement(index) { let quantityInput = $(`#product_cnt_${index}`);
- * if (quantityInput.val() > 1) { quantityInput.val(quantityInput.val() - 1); }
- * printPrice(index); }
- */
+
 function increment(index) {
     let quantityInput = document.getElementById(`product_cnt_${index}`);
     let quantity = Number(quantityInput.value);
     quantityInput.value = quantity + 1;
+    quantityInput.setAttribute('value', quantityInput.value);
     calculateTotalPrice(index);
 
     // 체크박스 상태 및 총 금액 업데이트
     $('.productCheckbox').trigger('change');
+    
+    console.log(document.getElementById(`product_cnt_${index}`))
+    
 }
 
 function decrement(index) {
@@ -38,8 +35,13 @@ function decrement(index) {
         // 체크박스 상태 및 총 금액 업데이트
         $('.productCheckbox').trigger('change');
     }
+    
+    quantityInput.setAttribute('value', quantityInput.value);
+    
+    console.log(document.getElementById(`product_cnt_${index}`))
 }
 
+let totalPrice;
 
 function totalPricePrint() {
 	let totalProductAmount = 0;
@@ -52,6 +54,8 @@ function totalPricePrint() {
     });
     $('.totalAmount p').text("총 상품금액: " + totalProductAmount.toLocaleString() + " 원");
     $('.orderButton').text("주문하기 " + selectedCount);
+    
+    totalPrice = totalProductAmount;
 }
 
 
@@ -73,43 +77,69 @@ function deleteCartProduct(productId) {
 	 });
 }
 
-const cart = []
+function moveToOrder() {
+    let cart = updateCartProduct();
 
-function moveToOrder(){
-
-	updateCartProduct();
-	
-	$.ajax({
-		url: '/evenapp/order',
-		type: 'POST',
-		contentType: 'application/json',
-		data: JSON.stringify(cart),
-		success : function(response) {
-			console.log("success")
-			window.location.href = 'order'
-		}
-	});
-		
+    $.ajax({
+        url: '/evenapp/order',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(cart),
+        success: function(response) {
+        	if (response="success") {
+	            console.log(response);
+	            window.location.href = '/evenapp/order';
+        	}
+        }
+    });
 }
+
 
 function updateCartProduct() {
 	let product;
+	const cart = []
+	
 	
 	$('.productCheckbox:checked').each(function() {
 		product = new Object();
-		
+
         const productIndex = $(this).closest('.productContainer').attr("index");
         product.productId = $('#product_id_' + productIndex).val();
         product.productCnt = parseInt($('#product_cnt_' + productIndex).val());
-        
         cart.push(product);
     });
 	
 	cart.forEach(function(object, index){
 		console.log(object.productId + ", " + object.productCnt);
-	})
+	});
+	
+	return cart;
 }
 
+
+
+function quickOrder(index) {
+	const product = new Object();
+	const cart = []
+	
+    product.productId = $('#product_id_' + index).val();
+    product.productCnt = parseInt($('#product_cnt_'+index).val());
+    product.productName = $('#product-name').text();
+    cart.push(product);
+	
+	$.ajax({
+        url: '/evenapp/order',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(cart),
+        success: function(response) {
+        	if (response="success") {
+	            console.log(response);
+	            window.location.href = '/evenapp/order';
+        	}
+        }
+    });	
+}
 
 $(document).ready(function() {
 	totalPricePrint();

@@ -1,5 +1,6 @@
 package kosa.hdit5.evenapp.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -29,11 +30,25 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<CartVO> selectPreOrderProduct(List<CartVO> arr_cart) {
-		log.debug("service {} {}", arr_cart);
-		List<CartVO> voList = orderMapper.selectPreOrderProduct(arr_cart);
+	public List<CartVO> selectPreOrderProduct(List<CartVO> arrCart) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		return voList;
+		map.put("cartList",arrCart);
+		
+		log.debug("service {} {}", arrCart);
+		
+		List<CartVO> result = orderMapper.selectPreOrderProduct(map);
+		
+		for(CartVO cartItem : arrCart) {
+			for(CartVO resultItem : result) {
+				if(resultItem.getProductId().equals(cartItem.getProductId())) {
+					resultItem.setProductCnt(cartItem.getProductCnt());
+				}
+			}
+		}
+		
+		log.debug("test {}", result);
+		return result;
 	}
 
 }

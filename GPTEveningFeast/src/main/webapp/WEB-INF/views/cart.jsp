@@ -44,12 +44,12 @@
 					<img class="productImg" src="${vo.productImgUrl}" alt="이미지">
 				</a>
 				<div class="productDetails">
-					<div class="ellipsis">${vo.productName}</div>
+					<div class="ellipsis" id="product-name">${vo.productName}</div>
 					<div>
 						<button onclick="decrement(${loop.index})">-</button>
 						<input class="product_cnt" id="product_cnt_${loop.index}" 
 							type="number" value="${vo.productCnt}" min="1" 
-							name="product_count" disabled>
+							name="product_count" readonly>
 						<button onclick="increment(${loop.index})">+</button>
 					</div>
 					<div class="ellipsis" >
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<button class="deleteButton" onclick="deleteCartProduct('${vo.productId}')">X</button>
-			<button class="purchaseButton" href="/evenapp/order">바로구매</button>
+			<button class="purchaseButton" onclick="quickOrder(${loop.index})">바로구매</button>
 		</div>
 	</c:forEach>
 		
