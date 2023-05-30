@@ -32,9 +32,12 @@ public class MainController {
 	ProductService productService; 
 	
 	@GetMapping
-	public String mainHandler(HttpSession session) {
+	public String mainHandler(HttpSession session, Model model) {
 		
 		UserVO user = (UserVO) session.getAttribute("signinUser");
+		List<ProductVO> list = productService.getRandomProduct();
+		
+		model.addAttribute("random", list);
 		
 		if(user == null || user.getUserId() == null) {
 			log.debug("로그인하지 않은 유저가 접속했습니다");
@@ -43,14 +46,6 @@ public class MainController {
 		}
 		
 		return "home";
-	}
-	
-	@GetMapping("main")
-	public String mainProductRandomHandler(Model model) {
-		List<ProductVO> list = productService.getRandomProduct();
-		
-		model.addAttribute("random", list);
-		return "main";
 	}
 
 }

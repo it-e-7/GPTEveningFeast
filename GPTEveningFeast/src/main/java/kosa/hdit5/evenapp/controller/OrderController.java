@@ -41,7 +41,7 @@ public class OrderController {
 		return new ArrayList<CartVO>();
 	}
 
-  @Auth
+	@Auth
 	@PostMapping
 	@ResponseBody
 	public String postOrderHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
@@ -64,6 +64,7 @@ public class OrderController {
 	}   
 
 	
+	@Auth
 	@GetMapping
 	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList) {
 		
