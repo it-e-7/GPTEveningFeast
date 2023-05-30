@@ -3,7 +3,7 @@ let pwNext = false;
 
 function validateUniqueUserId() {
 	const userId = $('input[name="userId"]').val();
-	$.ajax({
+	ajax({
 		url: '/evenapp/signup/validation',
 		type: 'POST',
 		data: {
@@ -36,7 +36,7 @@ function submitForm() {
 		const userAddress = $('input[name="userAddress"]').val();
 		console.log(userSex);
 		
-		$.ajax({
+		ajax({
 			url: '/evenapp/signup/success',
 			type: 'POST',
 			data: {
@@ -77,7 +77,7 @@ function agree() {
 	  const secondAgree = document.getElementById("secondAgree").checked;
 
 	  if (firstAgree && secondAgree) {
-	    $.ajax({
+	    ajax({
 	      url: '/evenapp/signup/agreement',
 	      type: 'POST',
 	      data: {

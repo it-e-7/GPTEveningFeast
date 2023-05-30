@@ -8,6 +8,7 @@
 	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 	crossorigin="anonymous">
 </script>
+<script src="/evenapp/resources/js/common.js"></script>
 <script src="/evenapp/resources/js/signup.js"></script>
 <meta charset="UTF-8">
 

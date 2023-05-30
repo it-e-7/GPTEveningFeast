@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="/evenapp/resources/js/common.js"></script>
 <script src="/evenapp/resources/js/headernav.js"></script>
 <link rel="stylesheet" href="/evenapp/resources/css/headernav.css">
 </head>

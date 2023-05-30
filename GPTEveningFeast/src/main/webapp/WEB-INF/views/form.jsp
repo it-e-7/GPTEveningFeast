@@ -10,6 +10,7 @@
 	crossorigin="anonymous">
 	
 </script>
+<script src="/evenapp/resources/js/common.js"></script>
 <script src="/evenapp/resources/js/signup.js"></script>
 </head>
 <body>

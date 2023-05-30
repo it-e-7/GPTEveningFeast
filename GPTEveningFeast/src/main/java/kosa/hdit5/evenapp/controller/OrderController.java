@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.OrderService;
 import kosa.hdit5.evenapp.vo.CartVO;
 import kosa.hdit5.evenapp.vo.UserVO;
@@ -31,6 +32,7 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 	
+	@Auth
 	@PostMapping
 	public String postOrderHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
 		

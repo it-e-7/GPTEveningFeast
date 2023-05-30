@@ -5,7 +5,7 @@ function cartGPT() {
 		productList.push($(this).val());
 	});
 	
-	$.ajax({
+	ajax({
 		url: "/evenapp/gpt/cart",
 		method: "post",
 		data: {

@@ -12,6 +12,7 @@
 	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 	crossorigin="anonymous">
 </script>
+<script src="/evenapp/resources/js/common.js"></script>
 <script src="/evenapp/resources/js/cart.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="/evenapp/resources/css/cart.css" />
