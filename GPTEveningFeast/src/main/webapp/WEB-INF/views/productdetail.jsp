@@ -25,7 +25,7 @@
 
 	<div class="quantity-selector">
 		<p id="product_name">${productDetail.productName}</p>
-
+		<input type="hidden" id="product_id" value="${productDetail.productId}">
 		<button onclick="decrement()">-</button>
 		<input id="product_cnt" type="number" value="1" min="1"
 			name="product_count" disabled>
@@ -47,7 +47,7 @@
 	</p>
 
 	<button onclick="cart('${productDetail.productId}')">장바구니</button>
-	<button onclick="orderPage()">바로구매</button>
+	<button onclick="quickOrder()">바로구매</button>
 
 	<div action="/product/${productDetail.productId}" method="get">
 		<img src="${productDetail.productImgUrl}" /><br>

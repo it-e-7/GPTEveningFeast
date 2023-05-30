@@ -74,6 +74,18 @@ public class OrderController {
 	    
 	}
 	
+	
+	@Auth
+	@PostMapping("quick")
+	@ResponseBody
+	public String quickOrderHandler(@RequestBody OrderVO order, Model model) {
+		    
+        model.addAttribute("preOrderProduct", order.getCart());
+        model.addAttribute("price", order.getProductPrice());
+		    
+		return "success";
+	} 
+	
 	@Auth
 	@GetMapping
 	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList, @ModelAttribute("price") int price) {
