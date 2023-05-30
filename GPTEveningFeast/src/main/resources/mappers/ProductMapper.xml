@@ -40,12 +40,21 @@
 
 	<select id="selectProductList" parameterType="map"
 		resultType="Product">
+		
 		  SELECT *
-		  FROM "Product" p 
-		  WHERE p."ctgr_id" = #{ctgrId}
-		  <if test="sectId!=null and !sectId.equals('')">
-		  	AND p."sect_id" = #{sectId}
-		  </if>
+		  FROM (
+		  	SELECT p.*, ROWNUM RNUM
+		  	FROM "Product" p 
+		  	WHERE p."ctgr_id" = #{ctgrId}
+		  	<if test="sectId!=null and !sectId.equals('')">
+		  		AND p."sect_id" = #{sectId}
+		  	</if>
+		  	<![CDATA[
+		  		AND ROWNUM <= 20*#{offset}
+		  )
+		  WHERE RNUM > 20*(#{offset} - 1)
+		]]>
+		  
 	</select>
 	
 	<select id="selectProductListBySearch" parameterType="String" resultType="Product">

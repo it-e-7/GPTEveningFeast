@@ -30,8 +30,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> getProductList(String ctgrId, String sectId) {
-		return mapper.selectProductList(ctgrId, sectId);
+	public List<ProductVO> getProductList(String ctgrId, String sectId, int offset) {
+		return mapper.selectProductList(ctgrId, sectId, offset);
 	}
 	
 	@Override
