@@ -15,7 +15,6 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%@ include file="/WEB-INF/views/headernav.jsp"%>
 	
 	<h1>현대식품관 회원가입</h1>
 

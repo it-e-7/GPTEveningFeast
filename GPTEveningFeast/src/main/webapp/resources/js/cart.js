@@ -80,7 +80,7 @@ function deleteCartProduct(productId) {
 function moveToOrder() {
     let cart = updateCartProduct();
 
-    $.ajax({
+    ajax({
         url: '/evenapp/order',
         type: 'POST',
         contentType: 'application/json',
@@ -127,7 +127,7 @@ function quickOrder(index) {
     product.productName = $('#product-name').text();
     cart.push(product);
 	
-	$.ajax({
+	ajax({
         url: '/evenapp/order',
         type: 'POST',
         contentType: 'application/json',
