@@ -10,5 +10,5 @@ public interface ProductService {
 	public ProductVO getProductDetail(String productId);
 	public List<ProductVO> getGPTProduct(String[] productList);
 	public List<ProductVO> getProductList(String ctgrId, String sectId, int offset);
-	public List<ProductVO> getProductListBySearch(String searchParam);
+	public List<ProductVO> getProductListBySearch(String searchParam, int offset);
 }

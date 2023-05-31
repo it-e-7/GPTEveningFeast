@@ -17,6 +17,8 @@
 	<%@ include file="/WEB-INF/views/header.jsp"%>
 	<%@ include file="/WEB-INF/views/headernav.jsp"%>
 
+	<button onclick="scrollList()">스크롤 !</button>
+
 	<h1>${ searchParam } 검색 결과</h1>
 	
 	<div class="product-list-container" data-offset="1">

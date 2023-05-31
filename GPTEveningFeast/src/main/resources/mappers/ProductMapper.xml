@@ -18,8 +18,7 @@
 		]]>
 	</select>
 
-	<select id="selectProductDetail" parameterType="String"
-		resultType="Product">
+	<select id="selectProductDetail" parameterType="String" resultType="Product">
 		<![CDATA[
 		  SELECT *
 		  FROM "Product" p JOIN "Product_detail" d 
@@ -38,8 +37,7 @@
 		</foreach>
 	</select>
 
-	<select id="selectProductList" parameterType="map"
-		resultType="Product">
+	<select id="selectProductList" parameterType="map" resultType="Product">
 		
 		  SELECT *
 		  FROM (
@@ -57,11 +55,15 @@
 		  
 	</select>
 	
-	<select id="selectProductListBySearch" parameterType="String" resultType="Product">
+	<select id="selectProductListBySearch" parameterType="map" resultType="Product">
 		<![CDATA[
-		  SELECT *
-		  FROM "Product" p 
-		  WHERE p."product_name" LIKE '%' || #{searchParam} || '%'
+			SELECT *
+			FROM (
+			  SELECT p.*, ROWNUM RNUM
+			  FROM "Product" p 
+			  WHERE p."product_name" LIKE '%' || #{searchParam} || '%' AND ROWNUM <= 20*#{offset}
+			)
+			WHERE RNUM > 20*(#{offset} - 1)
 		]]>
 	</select>
 </mapper>  

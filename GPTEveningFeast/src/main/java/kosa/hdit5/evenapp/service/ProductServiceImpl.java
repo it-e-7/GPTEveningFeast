@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<ProductVO> getProductListBySearch(String searchParam) {
-		return mapper.selectProductListBySearch(searchParam);
+	public List<ProductVO> getProductListBySearch(String searchParam, int offset) {
+		return mapper.selectProductListBySearch(searchParam, offset);
 	}
 }

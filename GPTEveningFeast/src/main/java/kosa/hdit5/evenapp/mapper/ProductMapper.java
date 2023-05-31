@@ -16,5 +16,5 @@ public interface ProductMapper {
 	public ProductVO selectProductDetail(String productId);
 	public List<ProductVO> selectGPTProduct(String[] productList);
 	public List<ProductVO> selectProductList(@Param("ctgrId") String ctgrId, @Param("sectId") String sectId, @Param("offset") int offset);
-	public List<ProductVO> selectProductListBySearch(String searchParam);
+	public List<ProductVO> selectProductListBySearch(@Param("searchParam") String searchParam, @Param("offset") int offset);
 }

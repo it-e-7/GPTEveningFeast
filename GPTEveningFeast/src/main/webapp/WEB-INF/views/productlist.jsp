@@ -15,9 +15,10 @@
 <body>
 
 	<%@ include file="/WEB-INF/views/header.jsp"%>
-<%-- 	<%@ include file="/WEB-INF/views/headernav.jsp"%> --%>
+	<%@ include file="/WEB-INF/views/headernav.jsp"%>
 
 	<button onclick="scrollList()">스크롤 !</button>
+	
 	<h1>상품 리스트 페이지</h1>
 	<p>${ category.name }</p>
 	<ul>
@@ -33,14 +34,16 @@
 	</c:forEach>
 	</ul>
 	
-	<div class="product-list-container" data-offset="1">
+	<ul class="product-list-container" data-offset="1">
 		<c:forEach var="product" items="${ productList }">
-			<a href="/evenapp/product/${ product.productId }">
-				<img src="${ product.productImgUrl }">
-				<p>${ product.productName }</p>
-				<p>${ product.productPrice }</p>
-			</a>
+			<li>
+				<a href="/evenapp/product/${ product.productId }">
+					<img src="${ product.productImgUrl }">
+					<p>${ product.productName }</p>
+					<p>${ product.productPrice }</p>
+				</a>
+			</li>
 		</c:forEach>
-	</div>
+	</ul>
 </body>
 </html>
