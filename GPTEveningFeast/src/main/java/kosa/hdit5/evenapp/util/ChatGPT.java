@@ -80,20 +80,22 @@ public class ChatGPT {
 		HashMap<String, Object> message = new HashMap<String, Object>();
 		List<HashMap<String, Object>> messages = new ArrayList<HashMap<String, Object>>();
 
-		sendData.put("model", "gpt-3.5-turbo");
+		sendData.put("model", "gpt-3.5-turbo-0301");
 
 		message.put("role", "user");
-		searchParam = searchParam + "메뉴 추천 딱 하나만 해줘 "
-				+ "해당 메뉴의 이름, 레시피와 재료를 menu, recipe, ingredients 라는 key값으로 가지는 json 형태로 반환해줘 "
-				+ "recipe는 요리하는 방법이 순서대로 들어간 배열, ingredients는 재료 이름을 key값으로 양을 value값으로 나타내줘 "
-				+ "형용사를 제거한 재료명을 사용해주고 ingredients의 key, value는 모두 String 타입으로 작성해줘  "
-				+ "레시피는 최대한 자세히 작성해줘 ";
+		searchParam = searchParam + "요청과 관련된 메뉴 추천 딱 하나만 해줘."
+				+ "해당 메뉴의 이름, 레시피와 재료를 menu, recipe, ingredients 라는 key를 가지는 json 형태로 반환해줘."
+				+ "recipe는 요리하는 방법이 순서대로 들어간 배열, ingredients는 재료 이름을 key값으로 양을 value값으로 최대한 자세하게 작성해줘."
+				+ "형용사를 제거한 재료명을 사용하고 ingredients의 key, value는 모두 String 타입으로 작성해줘.(10초 이내로)";
+	
 		message.put("content", searchParam);
 		messages.add(message);
 		sendData.put("messages", messages);
-
 		sendData.put("max_tokens", 2048);
-
+		sendData.put("temperature", 0.6);
+	    sendData.put("top_p", 1.0);
+	    sendData.put("frequency_penalty", 0.0);
+	    sendData.put("presence_penalty", 0.0);
 		ObjectMapper mapper = new ObjectMapper();
 
 		String json = "";
