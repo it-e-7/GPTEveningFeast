@@ -36,7 +36,7 @@ function totalPricePrint() {
     let selectedCount = 0;
     $('.productCheckbox:checked').each(function() {
         const productIndex = $(this).closest('.productContainer').attr("index");
-        const productPrice = parseInt($(`#total_price_${productIndex}`).text().replace(',', ''), 10);
+        const productPrice = +$(`#total_price_${productIndex}`).text().replace(/,/g, '').replace('원', '');
         totalProductAmount += productPrice;
         selectedCount++;
     });

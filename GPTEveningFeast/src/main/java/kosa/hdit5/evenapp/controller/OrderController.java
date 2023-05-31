@@ -1,7 +1,9 @@
 package kosa.hdit5.evenapp.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,17 +20,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.OrderService;
 import kosa.hdit5.evenapp.vo.CartVO;
+import kosa.hdit5.evenapp.vo.OrderProductVO;
 import kosa.hdit5.evenapp.vo.OrderVO;
 import kosa.hdit5.evenapp.vo.UserVO;
 
 @Controller
 @RequestMapping("order")
-@SessionAttributes(value = { "preOrderProduct", "price" })
+@SessionAttributes(value = { "preOrderProduct", "price", "orderProduct" })
 public class OrderController {
 	
 	Logger log = LogManager.getLogger("case3");
@@ -39,6 +43,11 @@ public class OrderController {
 	@ModelAttribute("preOrderProduct")
 	public List<CartVO> createPreOrderProduct() {
 		return new ArrayList<CartVO>();
+	}
+	
+	@ModelAttribute("orderProduct")
+	public List<OrderProductVO> createOrderProduct() {
+		return new ArrayList<OrderProductVO>();
 	}
 	
 	@ModelAttribute("price")
@@ -98,15 +107,24 @@ public class OrderController {
 	@PostMapping("success")
 	public String successOrderHandler(HttpSession session, 
 			@ModelAttribute("preOrderProduct") List<CartVO> voList, 
-			@ModelAttribute("price") int price) {
+			@ModelAttribute("price") int price,
+			Model model) {
 		
 	    UserVO userInfo = (UserVO) session.getAttribute("signinUser");
-	    
-		int orderId = service.insertOrder(userInfo.getUserId());
+		int orderId = service.insertOrder(userInfo.getUserId(), voList);
+
+		List<OrderProductVO> vo = service.selectOrderProduct(orderId);
 		
-		log.debug("orderId {}", orderId);
+		model.addAttribute("orderProduct", vo);
+		
+		return "ordersuccess";
+	}
 	
-		
+	
+	@Auth
+	@GetMapping("ordersuccess")
+	public String moveOrderSuccessHandler(@SessionAttribute OrderProductVO orderProduct) {
+	
 		return "ordersuccess";
 	}
 }

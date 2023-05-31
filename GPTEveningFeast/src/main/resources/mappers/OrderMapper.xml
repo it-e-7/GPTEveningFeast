@@ -7,7 +7,8 @@
 <mapper namespace="kosa.hdit5.evenapp.mapper.OrderMapper">
 
 	<select id="selectPreOrderProduct" resultType="Cart">
-		<foreach collection="cartList" item="cartItem" separator="UNION ALL">
+		<foreach collection="cartList" item="cartItem"
+			separator="UNION ALL">
 			<![CDATA[
 				SELECT c."product_id", "product_name", "user_id", "product_cnt"
 				FROM "Cart" c JOIN "Product" p
@@ -17,14 +18,25 @@
 			]]>
 		</foreach>
 	</select>
-	
-	<insert id="insertOrder" parameterType="Order"
-		useGeneratedKeys="true" keyProperty="orderId" keyColumn="order_id">
+
+	<select id="insertOrder" statementType="CALLABLE" parameterType="map">
+		call InsertOrder(
+			#{userId}, 
+			#{orderProduct,typeHandler=kosa.hdit5.evenapp.util.CartVOListTypeHandler},
+			#{orderId,mode=OUT, jdbcType=INTEGER, javaType=Integer}
+			)
+		
+	</select>
+
+	<select id="selectOrderProduct" resultType="OrderProduct">
 		<![CDATA[
-			INSERT INTO "Order" ("date", "user_id") 
-			VALUES (sysdate, #{userId})
-		]]> 
-	</insert>
-	
+				SELECT "order_id", "product_name", o."product_cnt"
+				FROM "Order_product" o JOIN "Product" p
+				ON o."product_id" = p."product_id"
+				WHERE o."order_id" = #{orderId}
+		]]>
+	</select>
+
+
 </mapper>  
 

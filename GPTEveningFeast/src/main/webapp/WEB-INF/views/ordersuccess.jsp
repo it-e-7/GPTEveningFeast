@@ -24,7 +24,7 @@
     <h1>주문완료</h1>
     
     <h2>${signinUser.userName} 고객님, 감사합니다.\n 주문을 완료했습니다.</h2>
-    <p>주문번호 (대충 숫자)</p>
+    <p>주문번호 ${orderProduct[0].orderId}</p>
     
     <h2>기본배송지</h2>
         <p>
@@ -32,17 +32,14 @@
             ${signinUser.userAddress}
         </p>
     
-    <h2>주문상품 정보<c:out value="${fn:length(preOrderProduct)}" /></h2>
-        <c:forEach var="vo" items="${preOrderProduct}">
+    <h2>주문상품 정보<c:out value="${fn:length(orderProduct)}" /></h2>
+        <c:forEach var="vo" items="${orderProduct}">
             ${vo.productName} ${vo.productCnt}개<br>
         </c:forEach>
         
         <br>
         <p>총 상품금액</p>
        		<fmt:formatNumber value="${price}" pattern="#,###" />원<br>
-        <button onclick="orderButton()">
-        	주문하기<c:out value="${fn:length(preOrderProduct)}" />
-        </button>
-    
+
 </body>
 </html>
