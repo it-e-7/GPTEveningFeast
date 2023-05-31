@@ -127,4 +127,15 @@ public class OrderController {
 	
 		return "ordersuccess";
 	}
+	
+	
+	@Auth
+	@GetMapping("orders")
+	public String getOrderListHandler(@SessionAttribute OrderProductVO orderProduct) {
+	
+		return "orders";
+	}
+	
+	
+	
 }

@@ -41,5 +41,7 @@
         <p>총 상품금액</p>
        		<fmt:formatNumber value="${price}" pattern="#,###" />원<br>
 
+	<a href="/evenapp">쇼핑하기</a>
+	<button onclick="moveOrderList()">주문 내역 보기</button>
 </body>
 </html>

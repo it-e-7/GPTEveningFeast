@@ -13,5 +13,9 @@ public class OrderProductVO {
 	private String productId;
 	private int productCnt;
 	private String productName;
+	
+	private String productImg;
+	private String productPrice;
+	
 
 }

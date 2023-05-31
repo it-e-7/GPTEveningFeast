@@ -30,7 +30,7 @@
 
 	<select id="selectOrderProduct" resultType="OrderProduct">
 		<![CDATA[
-				SELECT "order_id", "product_name", o."product_cnt"
+				SELECT "order_id", "product_name", o."product_cnt", p."product_id", "product_img_url", "product_price"
 				FROM "Order_product" o JOIN "Product" p
 				ON o."product_id" = p."product_id"
 				WHERE o."order_id" = #{orderId}
