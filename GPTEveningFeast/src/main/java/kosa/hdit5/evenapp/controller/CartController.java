@@ -2,8 +2,6 @@ package kosa.hdit5.evenapp.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.CartService;
@@ -32,10 +31,9 @@ public class CartController {
 
 	@Auth
 	@PostMapping()
-	public ResponseEntity<String> createCartHandler(HttpSession session, CartVO vo) {
+	public ResponseEntity<String> createCartHandler(@SessionAttribute UserVO signinUser, CartVO vo) {
 
-		UserVO user = (UserVO) session.getAttribute("signinUser");
-		vo.setUserId(user.getUserId());
+		vo.setUserId(signinUser.getUserId());
 
 		try {
 			service.insertOrUpdateCart(vo);
@@ -48,12 +46,11 @@ public class CartController {
 	
 	@Auth
 	@GetMapping()
-	public String moveCartPageHandler(HttpSession session, Model model) {
-		UserVO user = (UserVO) session.getAttribute("signinUser");
-	
+	public String moveCartPageHandler(@SessionAttribute UserVO signinUser, Model model) {
+		
 		try {
-			List<ProductVO> vo = service.selectProductFromCart(user.getUserId());
-			model.addAttribute("userInfo", user.getUserId());
+			List<ProductVO> vo = service.selectProductFromCart(signinUser.getUserId());
+			model.addAttribute("userInfo", signinUser.getUserId());
 			model.addAttribute("cartInfo", vo);
 		} catch (Exception e) {
 			e.printStackTrace();

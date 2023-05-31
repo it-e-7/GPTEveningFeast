@@ -3,8 +3,6 @@ package kosa.hdit5.evenapp.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
@@ -41,10 +40,9 @@ public class OrderController {
 	@Auth
 	@PostMapping
 	@ResponseBody
-	public String postOrderHandler(@RequestBody List<CartVO> cart, HttpSession session, Model model) {
-	    UserVO userInfo = (UserVO) session.getAttribute("signinUser");
+	public String postOrderHandler(@SessionAttribute UserVO signinUser ,@RequestBody List<CartVO> cart, Model model) {
 	    for (CartVO item : cart) {
-	        item.setUserId(userInfo.getUserId());
+	        item.setUserId(signinUser.getUserId());
 	    }
 	    
 	    try {
