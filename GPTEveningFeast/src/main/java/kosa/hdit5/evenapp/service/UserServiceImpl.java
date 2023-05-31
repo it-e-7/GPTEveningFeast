@@ -30,4 +30,10 @@ public class UserServiceImpl implements UserService {
 		
 		return result;
 	}
+	
+	@Override
+	public boolean userUpdate(UserVO user) {
+		int result = mapper.updateUser(user);
+		return result == 1 ? true : false;
+	}
 }

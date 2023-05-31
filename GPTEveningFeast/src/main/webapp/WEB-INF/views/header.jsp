@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/evenapp/resources/css/header.css">
+<script src="/evenapp/resources/js/signup.js"></script>
+
 </head>
 <body>
 	<c:set var="user" value="${sessionScope.signinUser}" />
@@ -25,7 +27,7 @@
 					<span>
 						<p>${user.userName }님환영합니다!</p> 
 						<a href="/evenapp/signout">로그아웃</a>
-						<a href="/evenapp/">마이페이지</a>
+						<a href="/evenapp/update">마이페이지</a>
 					</span>
 				</c:otherwise>
 			</c:choose>

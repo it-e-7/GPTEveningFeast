@@ -17,4 +17,16 @@
 			SELECT * FROM "User" WHERE "user_id"=#{userId}
 		]]>
 	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateUser" parameterType="User">
+		<![CDATA[
+			UPDATE "User" 
+			SET "user_pw" = #{userPw},
+			    "user_address" = #{userAddress}
+			WHERE "user_id" = #{userId}
+		]]>
+	</update>
+
+	
 </mapper>  
