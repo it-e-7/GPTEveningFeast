@@ -15,10 +15,12 @@
 		<input type="text" placeholder="GPT 검색" name="searchParam"> <input
 			type="submit" value="검색">
 	</form>
-	<form action="search" method="get">
-		<input type="text" placeholder="기본 검색" name="searchParam"> <input
-			type="submit" value="검색">
-	</form>
-	<a href="/evenapp/cart">장바구니</a>
+	<div>
+		<form action="search" method="get">
+			<input type="text" placeholder="기본 검색" name="searchParam"> <input
+				type="submit" value="검색">
+		</form>
+		<a href="/evenapp/cart">장바구니</a>
+	</div>
 </div>
 

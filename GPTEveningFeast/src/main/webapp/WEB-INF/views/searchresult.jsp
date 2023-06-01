@@ -7,11 +7,12 @@
 <title>검색결과</title>
 </head>
 <body>
+	<div class="top-area">
+		<%@ include file="/WEB-INF/views/header.jsp"%>
+		<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	</div>
 
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%@ include file="/WEB-INF/views/headernav.jsp"%>
-
-	<h1>${ searchParam }검색 결과</h1>
+	<h1>${ searchParam }검색결과</h1>
 
 	<div class="product-list-container" data-offset="1">
 		<c:forEach var="product" items="${ productList }">

@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	
+	<div class="top-area">
+		<%@ include file="/WEB-INF/views/header.jsp"%>
+	</div>
+
 	<h1>현대식품관 회원가입</h1>
 
 	아이디

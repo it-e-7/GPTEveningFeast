@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	
+	<div class="top-area">
+		<%@ include file="/WEB-INF/views/header.jsp"%>
+	</div>
 	<h1>현대식품관 회원가입</h1>
 	<h3>필수 약관에 동의해 주세요</h3>
 	<input type="checkbox" name="allAgree" id="allAgree">

@@ -7,8 +7,9 @@
 <title>로그인</title>
 </head>
 <body>
-
-	<%@ include file="/WEB-INF/views/header.jsp"%>
+	<div class="top-area">
+		<%@ include file="/WEB-INF/views/header.jsp"%>
+	</div>
 
 	<p>로그인</p>
 	<p>아이디와 패스워드를 입력해주세요</p>

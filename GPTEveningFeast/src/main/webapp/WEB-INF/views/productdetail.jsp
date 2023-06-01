@@ -13,8 +13,10 @@
 	href="/evenapp/resources/css/main.css" />
 
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	<div class="top-area">
+		<%@ include file="/WEB-INF/views/header.jsp"%>
+		<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	</div>
 
 	<div class="quantity-selector">
 		<p id="product_name">${productDetail.productName}</p>

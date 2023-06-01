@@ -8,9 +8,11 @@
 <title>Home</title>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%@ include file="/WEB-INF/views/headernav.jsp"%>
-	
+	<div class="top-area">
+		<%@ include file="/WEB-INF/views/header.jsp"%>
+		<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	</div>
+
 	<h2>오늘의 추천 상품</h2>
 	<table>
 		<tr>
