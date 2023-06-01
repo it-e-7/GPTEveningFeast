@@ -30,4 +30,10 @@ public class UserServiceImpl implements UserService {
 		
 		return result;
 	}
+	
+	@Override
+	public boolean userUpdate(UserVO user) {
+		int result = user.getUserPw().equals("") ? mapper.updateUserPwNull(user) : mapper.updateUser(user);
+		return result == 1;
+	}
 }

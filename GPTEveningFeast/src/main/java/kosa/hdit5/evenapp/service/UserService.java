@@ -7,4 +7,5 @@ public interface UserService {
 	public UserVO selectOneUser(String userId);
 	public boolean createUser(UserVO user);
 	public boolean validateUniqueUserId(String userId);
+	public boolean userUpdate(UserVO user);
 }
