@@ -8,12 +8,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-	crossorigin="anonymous">
-</script>
-<script src="/evenapp/resources/js/common.js"></script>
-<script src="/evenapp/resources/js/cart.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="/evenapp/resources/css/cart.css" />
 
@@ -21,8 +15,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	
+	<div class="top-area">
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+		</div>
+	</div>
 	<h1>장바구니</h1>
 	<!-- 총 상품금액 및 주문하기 버튼 -->
 	<div class="totalAmount">
@@ -56,8 +53,8 @@
 					<div class="ellipsis" id="product-name">${vo.productName}</div>
 					<div>
 						<button onclick="decrement(${loop.index})">-</button>
-						<input class="product_cnt" id="product_cnt_${loop.index}" 
-							type="number" value="${vo.productCnt}" min="1" 
+						<input class="product_cnt" id="product_cnt_${loop.index}"
+							type="number" value="${vo.productCnt}" min="1"
 							name="product_count" readonly>
 						<button onclick="increment(${loop.index})">+</button>
 					</div>
@@ -74,10 +71,12 @@
 					</div>
 				</div>
 			</div>
-			<button class="deleteButton" onclick="deleteCartProduct('${vo.productId}')">X</button>
+			<button class="deleteButton"
+				onclick="deleteCartProduct('${vo.productId}')">X</button>
 			<button class="purchaseButton" onclick="quickOrder(${loop.index})">바로구매</button>
 		</div>
 	</c:forEach>
 
 </body>
+<script src="/evenapp/resources/js/cart.js"></script>
 </html>

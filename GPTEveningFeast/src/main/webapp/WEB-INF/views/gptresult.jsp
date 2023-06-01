@@ -7,16 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>GPT 추천 레시피</title>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-	crossorigin="anonymous"></script>
-<script src="/evenapp/resources/js/common.js"></script>
-<script src="/evenapp/resources/js/gptresult.js"></script>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%@ include file="/WEB-INF/views/headernav.jsp"%>
-	
+
+	<div class="top-area">
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+			<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		</div>
+	</div>
+
 	<div>
 		<h3>GPT의 추천</h3>
 		<h2>${ GPTResult.menu }</h2>
@@ -49,4 +49,5 @@
 
 	</div>
 </body>
+<script src="/evenapp/resources/js/gptresult.js"></script>
 </html>

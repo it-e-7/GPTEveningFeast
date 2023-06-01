@@ -9,19 +9,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-	crossorigin="anonymous"></script>
-
-<script src="/evenapp/resources/js/common.js"></script>
-<script src="/evenapp/resources/js/productdetail.js"></script>
-
 <link rel="stylesheet" type="text/css"
 	href="/evenapp/resources/css/main.css" />
 
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%@ include file="/WEB-INF/views/headernav.jsp"%>
+	<div class="top-area">
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+			<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		</div>
+	</div>
 
 	<div class="quantity-selector">
 		<p id="product_name">${productDetail.productName}</p>
@@ -55,4 +52,5 @@
 		${productDetail.detail}
 	</div>
 </body>
+<script src="/evenapp/resources/js/productdetail.js"></script>
 </html>
