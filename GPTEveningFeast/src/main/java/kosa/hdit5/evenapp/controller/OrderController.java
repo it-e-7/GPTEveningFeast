@@ -122,9 +122,7 @@ public class OrderController {
 	@GetMapping("ordersuccess")
 	public String moveOrderSuccessHandler(@SessionAttribute List<OrderProductVO> orderProduct, SessionStatus status, Model model) {
 		model.addAttribute("productList", orderProduct);
-		log.debug("productList {}", orderProduct);
 		status.setComplete();
-		log.debug("productList after {}", orderProduct);
 		return "ordersuccess";
 	}
 	
