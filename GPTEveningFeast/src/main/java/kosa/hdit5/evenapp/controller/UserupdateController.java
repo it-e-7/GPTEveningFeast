@@ -48,11 +48,11 @@ public class UserupdateController {
 			@RequestBody UserVO edituser, 
 			SessionStatus status){
 			UserVO userInfo = (UserVO) session.getAttribute("signinUser");
-		
-		
+
 		try {
-			userInfo.setUserPw(pwdEncoder.encode(edituser.getUserPw()));
-			userInfo.setUserAddress(edituser.getUserAddress());
+			userInfo.setUserPw(!edituser.getUserPw().equals("") ? pwdEncoder.encode(edituser.getUserPw()) : "");
+			userInfo.setUserAddress(!edituser.getUserAddress().equals("") ? edituser.getUserAddress() : userInfo.getUserAddress());
+
 			service.userUpdate(userInfo);
 			status.setComplete();
 			return ResponseEntity.status(HttpStatus.OK).body("success");

@@ -27,6 +27,14 @@
 			WHERE "user_id" = #{userId}
 		]]>
 	</update>
+	<!-- PW 공백 회원정보 수정 -->
+	<update id="updateUserPwNull" parameterType="User">
+		<![CDATA[
+			UPDATE "User" 
+			SET "user_address" = #{userAddress}
+			WHERE "user_id" = #{userId}
+		]]>
+	</update>
 
 	
 </mapper>  

@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public boolean userUpdate(UserVO user) {
-		int result = mapper.updateUser(user);
-		return result == 1 ? true : false;
+		int result = user.getUserPw().equals("") ? mapper.updateUserPwNull(user) : mapper.updateUser(user);
+		return result == 1;
 	}
 }
