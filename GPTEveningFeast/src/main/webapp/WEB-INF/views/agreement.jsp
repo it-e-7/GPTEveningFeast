@@ -35,7 +35,7 @@
 	<br>
 
 	<button onclick="agree()">다음</button>
-	<a href="/evenapp/resources/signup/signup.html">취소</a>
+	<a href="/evenapp/signup">취소</a>
 
 	<script>
 		

@@ -50,7 +50,7 @@ public class SignupController {
 	@Auth(role = Auth.Role.UNAUTH)
 	@GetMapping
 	public String signupHandler() {
-		return "redirect:/resources/signup/signup.html";
+		return "signup";
 	}
 	
 	//약관동의 화면으로 이동
@@ -67,9 +67,9 @@ public class SignupController {
 
 		if (agreement) {
 			model.addAttribute("agreement", true);
-			return "redirect:/signup/form";
+			return "form";
 		} else {
-			return "redirect:/signup";
+			return "agreement";
 		}
 	}
 
@@ -80,7 +80,7 @@ public class SignupController {
 		if (agreement) {
 			return "form";
 		} else {
-			return "redirect:/resources/signup/signup.html";
+			return "signup";
 		}
 	}
 	
@@ -120,5 +120,11 @@ public class SignupController {
 		}
 	}
 	
+	
+	@Auth(role = Auth.Role.UNAUTH)
+	@GetMapping("success")
+	public String signupSuccessHandler() {
+		return "success";
+	}
 	
 }

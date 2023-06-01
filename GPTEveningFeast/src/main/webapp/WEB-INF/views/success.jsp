@@ -4,28 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<div class="top-area">
 		<div class="inner">
 			<%@ include file="/WEB-INF/views/header.jsp"%>
-			<%@ include file="/WEB-INF/views/headernav.jsp"%>
 		</div>
 	</div>
-	<h1>마이페이지</h1>
 
 
-	<a href="/evenapp/order/orders">
-		<h3>주문관리</h3>
-	</a>
+	<h1>회원가입을 환영합니다</h1>
+	<a href="/evenapp/signin">로그인 페이지로 이동</a>
 
-
-	<a href="/evenapp/update">
-		<h3>나의 정보</h3>
-	</a>
-
-
-
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>

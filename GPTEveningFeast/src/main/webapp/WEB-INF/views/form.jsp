@@ -37,7 +37,7 @@
 	<br> 주소
 	<input type="text" name="userAddress">
 	<br>
-	<a href="/evenapp/resources/signup/signup.html">취소</a>
+	<a href="/evenapp/signup">취소</a>
 	<button onclick="submitForm()">가입하기</button>
 </body>
 <script src="/evenapp/resources/js/signup.js"></script>

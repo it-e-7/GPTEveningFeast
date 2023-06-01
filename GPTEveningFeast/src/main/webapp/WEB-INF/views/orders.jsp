@@ -15,8 +15,12 @@
 <script src="/evenapp/resources/js/order.js"></script>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	<%-- 	<%@ include file="/WEB-INF/views/headernav.jsp"%> --%>
+	<div class="top-area">
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+			<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		</div>
+	</div>
 
 	<h1>주문목록</h1>
 
