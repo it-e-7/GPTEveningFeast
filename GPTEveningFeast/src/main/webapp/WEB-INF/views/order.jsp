@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +30,7 @@
 	</h2>
 	<c:forEach var="vo" items="${preOrderProduct}">
             ${vo.productName} ${vo.productCnt}개<br>
+
 	</c:forEach>
 
 	<br>
@@ -37,7 +39,6 @@
 		주문하기
 		<c:out value="${fn:length(preOrderProduct)}" />
 	</button>
-
 
 	<h2>결제수단</h2>
 	<input type="radio" name="hpay" checked>

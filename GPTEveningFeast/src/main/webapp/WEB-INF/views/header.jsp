@@ -24,12 +24,11 @@
 			<c:otherwise>
 				<p class="grey3">${user.userName }님환영합니다!</p> 
 				<a href="/evenapp/signout" class="grey3">로그아웃</a>
-				<a href="/evenapp/">마이페이지</a>
+				<a href="/evenapp/mypage">마이페이지</a>
 			</c:otherwise>
 		</c:choose>
 		</span>
 	</div>
-
 
 </header>
 

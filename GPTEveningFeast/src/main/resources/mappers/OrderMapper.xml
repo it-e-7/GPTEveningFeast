@@ -7,7 +7,8 @@
 <mapper namespace="kosa.hdit5.evenapp.mapper.OrderMapper">
 
 	<select id="selectPreOrderProduct" resultType="Cart">
-		<foreach collection="cartList" item="cartItem" separator="UNION ALL">
+		<foreach collection="cartList" item="cartItem"
+			separator="UNION ALL">
 			<![CDATA[
 				SELECT c."product_id", "product_name", "user_id", "product_cnt"
 				FROM "Cart" c JOIN "Product" p
@@ -17,5 +18,59 @@
 			]]>
 		</foreach>
 	</select>
+
+	<select id="insertOrder" statementType="CALLABLE" parameterType="map">
+		call InsertOrder(
+			#{userId}, 
+			#{orderProduct,typeHandler=kosa.hdit5.evenapp.util.CartVOListTypeHandler},
+			#{orderId,mode=OUT, jdbcType=INTEGER, javaType=Integer}
+			)
+		
+	</select>
+
+	<select id="selectOrderProduct" resultType="OrderProduct">
+		<![CDATA[
+				SELECT "order_id", "product_name", o."product_cnt", p."product_id", "product_img_url", "product_price"
+				FROM "Order_product" o JOIN "Product" p
+				ON o."product_id" = p."product_id"
+				WHERE o."order_id" = #{orderId}
+		]]>
+	</select>
+	
+<!-- 	<select id="selectOrderList" resultType="OrderProduct">
+		<![CDATA[
+				SELECT *
+				FROM "Order" 
+				WHERE "user_id" = #{userId}
+		]]>
+	</select>
+	
+	<select id="selectOrderListInfo" resultType="OrderProduct">
+		<foreach collection="orderList" item="orderItem"
+			separator="UNION ALL">
+			<![CDATA[
+				SELECT "order_id", "product_name", o."product_cnt", p."product_id", "product_img_url", "product_price"
+				FROM "Order_product" o JOIN "Product" p
+				ON o."product_id" = p."product_id"
+				WHERE o."order_id" = #{orderId}
+			]]>
+		</foreach>
+	</select> -->
+	
+	<select id="selectOrderList" resultType="OrderProduct">
+		<![CDATA[
+			SELECT o."date", o."order_id", p."product_name", op."product_cnt", p."product_id", p."product_img_url", p."product_price"
+			FROM "Order" o
+			INNER JOIN "Order_product" op ON o."order_id" = op."order_id"
+			INNER JOIN "Product" p ON op."product_id" = p."product_id"
+			WHERE o."user_id" = #{userId}
+			GROUP BY o."date", o."order_id", p."product_name", p."product_id", p."product_img_url", op."product_cnt", p."product_price"
+			ORDER BY o."order_id" DESC
+		]]>
+	</select>
+	
+	
+
+
 </mapper>  
 

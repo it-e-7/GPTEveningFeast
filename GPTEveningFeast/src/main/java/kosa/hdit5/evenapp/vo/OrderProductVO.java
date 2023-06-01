@@ -7,11 +7,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartVO {
+public class OrderProductVO {
 	
+	private int orderId;
 	private String productId;
 	private int productCnt;
-	private String userId;
 	private String productName;
+	
+	private String productImgUrl;
+	private String productPrice;
+	private String date;
+	
 
 }

@@ -37,5 +37,10 @@ public class MainController {
 		
 		return "home";
 	}
+	
+	@GetMapping("mypage")
+	public String myPageHandler() {
+		return "mypage";
+	}
 
 }

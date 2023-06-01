@@ -36,7 +36,7 @@ function totalPricePrint() {
     let selectedCount = 0;
     $('.productCheckbox:checked').each(function() {
         const productIndex = $(this).closest('.productContainer').attr("index");
-        const productPrice = parseInt($(`#total_price_${productIndex}`).text().replace(',', ''), 10);
+        const productPrice = +$(`#total_price_${productIndex}`).text().replace(/,/g, '').replace('원', '');
         totalProductAmount += productPrice;
         selectedCount++;
     });
@@ -69,10 +69,13 @@ function moveToOrder() {
     ajax({
         url: '/evenapp/order',
         type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(cart),
+        dataType: 'json',
+        contentType: 'application/json; charset=UTF-8',
+        data: JSON.stringify({cart:cart, productPrice:totalPrice}),
         success: function(response) {
-        	if (response="success") {
+        	
+        	console.log(response);
+        	if (response.status="success") {
 	            window.location.href = '/evenapp/order';
         	}
         }
@@ -90,6 +93,7 @@ function updateCartProduct() {
         const productIndex = $(this).closest('.productContainer').attr("index");
         product.productId = $(`#product_id_${productIndex}`).val();
         product.productCnt = parseInt($(`#product_cnt_${productIndex}`).val());
+        
         cart.push(product);
     });
 	
@@ -97,21 +101,21 @@ function updateCartProduct() {
 }
 
 
-
 function quickOrder(index) {
 	const product = new Object();
 	const cart = []
 	
     product.productId = $(`#product_id_${index}`).val();
-    product.productCnt = parseInt($(`#product_cnt_${index}`).val());
+    product.productCnt = +$(`#product_cnt_${index}`).val();
     product.productName = $('#product-name').text();
+    const price = +$(`#total_price_${index}`).text().replace(/,/g, '').replace('원', '');
     cart.push(product);
-	
+	  
 	ajax({
-        url: '/evenapp/order',
+        url: '/evenapp/order/quick',
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify(cart),
+        data: JSON.stringify({cart:cart, productPrice:price}),
         success: function(response) {
         	if (response="success") {
 	            console.log(response);
