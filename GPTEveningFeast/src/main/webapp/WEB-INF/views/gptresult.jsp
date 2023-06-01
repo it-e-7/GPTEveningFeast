@@ -9,9 +9,12 @@
 <title>GPT 추천 레시피</title>
 </head>
 <body>
+
 	<div class="top-area">
-		<%@ include file="/WEB-INF/views/header.jsp"%>
-		<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+			<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		</div>
 	</div>
 
 	<div>

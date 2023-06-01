@@ -16,7 +16,9 @@
 </head>
 <body>
 	<div class="top-area">
-		<%@ include file="/WEB-INF/views/header.jsp"%>
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+		</div>
 	</div>
 	<h1>장바구니</h1>
 	<!-- 총 상품금액 및 주문하기 버튼 -->

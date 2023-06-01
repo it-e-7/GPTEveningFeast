@@ -8,7 +8,9 @@
 </head>
 <body>
 	<div class="top-area">
-		<%@ include file="/WEB-INF/views/header.jsp"%>
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+		</div>
 	</div>
 
 	<h1>현대식품관 회원가입</h1>

@@ -8,8 +8,10 @@
 </head>
 <body>
 	<div class="top-area">
-		<%@ include file="/WEB-INF/views/header.jsp"%>
-		<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+			<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		</div>
 	</div>
 
 	<h1>상품 리스트 페이지</h1>

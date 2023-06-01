@@ -11,7 +11,9 @@
 </head>
 <body>
 	<div class="top-area">
-		<%@ include file="/WEB-INF/views/header.jsp"%>
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+		</div>
 	</div>
 
 	<h1>주문하기</h1>

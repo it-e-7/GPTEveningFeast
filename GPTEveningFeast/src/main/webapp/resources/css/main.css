@@ -30,10 +30,22 @@ dl,ul,ol,menu,li {
 
 .top-area {
 	position: relative;
-	margin: 0 auto;
 	border-bottom: 1px solid #e7e7e7;
 	background-color: #fff;
 	z-index: 20;
+}
+
+.inner {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.grey3 {
+	color: #767572;	
+}
+
+.grey1 {
+	color: #aea7a2;
 }
 
 /* 상세페이지 - 상품 수량 버튼 */
