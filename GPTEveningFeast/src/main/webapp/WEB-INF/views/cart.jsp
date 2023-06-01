@@ -50,7 +50,7 @@
 					class="productImg" src="${vo.productImgUrl}" alt="이미지">
 				</a>
 				<div class="productDetails">
-					<div class="ellipsis" id="product-name">${vo.productName}</div>
+					<div class="ellipsis" id="product_name_${loop.index}">${vo.productName}</div>
 					<div>
 						<button onclick="decrement(${loop.index})">-</button>
 						<input class="product_cnt" id="product_cnt_${loop.index}"

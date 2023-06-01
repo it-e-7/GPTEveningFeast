@@ -107,7 +107,7 @@ function quickOrder(index) {
 	
     product.productId = $(`#product_id_${index}`).val();
     product.productCnt = +$(`#product_cnt_${index}`).val();
-    product.productName = $('#product-name').text();
+    product.productName = $(`#product_name_${index}`).text();
     const price = +$(`#total_price_${index}`).text().replace(/,/g, '').replace('원', '');
     cart.push(product);
 	  
