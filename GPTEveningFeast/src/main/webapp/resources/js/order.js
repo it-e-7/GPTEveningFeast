@@ -20,14 +20,24 @@ function moveOrderList() {
 }
 
 function getOrderList() {
-	const products = $(".order-product-wrapper");
+	const orders = $(".order-list-wrapper");
 	
-	products.each(function(index, product) {
-		console.log(product);
-		const cnt = +product.querySelector(".order-list-cnt").innerText.replace('개', '');
-		const price = +product.querySelector(".order-list-price").innerText.replace(/,/g, '').replace('원', '');
-		product.querySelector(".order-list-price").innerText = (cnt * price).toLocaleString() + " 원";
+	orders.each(function(index, order) {
+		const products = order.getElementsByClassName("order-product-wrapper");
+		let totalPrice = 0;
+		
+		for(let i = 0; i < products.length; i++) {
+			const product = products[i];
+			const cnt = +product.querySelector(".order-list-cnt").innerText.replace('개', '');
+			const price = +product.querySelector(".order-list-price").innerText.replace(/,/g, '').replace('원', '');
+			const cntPrice = cnt * price;
+			totalPrice += cntPrice;
+			product.querySelector(".order-list-price").innerText = cntPrice.toLocaleString() + " 원";	
+		}
+		
+		order.querySelector(".order-list-total-price").innerText = totalPrice.toLocaleString() + " 원";
 	});
+	
 }
 
 $(document).ready(function() {

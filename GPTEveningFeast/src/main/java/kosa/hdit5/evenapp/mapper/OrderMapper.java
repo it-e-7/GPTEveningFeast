@@ -18,5 +18,6 @@ public interface OrderMapper {
 	public List<CartVO> selectPreOrderProduct(Map<String, Object> params);
 	public void insertOrder(Map<String, Object> params);
 	public List<OrderProductVO> selectOrderProduct(int orderId);
+	public List<OrderProductVO> selectOrderList(String userId);
 
 }

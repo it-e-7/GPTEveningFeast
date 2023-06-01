@@ -12,6 +12,6 @@ public interface OrderService {
 	public List<CartVO> selectPreOrderProduct(List<CartVO> arr_cart);
 	public int insertOrder(String userId, List<CartVO> orderProduct);
 	public List<OrderProductVO> selectOrderProduct(int orderId);
-
+	public List<OrderProductVO> selectOrderList(String userId);
 	
 }

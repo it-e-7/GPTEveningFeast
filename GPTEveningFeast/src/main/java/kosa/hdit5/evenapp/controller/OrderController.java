@@ -119,15 +119,20 @@ public class OrderController {
 	
 	@Auth
 	@GetMapping("ordersuccess")
-	public String moveOrderSuccessHandler(@SessionAttribute OrderProductVO orderProduct) {
-	
+	public String moveOrderSuccessHandler(@SessionAttribute OrderProductVO orderProduct, HttpSession session) {
+		session.removeAttribute("orderProduct");
 		return "ordersuccess";
 	}
 	
 	
 	@Auth
 	@GetMapping("orders")
-	public String getOrderListHandler(@SessionAttribute OrderProductVO orderProduct) {
+	public String getOrderListHandler(@SessionAttribute UserVO signinUser, Model model) {
+		
+		List<OrderProductVO> vo = service.selectOrderList(signinUser.getUserId());
+		
+		model.addAttribute("orderList", vo);
+		
 		return "orders";
 	}
 	

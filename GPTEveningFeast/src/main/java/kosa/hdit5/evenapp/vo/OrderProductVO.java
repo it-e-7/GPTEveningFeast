@@ -16,6 +16,7 @@ public class OrderProductVO {
 	
 	private String productImgUrl;
 	private String productPrice;
+	private String date;
 	
 
 }

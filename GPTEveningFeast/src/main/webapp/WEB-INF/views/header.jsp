@@ -27,7 +27,7 @@
 					<span>
 						<p>${user.userName }님환영합니다!</p> 
 						<a href="/evenapp/signout">로그아웃</a>
-						<a href="/evenapp/update">마이페이지</a>
+						<a href="/evenapp/mypage">마이페이지</a>
 					</span>
 				</c:otherwise>
 			</c:choose>

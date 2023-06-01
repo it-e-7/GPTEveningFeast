@@ -71,6 +71,12 @@ public class OrderServiceImpl implements OrderService {
 		
 		return vo;
 	}
+
+	@Override
+	public List<OrderProductVO> selectOrderList(String userId) {
+		
+		return orderMapper.selectOrderList(userId);
+	}
 	
 
 }
