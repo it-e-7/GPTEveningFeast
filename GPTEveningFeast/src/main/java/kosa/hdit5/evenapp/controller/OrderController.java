@@ -113,13 +113,20 @@ public class OrderController {
 			@ModelAttribute("price") int price,
 			Model model) {
 		
-		int orderId = service.insertOrder(signinUser.getUserId(), voList);
+		try {
+			int orderId = service.insertOrder(signinUser.getUserId(), voList);
 
-		List<OrderProductVO> vo = service.selectOrderProduct(orderId);
+			List<OrderProductVO> vo = service.selectOrderProduct(orderId);
 		
-		model.addAttribute("orderProduct", vo);
-			
-		return "ordersuccess";
+			model.addAttribute("orderProduct", vo);
+		
+			return "ordersuccess";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		
 	}
 	
 	
@@ -135,10 +142,21 @@ public class OrderController {
 	@Auth
 	@GetMapping("orders")
 	public String getOrderListHandler(@SessionAttribute UserVO signinUser, Model model) {
-		List<OrderProductVO> vo = service.selectOrderList(signinUser.getUserId());
-		model.addAttribute("orderList", vo);
 		
-		return "orders";
+		try {
+			List<OrderProductVO> vo = service.selectOrderList(signinUser.getUserId());
+			model.addAttribute("orderList", vo);
+			
+			return "orders";
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
+		}
+		
+		
+		
+		
 	}
 	
 	
