@@ -113,6 +113,8 @@ public class OrderController {
 
 		List<OrderProductVO> vo = service.selectOrderProduct(orderId);
 		
+		log.debug("success handler {}", vo);
+		
 		model.addAttribute("orderProduct", vo);
 		
 		return "ordersuccess";
@@ -130,7 +132,7 @@ public class OrderController {
 	@Auth
 	@GetMapping("orders")
 	public String getOrderListHandler(@SessionAttribute OrderProductVO orderProduct) {
-	
+		log.debug("getOrderListHandler handler {}", orderProduct);
 		return "orders";
 	}
 	
