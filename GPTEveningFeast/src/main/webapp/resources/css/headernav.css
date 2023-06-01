@@ -9,6 +9,26 @@
 }
 
 .category-popup {
+	display: none;
 	position: absolute;
 	top: 100%;
+}
+
+.nav-right-menu-wrapper {
+	display: flex;
+    gap: 10px;
+}
+
+.ctgr-list {
+	position: relative;
+	width: 200px;
+	background-color: white;
+}
+
+.depth2 {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 320px;
+	background-color: #e7e7e7;
 }

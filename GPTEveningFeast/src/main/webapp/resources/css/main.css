@@ -11,6 +11,10 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
 }
 
+body {
+	position: relative;
+}
+
 button {
 	cursor: pointer;
 	border: none;
@@ -40,12 +44,30 @@ dl,ul,ol,menu,li {
 	margin: 0 auto;
 }
 
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 350px;
+}
+
 .grey3 {
 	color: #767572;	
 }
 
 .grey1 {
 	color: #aea7a2;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 300px;
+	background-color: black;
+	color: white;
 }
 
 /* 상세페이지 - 상품 수량 버튼 */

@@ -14,7 +14,9 @@
 
 <header>
 	<div class="header-wrapper">
-		<a href="/evenapp">코사식품관</a>
+		<a href="/evenapp">
+			<img src="/evenapp/resources/img/logo.png" class="logo-img">
+		</a>
 		<span class="auth-menu-wrapper grey1">
 		<c:choose>
 			<c:when test="${empty user.userId}">
