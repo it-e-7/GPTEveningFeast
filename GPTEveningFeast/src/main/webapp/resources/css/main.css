@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+* { padding: 0; margin: 0; }
+
 /* 상세페이지 - 상품 수량 버튼 */
 .quantity-selector {
 	display: flex;
