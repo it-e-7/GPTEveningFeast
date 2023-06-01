@@ -2,8 +2,6 @@ package kosa.hdit5.evenapp.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.CartService;
@@ -62,8 +61,8 @@ public class GPTController {
 	
 	@Auth
 	@PostMapping("cart")
-	public String gptCartPostHandler(@RequestParam("productList[]") List<String> productList, HttpSession session) {
-		String userId = ((UserVO) session.getAttribute("signinUser")).getUserId();
+	public String gptCartPostHandler(@SessionAttribute UserVO signinUser, @RequestParam("productList[]") List<String> productList) {
+		String userId = signinUser.getUserId();
 		
 		try {
 			cartService.insertOrUpdateGPTCart(userId, productList);
