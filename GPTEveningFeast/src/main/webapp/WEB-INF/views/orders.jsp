@@ -12,6 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
 	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 	crossorigin="anonymous"></script>
+<script src="/evenapp/resources/js/order.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/header.jsp"%>
@@ -24,14 +25,16 @@
 	<p>결제완료</p>
 	
 	<c:forEach var="vo" items="${orderProduct}" varStatus="loop">
-		<img src="${vo.productImgUrl}">
-		<p>${vo.productName}</p>
-		<p id="order-list-price_${loop.index}">
-		<fmt:formatNumber value="${vo.productPrice*vo.productCnt}" pattern="#,###" />
-							원
-		</p>
-		<p id="order-list-cnt_${loop.index}">${vo.productCnt} 개</p>
-		<br>
+		<div class="order-product-wrapper">
+			<img src="${vo.productImgUrl}">
+			<p>${vo.productName}</p>
+			<p class="order-list-price">
+			<fmt:formatNumber value="${vo.productPrice}" pattern="#,###" />
+								원
+			</p>
+			<p class="order-list-cnt">${vo.productCnt} 개</p>
+			<br>
+		</div>
 	</c:forEach>
 	
 	결제금액
