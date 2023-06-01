@@ -13,8 +13,13 @@
 </head>
 <body>
 
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-
+	<div class="top-area">
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+			<%@ include file="/WEB-INF/views/headernav.jsp"%>
+		</div>
+	</div>
+	
 	<p>회원정보 변경</p>
 	<p>변경할 패스워드 입력</p>
 	<input type="password" name="userPw" placeholder="비밀번호">

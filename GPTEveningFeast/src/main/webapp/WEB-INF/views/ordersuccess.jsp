@@ -19,12 +19,15 @@
 </head>
 <body>
 
-	<%@ include file="/WEB-INF/views/header.jsp"%>
-	
+	<div class="top-area">
+		<div class="inner">
+			<%@ include file="/WEB-INF/views/header.jsp"%>
+		</div>
+	</div>
     <h1>주문완료</h1>
     
     <h2>${signinUser.userName} 고객님, 감사합니다.\n 주문을 완료했습니다.</h2>
-    <p>주문번호 ${orderProduct[0].orderId}</p>
+    <p>주문번호 ${productList[0].orderId}</p>
     
     <h2>기본배송지</h2>
         <p>
@@ -32,8 +35,8 @@
             ${signinUser.userAddress}
         </p>
     
-    <h2>주문상품 정보<c:out value="${fn:length(orderProduct)}" /></h2>
-        <c:forEach var="vo" items="${orderProduct}">
+    <h2>주문상품 정보<c:out value="${fn:length(productList)}" /></h2>
+        <c:forEach var="vo" items="${productList}">
             ${vo.productName} ${vo.productCnt}개<br>
         </c:forEach>
         
@@ -42,6 +45,6 @@
        		<fmt:formatNumber value="${price}" pattern="#,###" />원<br>
 
 	<a href="/evenapp">쇼핑하기</a>
-	<button onclick="moveOrderList(${fn:length(orderProduct)})">주문 내역 보기</button>
+	<button onclick="moveOrderList(${fn:length(productList)})">주문 내역 보기</button>
 </body>
 </html>

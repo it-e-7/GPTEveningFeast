@@ -3,6 +3,8 @@ package kosa.hdit5.evenapp.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.OrderService;
@@ -92,7 +95,7 @@ public class OrderController {
 	// 주문하기 페이지 로드
 	@Auth
 	@GetMapping
-	public String orderHandler(@ModelAttribute("preOrderProduct") List<CartVO> voList, @ModelAttribute("price") int price) {
+	public String orderHandler() {
 		return "order";
 	}
 	
@@ -117,8 +120,11 @@ public class OrderController {
 	
 	@Auth
 	@GetMapping("ordersuccess")
-	public String moveOrderSuccessHandler(@SessionAttribute OrderProductVO orderProduct, HttpSession session) {
-		session.removeAttribute("orderProduct");
+	public String moveOrderSuccessHandler(@SessionAttribute List<OrderProductVO> orderProduct, SessionStatus status, Model model) {
+		model.addAttribute("productList", orderProduct);
+		log.debug("productList {}", orderProduct);
+		status.setComplete();
+		log.debug("productList after {}", orderProduct);
 		return "ordersuccess";
 	}
 	
