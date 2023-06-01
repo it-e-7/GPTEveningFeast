@@ -70,8 +70,6 @@ public class OrderController {
 	        model.addAttribute("preOrderProduct", voList);
 	        model.addAttribute("price", order.getProductPrice());
 	        
-	        log.debug("controller {} {}", order.getProductPrice(), order.getCart());
-	        
 	        return ResponseEntity.status(HttpStatus.OK).body("{\"status\":\"success\"}");
 	    } catch (Exception e) {
 	        e.printStackTrace();
@@ -130,7 +128,6 @@ public class OrderController {
 	@Auth
 	@GetMapping("orders")
 	public String getOrderListHandler(@SessionAttribute OrderProductVO orderProduct) {
-	
 		return "orders";
 	}
 	
