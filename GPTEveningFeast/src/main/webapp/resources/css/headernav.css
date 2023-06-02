@@ -9,6 +9,142 @@
 }
 
 .category-popup {
+	display: none;
 	position: absolute;
 	top: 100%;
+}
+
+.nav-right-menu-wrapper {
+	display: flex;
+    gap: 10px;
+}
+
+.category-btn-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	padding-bottom: 16px;
+}
+
+.category-btn {
+	background-color: white;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.cart-img {
+	content: "";
+    position: absolute;
+    left: 1px;
+    top: 14px;
+    display: inline-block;
+    width: 26px;
+    height: 21px;
+    background: url(../../images/common/btn.png) no-repeat -250px -300px;
+}
+
+.category-wrapper:hover .category-popup {
+	display: block;
+}
+
+.category-popup {
+	border: 1px solid #ddd;
+}
+
+.ctgr-list {
+	position: relative;
+	width: 176px;
+	background-color: white;
+}
+
+.depth1 {
+	cursor: pointer;
+}
+
+.depth1-a {
+	font-size: 15px;
+	padding: 8px 5px 8px 19px;
+}
+
+.depth2-a {
+	font-size: 15px;
+	padding: 8px 5px 8px 19px;
+}
+
+.depth1:hover {
+	background-color: #f4f4f4;
+}
+
+.depth1:hover .depth1-a {
+	font-weight: 700;
+	color: #ff6913; 
+}
+
+.depth1:hover .depth2 {
+	display:block;
+}
+
+.depth2 {
+	display:none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 296px;
+	height: 100%;
+	background-color: #f4f4f4;
+	border-top: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	cursor: pointer;
+}
+
+.depth2 li:hover{
+	background-color: #ddd;
+}
+
+.depth2 li:hover a{
+	font-weight: 700;
+	color: #ff6913;
+}
+
+.search-form {
+	display: flex;
+	position: relative;
+}
+
+.search-form input[type="text"] {
+	padding: 0 32px 0 16px;
+    width: 120px;
+    height: 36px;
+    line-height: 34px;
+    text-align: left;
+    border: 1px solid #f3f3f3;
+    background-color: #f3f3f3;
+    border-radius: 18px;
+    
+    transition: width, background-color, border;
+    transition-duration: 0.4s;
+}
+
+.search-form input[type="text"]:focus {
+    width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #303030;
+}
+
+.search-btn {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: block;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	background:url(/evenapp/resources/img/search.png) no-repeat;"
+}
+
+.search-btn .active {
+	background:url(/evenapp/resources/img/search_active.png) no-repeat;"
 }
