@@ -48,7 +48,10 @@
 
 	<div action="/product/${productDetail.productId}" method="get">
 		<img src="${productDetail.productImgUrl}" /><br>
-		${productDetail.productName}<br> ${productDetail.productPrice}<br>
+		${productDetail.productName}<br> 
+		<p class="product-one-price">
+			<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" /> 원
+		</p><br>
 		${productDetail.detail}
 	</div>
 </body>

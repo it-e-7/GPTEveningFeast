@@ -26,10 +26,12 @@ function cart(productId) {
 }
 
 function calculateTotalPrice(){
-    let price = +$('#product_price').text().replace(/,/g, '').replace('원', '');
+    let price = +$('.product-one-price').text().replace(/,/g, '').replace('원', '');
+    console.log(price);
     let count = +$('#product_cnt').val();
     let total = price * count;
     $('#total_price').text(total.toLocaleString() + '원');
+    $('#product_price').text(total.toLocaleString() + '원');
 }
 
 function quickOrder() {

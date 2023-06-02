@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.context.annotation.SessionScope;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.OrderService;
@@ -153,12 +152,6 @@ public class OrderController {
 			
 			return null;
 		}
-		
-		
-		
-		
 	}
-	
-	
-	
+
 }

@@ -86,8 +86,6 @@ function moveToOrder() {
     else {
     	alert("주문할 상품이 없습니다.");
     }
-
-
 }
 
 
