@@ -11,8 +11,13 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	position: relative;
+	min-height: 100%;
 }
 
 a {
