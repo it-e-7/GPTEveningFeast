@@ -14,12 +14,14 @@ body, html {
 
 .innercon {
   position: relative;
-  width: 680px;
-  margin: 50px 0;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 20px;
 }
 
 h2{
     margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 .linearea {
@@ -27,7 +29,7 @@ h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 680px;
+  width: 100%;
   border: 1px solid #DBD9D6;
   padding: 20px;
   box-sizing: border-box;
@@ -44,12 +46,12 @@ h2{
 
 #btn {
   display: block;
-  width: 560px;
-  height: 56px;
+  width: 100%;
+  height: 48px;
   background: #FFFFFF;
   border: 1px solid #101010;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .member {
@@ -59,4 +61,20 @@ h2{
 #logo {
   display: block;
   margin-bottom: 20px;
+}
+
+@media (min-width: 681px) {
+  .innercon, .linearea {
+    width: 680px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  #btn {
+    width: 560px;
+    height: 56px;
+    font-size: 20px;
+  }
 }
