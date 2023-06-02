@@ -24,3 +24,7 @@ ajax({
 		})
 	}
 });
+
+function loadingGPT() {
+	$(".gpt-loading-modal-wrapper").css("display", "block");
+}
