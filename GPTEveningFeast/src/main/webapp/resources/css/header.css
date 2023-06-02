@@ -8,5 +8,10 @@
 }
 
 .auth-menu-wrapper {
-	
+	display: flex;
+    gap: 24px;
+}
+
+.logo-img {
+	width: 232px;
 }

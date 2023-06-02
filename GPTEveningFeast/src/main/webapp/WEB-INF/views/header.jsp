@@ -14,17 +14,19 @@
 
 <header>
 	<div class="header-wrapper">
-		<a href="/evenapp">코사식품관</a>
-		<span class="auth-menu-wrapper grey1">
+		<a href="/evenapp">
+			<img src="/evenapp/resources/img/logo.png" class="logo-img">
+		</a>
+		<span class="auth-menu-wrapper">
 		<c:choose>
 			<c:when test="${empty user.userId}">
-				<a href="/evenapp/signin">로그인</a> 
-				<a href="/evenapp/signup">회원가입</a>
+				<a href="/evenapp/signin" class="grey1">로그인</a> 
+				<a href="/evenapp/signup" class="grey1">회원가입</a>
 			</c:when>
 			<c:otherwise>
 				<p class="grey3">${user.userName }님환영합니다!</p> 
-				<a href="/evenapp/signout" class="grey3">로그아웃</a>
-				<a href="/evenapp/mypage">마이페이지</a>
+				<a href="/evenapp/signout">로그아웃</a>
+				<a href="/evenapp/mypage" class="grey1">마이페이지</a>
 			</c:otherwise>
 		</c:choose>
 		</span>
