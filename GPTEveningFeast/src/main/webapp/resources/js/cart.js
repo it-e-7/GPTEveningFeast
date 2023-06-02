@@ -40,7 +40,7 @@ function totalPricePrint() {
         totalProductAmount += productPrice;
         selectedCount++;
     });
-    $('.totalAmount p').text("총 상품금액: " + totalProductAmount.toLocaleString() + " 원");
+    $('.totalAmount p').text(totalProductAmount.toLocaleString() + " 원");
     $('.orderButton').text("주문하기 " + selectedCount);
     
     totalPrice = totalProductAmount;
