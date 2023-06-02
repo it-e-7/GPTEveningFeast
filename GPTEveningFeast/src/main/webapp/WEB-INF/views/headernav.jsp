@@ -4,6 +4,13 @@
 <script src="/evenapp/resources/js/headernav.js"></script>
 <link rel="stylesheet" href="/evenapp/resources/css/headernav.css">
 
+<div class="gpt-loading-modal-wrapper">
+	<div class="gpt-loading-modal">
+		<img src="/evenapp/resources/img/cooking.gif">
+		<p>GPT가 요리중입니다 !</p>
+	</div>
+</div>
+
 <div class="header-nav-container">
 	<div class="category-wrapper">
 		<span class="category-btn-wrapper">
@@ -16,15 +23,19 @@
 			</nav>
 		</div>
 	</div>
-	<form action="gpt" method="post" class="search-form">
-		<input type="text" placeholder="GPT 검색" name="searchParam"> 
-		<input type="submit" class="search-btn" value="">
-	</form>
-	<div class="nav-right-menu-wrapper">
-		<form action="search" method="get" class="search-form">
-			<input type="text" placeholder="기본 검색" name="searchParam">
+	<div class="search-form-gpt">
+		<form action="gpt" method="post" class="search-form" onsubmit="loadingGPT()">
+			<input type="text" placeholder="GPT 검색" name="searchParam"> 
 			<input type="submit" class="search-btn" value="">
 		</form>
+	</div>
+	<div class="nav-right-menu-wrapper">
+		<div>
+			<form action="search" method="get" class="search-form">
+				<input type="text" placeholder="기본 검색" name="searchParam">
+				<input type="submit" class="search-btn" value="">
+			</form>
+		</div>
 		<a href="/evenapp/cart">
 			<img src="/evenapp/resources/img/cart.png">
 		</a>

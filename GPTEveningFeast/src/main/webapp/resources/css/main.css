@@ -37,7 +37,7 @@ dl,ul,ol,menu,li {
 }
 
 .top-area {
-	position: relative;
+	min-width: 1200px;
 	border-bottom: 1px solid #e7e7e7;
 	background-color: #fff;
 	z-index: 20;
