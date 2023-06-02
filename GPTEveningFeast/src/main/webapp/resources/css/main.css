@@ -15,6 +15,10 @@ body {
 	position: relative;
 }
 
+a {
+    display:inline-block;
+}
+
 button {
 	cursor: pointer;
 	border: none;
