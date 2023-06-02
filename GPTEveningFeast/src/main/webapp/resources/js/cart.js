@@ -65,21 +65,27 @@ function deleteCartProduct(productId) {
 
 function moveToOrder() {
     let cart = updateCartProduct();
-
-    ajax({
-        url: '/evenapp/order',
-        type: 'POST',
-        dataType: 'json',
-        contentType: 'application/json; charset=UTF-8',
-        data: JSON.stringify({cart:cart, productPrice:totalPrice}),
-        success: function(response) {
-        	
-        	console.log(response);
-        	if (response.status="success") {
-	            window.location.href = '/evenapp/order';
-        	}
-        }
-    });
+    const cnt = +$('.orderButton').text().replace('주문하기', '');
+   
+    if (cnt > 0) {
+        ajax({
+            url: '/evenapp/order',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json; charset=UTF-8',
+            data: JSON.stringify({cart:cart, productPrice:totalPrice}),
+            success: function(response) {
+            	
+            	console.log(response);
+            	if (response.status="success") {
+    	            window.location.href = '/evenapp/order';
+            	}
+            }
+        });
+    }
+    else {
+    	alert("주문할 상품이 없습니다.");
+    }
 }
 
 

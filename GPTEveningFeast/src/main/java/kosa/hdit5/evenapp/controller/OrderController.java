@@ -57,12 +57,10 @@ public class OrderController {
 	@Auth
 	@PostMapping
 	@ResponseBody
-	public ResponseEntity<Object> postOrderHandler(@RequestBody OrderVO order, HttpSession session, Model model) {
-	    
-	    UserVO userInfo = (UserVO) session.getAttribute("signinUser");
+	public ResponseEntity<Object> postOrderHandler(@RequestBody OrderVO order, @SessionAttribute UserVO signinUser, Model model) {
 	    
 	    for (CartVO item : order.getCart()) {
-	        item.setUserId(userInfo.getUserId());
+	        item.setUserId(signinUser.getUserId());
 	    }
 	        
 	    try {
@@ -95,26 +93,39 @@ public class OrderController {
 	// 주문하기 페이지 로드
 	@Auth
 	@GetMapping
-	public String orderHandler() {
+	public String orderHandler(HttpSession session) {
+		
+		List<CartVO> pre = (List<CartVO>) session.getAttribute("preOrderProduct");
+		
+		if (pre.isEmpty()) {
+			return "redirect:/order/orders";
+		}		
+		
 		return "order";
 	}
 	
 	// 주문하기 완료
 	@Auth
 	@PostMapping("success")
-	public String successOrderHandler(HttpSession session, 
+	public String successOrderHandler(@SessionAttribute UserVO signinUser, 
 			@ModelAttribute("preOrderProduct") List<CartVO> voList, 
 			@ModelAttribute("price") int price,
 			Model model) {
 		
-	    UserVO userInfo = (UserVO) session.getAttribute("signinUser");
-		int orderId = service.insertOrder(userInfo.getUserId(), voList);
+		try {
+			int orderId = service.insertOrder(signinUser.getUserId(), voList);
 
-		List<OrderProductVO> vo = service.selectOrderProduct(orderId);
+			List<OrderProductVO> vo = service.selectOrderProduct(orderId);
 		
-		model.addAttribute("orderProduct", vo);
+			model.addAttribute("orderProduct", vo);
 		
-		return "ordersuccess";
+			return "ordersuccess";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		
 	}
 	
 	
@@ -131,13 +142,16 @@ public class OrderController {
 	@GetMapping("orders")
 	public String getOrderListHandler(@SessionAttribute UserVO signinUser, Model model) {
 		
-		List<OrderProductVO> vo = service.selectOrderList(signinUser.getUserId());
-		
-		model.addAttribute("orderList", vo);
-		
-		return "orders";
+		try {
+			List<OrderProductVO> vo = service.selectOrderList(signinUser.getUserId());
+			model.addAttribute("orderList", vo);
+			
+			return "orders";
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
+		}
 	}
-	
-	
-	
+
 }
