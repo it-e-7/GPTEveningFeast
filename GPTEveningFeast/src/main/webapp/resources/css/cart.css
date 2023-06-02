@@ -4,7 +4,6 @@ a {
 }
 
 .productContainer {
-	position: relative;
 	display: flex;
 	align-items: flex-start;
 }
@@ -16,9 +15,14 @@ a {
 }
 
 .productDetails {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 124px;
+    width: calc(100% - 128px);
+	padding: 32px 0 12px 10px;
+    float: left;
+    vertical-align: top;
 }
 
 .productContainer .productImg {
@@ -27,24 +31,70 @@ a {
 }
 
 .productContainer .deleteButton {
-	position: absolute;
-	top: 0;
-	right: 0;
 	background-color: #ff0000;
 	color: #ffffff;
 	padding: 2px 5px;
 	cursor: pointer;
+	right: 0;
 }
 
 .productContainer .productCheckbox {
-	position: absolute;
-	top: 0;
-	left: 0;
 }
+
 .productContainer .product_cnt {
-	width : 6ch;
+	width: 6ch;
 }
 
 .purchaseButton {
-    float: right;
+	float: right;
+}
+
+.all-cart-container {
+	display: flex;
+}
+
+.cart-container {
+	display: inline-flex;
+	margin: 0 auto;
+}
+
+.left-area {
+	
+}
+
+.rigth-area {
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 0;
+	width: 100%;
+	min-height: 38px;
+}
+
+.ea-area {
+	display: flex;
+	margin-right: 24px;
+	height: 32px;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.purchaseButton {
+	padding: 0 12px;
+	height: 42px;
+	line-height: 40px;
+	text-align: center;
+	/* color: #fff; */
+	font-size: 15px;
+	/* background-color: #fff; */
+	vertical-align: top;
+}
+
+.txt-price {
+	display: none;
+	margin-right: 7px;
+	margin-right: 8px;
+	font-weight: 200;
 }
