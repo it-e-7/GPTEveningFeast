@@ -16,14 +16,14 @@
 			</nav>
 		</div>
 	</div>
-	<form action="gpt" method="post">
-		<input type="text" placeholder="GPT 검색" name="searchParam"> <input
-			type="submit" value="검색">
+	<form action="gpt" method="post" class="search-form">
+		<input type="text" placeholder="GPT 검색" name="searchParam"> 
+		<input type="submit" class="search-btn" value="">
 	</form>
 	<div class="nav-right-menu-wrapper">
-		<form action="search" method="get">
-			<input type="text" placeholder="기본 검색" name="searchParam"> <input
-				type="submit" value="검색">
+		<form action="search" method="get" class="search-form">
+			<input type="text" placeholder="기본 검색" name="searchParam">
+			<input type="submit" class="search-btn" value="">
 		</form>
 		<a href="/evenapp/cart">
 			<img src="/evenapp/resources/img/cart.png">
