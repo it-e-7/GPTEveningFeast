@@ -15,14 +15,15 @@ a {
 }
 
 .productDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 124px;
-    width: calc(100% - 128px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 124px;
+	width: 650px;
 	padding: 32px 0 12px 10px;
-    float: left;
-    vertical-align: top;
+	float: left;
+	vertical-align: top;
+	padding-right: 50px;
 }
 
 .productContainer .productImg {
@@ -39,10 +40,12 @@ a {
 }
 
 .productContainer .productCheckbox {
+	
 }
 
 .productContainer .product_cnt {
 	width: 6ch;
+	text-align: center;
 }
 
 .purchaseButton {
@@ -50,19 +53,25 @@ a {
 }
 
 .all-cart-container {
+	padding-top: 50px;
 	display: flex;
+	justify-content: center;
+	flex-direction: row;
 }
 
 .cart-container {
-	display: inline-flex;
-	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
 }
 
 .left-area {
-	
+	margin-right: 20px;
 }
 
-.rigth-area {
+.riget-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .info {
@@ -97,4 +106,50 @@ a {
 	margin-right: 7px;
 	margin-right: 8px;
 	font-weight: 200;
+}
+
+.delete-name-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.totalAmount {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.orderButton {
+	color: #fff;
+	background-color: #ff6913;
+	height: 64px;
+	line-height: 62px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.product-price-text {
+	padding-right: 100px;
+	display: table-cell;
+	line-height: 39px;
+	color: #454545;
+	font-size: 18px;
+	vertical-align: top;
+	word-break: break-all;
+}
+
+.price-box {
+	border: 1px #ff6913 solid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 340px;
+	height: 246.27px;
+}
+
+.product-price-num {
+	font-size: 20px;
+	font-weight: 700;
+	font-family: "Roboto";
 }
