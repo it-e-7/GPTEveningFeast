@@ -28,9 +28,14 @@
 			<input type="checkbox" name="allCheck" id="allCheck" checked>
 
 			<label for="allCheck">전체 선택</label> <br> <br>
-			<d3 class="delivary-text-title">배송</d3>
-
-			<div>
+			
+			<div class="tit toggle-ti">
+				배송
+				<em>${fn:length(cartInfo)}</em>
+			</div>
+		
+			<div class="cont">
+				<ul class="product-list vertical">
 				<c:forEach var="vo" items="${cartInfo}" varStatus="loop">
 					<input type=hidden id="product_id_${loop.index}"
 						value="${vo.productId}">
@@ -73,6 +78,7 @@
 
 					</div>
 				</c:forEach>
+				</ul>
 			</div>
 		</div>
 		<div></div>

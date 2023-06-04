@@ -7,8 +7,8 @@
 body {
 	position: relative;
 	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
-	font-weight: 200;
-	font-size: 15px;
+	font-weight: 400;
+/* 	font-size: 15px; */
 	line-height: 1.6;
 	color: #767572;
 	letter-spacing: -0.025em;
@@ -101,7 +101,7 @@ fieldset {
 .product-list .txt-ti {
     margin-top: 15px;
     height: 50px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .product-field .cont > div {
@@ -115,7 +115,7 @@ fieldset {
     top: 26px;
     color: #101010;
     font-size: 18px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .innercon > fieldset > legend {
@@ -318,13 +318,13 @@ fieldset {
 	position: absolute;
 	left: 0;
 	top: 19px;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 .addrinfo span>strong {
 	position: relative;
 	padding-right: 25px;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 .addrinfo span {
@@ -335,6 +335,7 @@ fieldset {
 .addrinfo .addr {
 	margin-top: 2px;
 	color: #454545;
+	font-weight: 600;
 }
 
 .addrinfo .arrow {
@@ -379,5 +380,55 @@ fieldset {
 	font-size: 0;
 }
 
+.product-list.nothumb .txt-num strong {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 14px;
+}
 
+em {
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: -0.03em;
+}
+.product-list.nothumb .txt-num em {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Roboto";
+}
 
+.delivery-field .addrinfo .addr {
+    margin-top: 6px;
+}
+
+.pay-field input[type="radio"]:checked + span .icon.hpointpay {
+    background-position: 0 -470px;
+}
+.icon {
+    display: inline-block;
+    text-align: left;
+    text-indent: -9999px;
+    background: url(/evenapp/resources/img/icon.png) no-repeat 0 0;
+}
+.icon.hpointpay {
+    margin-top: -3px;
+    width: 70px;
+    height: 29px;
+    background-position: 0 -502px;
+    vertical-align: top;
+}
+
+.rightarea .btn-order em {
+    margin-left: 8px;
+    color: #ffd2b8;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.rightarea .btn-order .txt-price {
+    margin-right: 7px;
+    color: #ffd2b8;
+    font-size: 18px;
+    font-weight: 540;
+}

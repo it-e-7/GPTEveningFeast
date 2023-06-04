@@ -1,0 +1,431 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
+	font-weight: 400;
+	line-height: 1.6;
+	color: #767572;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+div {
+	display: block;
+}
+
+i, p, div, span, li {
+	margin: 0;
+}
+
+article, aside, details, footer, header, menu, nav, section {
+	display: block;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: 400;
+}
+
+
+#contents {
+	position: relative;
+	padding: 44px 0 120px;
+	width: 100%;
+	min-height: calc(100% - 360px);
+	z-index: 10;
+}
+
+#contents h2 {
+	color: #101010;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+#contents>.innercon {
+	position: relative;
+	margin: 0 auto;
+	width: 1204px;
+}
+
+.innercon:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.conarea {
+	position: relative;
+}
+
+.conarea:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.leftarea {
+	float: left;
+	width: 800px;
+}
+
+.confirmdata {
+	margin: 14px 0 43px;
+	position: relative;
+	padding-top: 54px;
+	text-align: center;
+}
+
+.confirmdata>h3 {
+	color: #101010;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.confirmdata>p {
+	margin-top: 1px;
+}
+
+.confirmdata:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background: url(/evenapp/resources/img/icon.png) no-repeat -250px -50px;
+}
+
+.innercon .tit {
+	display: block;
+	padding-top: 15px;
+	width: 100%;
+	color: #101010;
+	font-size: 24px;
+	border-top: 2px solid #767572;
+}
+
+.order-info .delivery-field>.cont {
+	padding-bottom: 36px;
+}
+
+.delivery-field .addrinfo {
+	position: relative;
+	padding: 19px 0 19px 160px;
+}
+
+.delivery-field .addrinfo>strong {
+	position: absolute;
+	left: 0;
+	top: 19px;
+	font-weight: 400;
+}
+
+.addrinfo span {
+	display: block;
+	color: #454545;
+}
+
+.addrinfo span>strong {
+	position: relative;
+	padding-right: 25px;
+	font-weight: 400;
+}
+
+.addrinfo .addr {
+	margin-top: 2px;
+	color: #454545;
+}
+
+.delivery-field .addrinfo .addr {
+	margin-top: 6px;
+}
+
+.innercon .tit em {
+	margin-left: 6px;
+	line-height: 1;
+	color: #ff6913;
+	font-size: 24px;
+	font-weight: 700;
+	font-family: "Roboto";
+}
+
+em {
+	display: inline-block;
+	font-style: normal;
+	letter-spacing: -0.03em;
+}
+
+.order-info .product-field .cont {
+	padding-bottom: 15px;
+}
+
+.product-field .cont>div {
+	position: relative;
+	padding: 28px 0 12px 160px;
+}
+
+.product-field .ti {
+	position: absolute;
+	left: 0;
+	top: 26px;
+	color: #101010;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.product-list.nothumb {
+	margin-bottom: 40px;
+}
+
+.product-list {
+	position: relative;
+}
+
+.product-list.nothumb>li {
+	margin: 7px 0 0 0;
+	width: 100%;
+}
+
+.product-list.nothumb .txt-ti {
+    display: inline;
+    padding-right: 0;
+    line-height: 24px;
+    color: #101010;
+    font-size: 18px;
+}
+.product-list .txt-ti {
+    margin-top: 15px;
+    font-weight: 400;
+    height: 50px;
+}
+
+.product-list.nothumb .txt-num {
+	display: inline-block;
+    margin-left: 8px;
+    color: #454545;
+    font-size: 15px;
+    margin-right: 14px;
+}
+
+.product-list.nothumb .txt-num strong {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.product-list.nothumb .txt-num em {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.rightarea {
+	float: right;
+	border: none;
+	margin-bottom: 48px;
+	width: 340px;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.rightarea .price-field {
+	padding-bottom: 15px;
+}
+
+.rightarea>div {
+	margin-bottom: 8px;
+	padding: 0 32px;
+	background-color: #f8f8f8;
+}
+
+.rightarea .price-field .tit {
+	margin-bottom: -3px;
+}
+
+.rightarea .tit {
+	padding: 23px 0 12px;
+	border-top: none;
+}
+
+.rightarea .price-field dl {
+	display: table;
+	width: 100%;
+	margin-top: 0;
+	padding: 0;
+}
+
+.rightarea .price-field dl dt {
+	display: table-cell;
+	line-height: 29px;
+	color: #454545;
+	font-size: 15px;
+	vertical-align: top;
+	word-break: break-all;
+}
+
+.rightarea .price-field dl dd {
+	display: table-cell;
+	line-height: 29px;
+	color: #101010;
+	text-align: right;
+	vertical-align: top;
+	font-size: 15px;
+}
+
+.rightarea .price-field dl dd strong {
+	position: relative;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+.rightarea .price-field dl dd strong em {
+	font-weight: 700;
+	font-family: "Roboto";
+}
+
+.rightarea .price-field dl.total {
+	border-top: 1px solid #e7e7e7;
+	margin-top: 8px;
+}
+
+.rightarea .price-field .total dt {
+	line-height: 48px;
+}
+
+.rightarea .price-field dl.total dt {
+	color: #ff6913;
+	font-weight: 600;
+}
+
+.rightarea .price-field .total dd {
+	line-height: 48px;
+}
+
+.rightarea .price-field dl.total dd {
+	color: #ff6913;
+}
+
+.rightarea .price-field .total dd strong {
+	font-size: 15px;
+}
+
+.rightarea .price-field dl.total dd strong {
+	font-weight: 200;
+}
+
+.rightarea .price-field .total dd strong em {
+	font-size: 20px;
+}
+
+.rightarea .pay {
+	padding-bottom: 28px;
+}
+
+.rightarea .pay .tit {
+	padding-bottom: 12px;
+}
+
+.rightarea .pay dl {
+	display: table;
+	width: 100%;
+}
+
+.rightarea .pay dl dt {
+	display: table-cell;
+	color: #454545;
+}
+
+.rightarea .pay dl dd {
+	display: table-cell;
+	text-align: right;
+}
+
+.rightarea .txt-price {
+	color: #101010;
+	font-size: 14px;
+}
+
+.rightarea .txt-price em {
+	font-size: 16px;
+	font-weight: 700;
+	font-family: "Roboto";
+}
+
+.rightarea .pay p {
+	margin-top: 4px;
+	line-height: 21px;
+	font-size: 13px;
+}
+
+.btns {
+	padding-top: 48px;
+	border-top: 1px solid #e7e7e7;
+	position: relative;
+	display: block;
+	text-align: center;
+	font-size: 0;
+}
+
+.btns .btn {
+	width: 276px;
+	margin: 0 4px;
+}
+
+.btn.fill.lightgray {
+	color: #101010;
+	background-color: #f3f3f3;
+	border-color: #f3f3f3;
+}
+
+.btn.fill.orange {
+	color: #fff;
+	background-color: #ff6913;
+}
+
+.btn.orange {
+	color: #ff6913;
+	border: 1px solid #ff6913;
+}
+
+.btn.big {
+	height: 56px;
+	line-height: 54px;
+	font-size: 18px;
+}
+
+.btn.lightgray {
+	color: #767572;
+	border: 1px solid #dbd9d6;
+}
+
+.btn {
+	display: inline-block;
+	position: relative;
+	padding: 0 12px;
+	/*     height: 42px;
+    line-height: 40px; */
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	background-color: #fff;
+	vertical-align: top;
+}

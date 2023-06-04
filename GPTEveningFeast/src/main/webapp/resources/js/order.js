@@ -20,6 +20,7 @@ function moveOrderList() {
 }
 
 function getOrderList() {
+	console.log("getOrderList");
 	const orders = $(".order-list-wrapper");
 	
 	orders.each(function(index, order) {
@@ -41,5 +42,12 @@ function getOrderList() {
 }
 
 $(document).ready(function() {
+	console.log("구매 완료 페이지");
 	getOrderList();
+	
+	const totalPrice = +$('.orderprice strong em').text().replace(/,/g, '').replace('원', '');
+	const deliCharge = totalPrice > 50000 ? 0 : 3500;	 
+	$('.plus strong em').text(deliCharge.toLocaleString());
+	
+	
 });

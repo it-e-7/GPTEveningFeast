@@ -63,7 +63,7 @@
 							<div class="cont">
 								<div>
 									<strong class="ti">
-										<em>배송</em>
+										배송
 									</strong>
 									<ul class="product-list nothumb">
 										<c:forEach var="vo" items="${preOrderProduct}">
@@ -163,7 +163,9 @@
 <%-- 						<c:out value="${fn:length(preOrderProduct)}" /> --%>
 						<span class="txt-price">
 							총 
-							<em id="expSumAmt">0</em>
+							<em id="expSumAmt">
+								<fmt:formatNumber value="${price}" pattern="#,###" />
+							</em>
 							원
 						</span>
 						<strong>결제하기</strong>

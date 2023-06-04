@@ -83,7 +83,7 @@ a {
 .riget-area {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	padding-top: 70px;
 }
 
 .info {
@@ -103,14 +103,15 @@ a {
 }
 
 .purchaseButton {
-	padding: 0 12px;
-	height: 42px;
-	line-height: 40px;
-	text-align: center;
-	/* color: #fff; */
-	font-size: 15px;
-	/* background-color: #fff; */
-	vertical-align: top;
+    height: 42px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    background-color: #fff;
+    vertical-align: top;
+    color: #ff6913;
+    border: 1px solid #ff6913;
+    padding: 0 18px;
 }
 
 .txt-price {
@@ -238,13 +239,28 @@ input[id="item-check-box"] {
 	left: 0;
 }
 
-.delivary-text-title {
-	display: block;
-	width: 100%;
-	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
-	padding: 15px 0 17px;
-	width: 100%;
-	color: #101010;
-	font-size: 24px;
-	border-top: 2px solid #767572;
+.tit {
+    display: block;
+    width: 100%;
+    border-top: 2px solid #767572;
+    padding: 15px 0 17px;
+    color: #101010;
+    font-size: 24px;
+}
+
+.tit em {
+    margin-left: 6px;
+    line-height: 1;
+    color: #ff6913;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Roboto";
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: -0.03em;
+}
+
+.cont {
+    display: block;
+    border-bottom: 2px solid #767572;
 }
