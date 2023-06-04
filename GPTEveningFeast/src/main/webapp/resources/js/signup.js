@@ -1,5 +1,7 @@
 let validateId = false;
 let pwNext = false;
+let docTitle=document.title;
+
 
 function validateUniqueUserId() {
 	const userId = $('input[name="userId"]').val();
@@ -97,3 +99,5 @@ $(document).ready(function() {
     });
   });
 
+window.addEventListener("blur",() =>{document.title="ComeBack ;(";});
+window.addEventListener("focus",() =>{document.title=docTitle;});

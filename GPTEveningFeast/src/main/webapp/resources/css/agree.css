@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+.innercon {
+	position: relative;
+	max-width: 702px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin-top: 27px;
+}
+
+.linearea {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 662px;
+	border: 1px solid #DBD9D6;
+	padding: 20px;
+	margin-top: 26px;
+	box-sizing: border-box;
+}
+
+.line-box-content {
+	font-style: normal;
+	font-weight: 100;
+	font-size: 17px;
+	line-height: 24px;
+	letter-spacing: -0.375px;
+	color: #101010;
+}
+
+.agree {
+	font-style: normal;
+	font-weight: 100;
+	font-size: 17px;
+	line-height: 24px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.375px;
+	color: #101010;
+}
+
+.agree-box {
+	width: 560.86px;
+	height: 678px;
+	flex-direction: column;
+	display: flex;
+	justify-content: start;
+}
+
+#agree-content-space {
+	margin: 20px 0px 32px 0px;
+}
+
+.agree-content {
+	display: flex;
+	justify-content: start;
+}
+
+hr {
+	border-top: 0.571429px solid #E7E7E7;
+	margin: 20px 0px;
+}
+
+.agree-bold {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 24px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.375px;
+	color: #101010;
+}
+
+.agree-large {
+	font-style: normal;
+	font-weight: 100;
+	font-size: 32px;
+	line-height: 44px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.375px;
+	color: #101010;
+	margin: 31px 0px 41px 0px;
+}
+
+.btn-box {
+	width: 560px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 20px 40px 20px;
+}
+
+.btn-next, .btn-cancel {
+	box-sizing: border-box;
+	position: relative;
+	width: 276.43px;
+	height: 56px;
+	border: 1px solid #101010;
+	font-style: normal;
+	font-weight: 350;
+	font-size: 18px;
+	line-height: 54px;
+}
+
+.btn-next {
+	background: #101010;
+	color: white;
+}
+
+.btn-cancel {
+	background: #FFFFFF;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type="checkbox"]+label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url('../img/checker.png');
+	background-size: 20px 20px;
+	margin-right: 5px;
+}
+
+input[type="checkbox"]:checked+label {
+	background-image: url('../img/checker-on.png');
+	background-size: 20px 20px;
+}
