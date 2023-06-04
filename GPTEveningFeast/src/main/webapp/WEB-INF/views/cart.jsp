@@ -23,11 +23,12 @@
 	<div class="all-cart-container">
 		<!-- 		<div class="cart-container"> -->
 		<div class="left-area">
-			<h1>장바구니</h1>
+			<h1 class="top-text">장바구니</h1>
 
 			<input type="checkbox" name="allCheck" id="allCheck" checked>
 
 			<label for="allCheck">전체 선택</label> <br> <br>
+			<d3 class="delivary-text-title">배송</d3>
 
 			<div>
 				<c:forEach var="vo" items="${cartInfo}" varStatus="loop">
@@ -36,15 +37,16 @@
 
 					<div class="productContainer" index="${loop.index}">
 						<div class="productInfo">
-							<a href="/evenapp/product/${vo.productId}"> <input
-								type="checkbox" class="productCheckbox" checked> <img
+							<a href="/evenapp/product/${vo.productId}"> 
+							<input type="checkbox" class="productCheckbox" id="item-check-box" checked> 
+								<img
 								class="productImg" src="${vo.productImgUrl}" alt="이미지">
 							</a>
 							<div class="productDetails">
 								<div class="delete-name-box">
 									<div class="ellipsis" id="product_name_${loop.index}">${vo.productName}</div>
 									<button class="deleteButton"
-										onclick="deleteCartProduct('${vo.productId}')">X</button>
+										onclick="deleteCartProduct('${vo.productId}')"></button>
 								</div>
 								<span class="info">
 									<div class="ea-area">
@@ -75,14 +77,31 @@
 		</div>
 		<div></div>
 		<div class="riget-area">
-			<div class="price-box">
-			<div class="totalAmount">
-				<div class="product-price-text">총 상품금액 </div>
-				<p class="product-price-num">
-					<fmt:formatNumber value="${totalProductAmount}" pattern="#,###" /> 원
+			<fieldset class="price-box">
+				<d1 class="orderprice">
+				<div class="product-price-text">총 상품금액</div>
+				<p class="product-price-num" id="totalAmount">
+					<fmt:formatNumber value="${totalProductAmount}" pattern="#,###" />
+					원
 				</p>
-			</div>
-			</div>
+				</d1>
+
+				<d1 class="orderprice">
+				<div class="product-price-text">총 배송비</div>
+				<p class="product-price-num" id="delivery-price-text">
+					<fmt:formatNumber value="0" pattern="#,###" />
+					원
+				</p>
+				</d1>
+				<d1 class="total">
+					<div class="product-price-text">총 결제예상금액</div>
+					<p class="product-price-num" id="last-total-price">
+						<fmt:formatNumber value="0" pattern="#,###" />
+						원
+					</p>
+				</d1>
+
+			</fieldset>
 			<button class="orderButton" onclick="moveToOrder()">주문하기
 				${fn:length(cartInfo)}</button>
 		</div>

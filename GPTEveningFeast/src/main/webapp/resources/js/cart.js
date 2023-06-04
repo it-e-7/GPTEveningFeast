@@ -34,16 +34,24 @@ let totalPrice;
 function totalPricePrint() {
 	let totalProductAmount = 0;
     let selectedCount = 0;
+    let delivaryCharge = 0;
     $('.productCheckbox:checked').each(function() {
         const productIndex = $(this).closest('.productContainer').attr("index");
         const productPrice = +$(`#total_price_${productIndex}`).text().replace(/,/g, '').replace('원', '');
         totalProductAmount += productPrice;
         selectedCount++;
     });
-    $('.totalAmount p').text(totalProductAmount.toLocaleString() + " 원");
+    $('#totalAmount').text(totalProductAmount.toLocaleString() + " 원");
     $('.orderButton').text("주문하기 " + selectedCount);
     
+    delivaryCharge = (totalProductAmount < 50000 ? 3500 : 0);
+    console.log(delivaryCharge);
+    $('#delivery-price-text').text(delivaryCharge.toLocaleString() + " 원");
+    
     totalPrice = totalProductAmount;
+    
+    $('#last-total-price').text((totalPrice+delivaryCharge).toLocaleString() + " 원");
+    
 }
 
 
