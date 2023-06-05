@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +18,10 @@
 		</div>
 	</div>
 
-	<div>
-		<h3>GPT의 추천</h3>
+	<div class="content-wrapper">
+		<p>GPT가 요리를 완성했어요 !</p>
+		<h2>GPT의 추천 레시피</h2>
 		<h2>${ GPTResult.menu }</h2>
-
-		<hr>
 
 		<span>
 			<h4>준비 재료</h4> <c:forEach items="${ GPTResult.ingredients }"
@@ -37,16 +37,24 @@
 		<hr>
 		<button onclick="cartGPT()">관련상품 장바구니 담기</button>
 		<p>관련상품 ${ fn:length(productResult) }건</p>
-
-		<c:forEach items="${ productResult }" var="product">
-			<a href="/evenapp/product/${ product.productId }"> <input
-				type="checkbox" value="${ product.productId }" name="product">
-				<img src="${ product.productImgUrl }" />
-				<p>${ product.productName }</p>
-				<p>${ product.productPrice }</p>
-			</a>
-		</c:forEach>
-
+		
+		<ul class="product-list-container">
+			<c:forEach items="${ productResult }" var="product">
+				<li id="${ product.productId }">
+				<a href="/evenapp/product/${ product.productId }"> 
+					<img src="${ product.productImgUrl }" class="product-list-img">
+					<p class="product-name">${ product.productName }</p>
+				</a> 
+				<span class="product-price"> 
+					<strong> 
+						<em> 
+							<fmt:formatNumber value="${ product.productPrice }" pattern="#,###" />
+						</em> 원
+					</strong> 
+					<input type="checkbox" value="${ product.productId }" name="product">
+				</span></li>
+			</c:forEach>
+		</ul>
 	</div>
 </body>
 <script src="/evenapp/resources/js/gptresult.js"></script>
