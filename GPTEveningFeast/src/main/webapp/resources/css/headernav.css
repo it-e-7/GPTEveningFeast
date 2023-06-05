@@ -36,6 +36,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding-top: 5px;
 }
 
 .category-popup {
@@ -53,6 +54,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	gap: 8px;
 	cursor: pointer;
 	padding-bottom: 18px;
 }
@@ -166,6 +168,10 @@
     width: 220px;
     background-color: #ffffff;
     border: 1px solid #303030;
+}
+
+.search-form input[type="text"]:focus .search-btn {
+    background:url(/evenapp/resources/img/search_active.png) no-repeat;"
 }
 
 .search-btn {

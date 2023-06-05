@@ -1,17 +1,27 @@
 let scrollLock = false;
 const urlParams = new URLSearchParams(window.location.search);
+const ctgrId = urlParams.get("category");
+const sectId = urlParams.get("section");
+const searchParam = urlParams.get("searchParam");
 
 setTimeout(() => {
 	scrollLock = false;
 }, 1000);
 
+if(sectId) {
+	const section = $(`.product-list-section-wrapper li[id="${sectId}"] a`);
+	section.css('color', '#ff6913');
+	section.css('font-weight', '600');
+} else {
+	const section = $('.product-list-section-wrapper li a:contains("전체보기")');
+	section.css('color', '#ff6913');
+	section.css('font-weight', '600');
+}
+
 function scrollList() {
 
 	if(scrollLock === false){
 		scrollLock = true;
-		const ctgrId = urlParams.get("category");
-		const sectId = urlParams.get("section");
-		const searchParam = urlParams.get("searchParam");
 		
 		const offset = +$(".product-list-container").data("offset") + 1;
 		$(".product-list-container").data("offset", offset);
@@ -28,13 +38,22 @@ function scrollList() {
 			success: function(response) {
 				response.forEach(product => {
 					container.append($(
-					`<li>
-						<a href="/evenapp/product/${ product.productId }">
-							<img src="${ product.productImgUrl }">
-							<p>${ product.productName }</p>
-							<p>${ product.productPrice }</p>
-						</a>
-					</li>`));
+					`<li id="${ product.productId }">
+					<a href="/evenapp/product/${ product.productId }"> 
+					<img src="${ product.productImgUrl }" class="product-list-img">
+						<p class="product-name">${ product.productName }</p> 
+					</a>
+					<span class="product-price">
+						<strong> 
+							<em>
+								${ product.productPrice.toLocaleString() }
+							</em> 
+							원
+						</strong>
+						<button class="cart-btn" onclick="cartFromList(${ product.productId })">
+						</button>
+					</span>
+				</li>`));
 				});
 				setTimeout(() => {
 					scrollLock = false;
@@ -46,6 +65,22 @@ function scrollList() {
 		});
 	}
 	
+}
+
+function cartFromList(productId) {
+	const productCnt = 1;
+	
+	ajax({
+		url: '/evenapp/cart',
+		type: 'POST',
+		data: {
+			productId,
+			productCnt,
+		},
+		success: function(response) {
+			alert("장바구니에 담겼습니다");
+		}
+	});
 }
 
 //현재 스크롤 위치 저장
