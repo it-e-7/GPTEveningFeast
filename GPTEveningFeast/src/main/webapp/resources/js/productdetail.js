@@ -22,6 +22,9 @@ function cart(productId) {
 			productId,
 			productCnt,
 		},
+		success: function(response) {
+			updateCartCount();
+		}
 	});
 }
 

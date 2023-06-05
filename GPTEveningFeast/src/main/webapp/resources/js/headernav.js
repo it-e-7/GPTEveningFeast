@@ -25,6 +25,20 @@ ajax({
 	}
 });
 
+updateCartCount();
+
+function updateCartCount() {
+	ajax({
+		url: "/evenapp/cart/count",
+		method: "GET",
+		success: function(data) {
+			if(!isNaN(+data)) {
+				$(".cart-count").text(data);
+			}
+		}
+	});
+}
+
 function loadingGPT() {
 	$(".gpt-loading-modal-wrapper").css("display", "block");
 }

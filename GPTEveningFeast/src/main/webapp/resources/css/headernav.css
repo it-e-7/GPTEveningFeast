@@ -36,6 +36,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding-top: 5px;
 }
 
 .category-popup {
@@ -53,6 +54,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	gap: 8px;
 	cursor: pointer;
 	padding-bottom: 18px;
 }
@@ -168,6 +170,10 @@
     border: 1px solid #303030;
 }
 
+.search-form input[type="text"]:focus .search-btn {
+    background:url(/evenapp/resources/img/search_active.png) no-repeat;"
+}
+
 .search-btn {
 	position: absolute;
 	top: 8px;
@@ -182,4 +188,22 @@
 
 .search-btn .active {
 	background:url(/evenapp/resources/img/search_active.png) no-repeat;"
+}
+
+.cart-count {
+	position: absolute;
+    top: -5px;
+    right: -8px;
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    text-indent: 0;
+    font-weight: 700;
+    font-family: "Roboto";
+    background-color: #ff6913;
+    border-radius: 24px;
+    z-index: 1;
 }

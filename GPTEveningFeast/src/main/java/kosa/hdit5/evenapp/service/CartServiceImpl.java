@@ -44,4 +44,9 @@ public class CartServiceImpl implements CartService{
 			mapper.insertOrUpdateCart(vo);
 		}
 	}
+	
+	@Override
+	public String getCartCount(String userId) {
+		return mapper.selectCartCount(userId);
+	}
 }

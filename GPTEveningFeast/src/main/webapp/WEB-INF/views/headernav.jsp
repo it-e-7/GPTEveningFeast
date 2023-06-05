@@ -38,6 +38,7 @@
 		</div>
 		<a href="/evenapp/cart">
 			<img src="/evenapp/resources/img/cart.png">
+			<span class="cart-count">0</span>
 		</a>
 	</div>
 </div>

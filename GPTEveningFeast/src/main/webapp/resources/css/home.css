@@ -1,0 +1,74 @@
+.recommend-product-wrapper {
+	margin-top: 80px;
+}
+
+.recommend-product-wrapper h2 {
+	padding-bottom: 19px;
+}
+
+.random-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+.random-list li {
+	width: 388px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.random-list .product-list-img {
+	width: 388px;
+}
+
+.product-price {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    margin-top: 7px;
+    color: #101010;
+    font-size: 14px;
+}
+
+.product-name {
+	display: block;
+	margin-top: 10px;
+    width: 320px;
+    height: 40px;
+    color: #454545;
+    font-size: 20px;
+    font-weight: 400;
+    overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+.product-price strong {
+	display: inline-block;
+    margin-right: 7px;
+    padding-bottom: 8px;
+    font-weight: 400;
+    color: #000;
+	font-size: 18px;
+}
+
+.product-price em {
+	color: #ff6913;
+	font-size: 32px;
+    font-weight: 700;
+}
+
+.cart-btn {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    background-color: #fff;
+    border: 1px solid #dbd9d6;
+    border-radius: 48px;
+    cursor:pointer;
+    margin-right: 8px;
+    background: url(/evenapp/resources/img/cart_grey.png) no-repeat;
+    background-position: center center;
+}

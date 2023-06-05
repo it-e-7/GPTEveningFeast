@@ -20,6 +20,23 @@ function ajax(config) {
 	$.ajax(config);
 }
 
+function cartFromList(productId) {
+	const productCnt = 1;
+	
+	ajax({
+		url: '/evenapp/cart',
+		type: 'POST',
+		data: {
+			productId,
+			productCnt,
+		},
+		success: function(response) {
+			alert("장바구니에 담겼습니다");
+			updateCartCount();
+		}
+	});
+}
+
 $(document).ready(function() {
     $('a[href="/evenapp/signout"]').click(function(event) {
         event.preventDefault();
