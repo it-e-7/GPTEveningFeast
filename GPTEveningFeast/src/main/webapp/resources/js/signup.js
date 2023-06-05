@@ -34,8 +34,10 @@ function submitForm() {
 		const userName = $('input[name="userName"]').val();
 		const userBirth = $('input[name="userBirth"]').val();
 		const userSex = $('input[name="userSex"]:checked').val();
-		const userAddress = $('input[name="userAddress"]').val();
-		
+		let userAddress = $('input[name="userAddress"]').val();
+		const detailAddress = $('input[name="detailAddress"]').val();
+		const extraAddress = $('input[name="extraAddress"]').val();
+		userAddress = userAddress + extraAddress + " " + detailAddress
 		ajax({
 			url: '/evenapp/signup/success',
 			type: 'POST',
@@ -101,3 +103,37 @@ $(document).ready(function() {
 
 window.addEventListener("blur",() =>{document.title="ComeBack ;(";});
 window.addEventListener("focus",() =>{document.title=docTitle;});
+
+
+function addressSearch(){
+	new daum.Postcode({
+	    oncomplete: function(data) {
+	        var addr = '';
+	        var extraAddr = '';
+
+	        if (data.userSelectedType === 'R') {
+	            addr = data.roadAddress;
+	        } else {
+	            addr = data.jibunAddress;
+	        }
+
+	        if(data.userSelectedType === 'R'){
+	            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                extraAddr += data.bname;
+	            }
+	            if(data.buildingName !== '' && data.apartment === 'Y'){
+	                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	            }
+	            if(extraAddr !== ''){
+	                extraAddr = ' (' + extraAddr + ')';
+	            }
+	            document.getElementById("extraAddress").value = extraAddr;
+	        
+	        } else {
+	            document.getElementById("extraAddress").value = '';
+	        }
+
+	        document.getElementById("userAddress").value = addr;
+	        document.getElementById("detailAddress").focus();    }
+	}).open();
+}

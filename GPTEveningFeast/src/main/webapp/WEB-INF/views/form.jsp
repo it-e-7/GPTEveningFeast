@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>현대식품관 회원가입</title>
+<title>코사식품관 회원가입</title>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="/evenapp/resources/js/signup.js"></script>
 
 <link href="/evenapp/resources/css/main.css" rel="stylesheet" />
 <link href="/evenapp/resources/css/form.css" rel="stylesheet" />
@@ -17,7 +19,7 @@
 	</div>
 	<div class="content-wrapper">
 		<div class="wrap">
-			<h1 class="signup-title">현대식품관 회원가입</h1>
+			<h1 class="signup-title">코사식품관 회원가입</h1>
 			<div class="form-wrapper">
 				<div class="inner-content">
 					<div class="form-title">
@@ -29,39 +31,39 @@
 					</div>
 					<hr>
 					<div class="form-label">
-						<label for="userId">아이디 *</label>
+						<label for="userId">아이디  *</label>
 					</div>
 					<div class="form-content">
-						<input id="userId" type="text" name="userId" onchange="changeId()">
+						<input id="userId" type="text" name="userId" onchange="changeId()" placeholder="아이디를 입력해 주세요.">
 						<button class="btn-validation" onclick="validateUniqueUserId()"
 							type="button">중복확인</button>
 					</div>
 
 					<div class="form-label">
-						<label for="userName">이름 *</label>
+						<label for="userName">이름  *</label>
 					</div>
 					<div class="form-content">
-						<input id="userName" type="text" name="userName">
+						<input id="userName" type="text" name="userName" placeholder="이름을 입력해 주세요.">
 					</div>
 
 					<div class="form-label">
-						<label for="userPw">비밀번호 *</label>
+						<label for="userPw">비밀번호  *</label>
 					</div>
 					<div class="form-content">
 						<input id="userPw" type="password" name="userPw"
-							oninput="checkPw()">
+							oninput="checkPw()" placeholder="비밀번호를 입력해 주세요.">
 					</div>
 
 					<div class="form-label">
-						<label for="pwCheck">비밀번호 확인 *</label>
+						<label for="pwCheck">비밀번호 확인  *</label>
 					</div>
 					<div class="form-content">
 						<input id="pwCheck" type="password" name="pwCheck"
-							oninput="checkPw()">
+							oninput="checkPw()" placeholder="입력하신 비밀번호를 다시 입력해 주세요.">
 					</div>
 
 					<div class="form-label">
-						<label for="userBirth">생년월일 및 성별 *</label>
+						<label for="userBirth">생년월일 및 성별  *</label>
 					</div>
 					<div class="form-content">
 						<input id="userBirth" type="date" name="userBirth">
@@ -76,16 +78,26 @@
 								class="styled-radio-button">남성</label>
 						</div>
 					</div>
-
-
+					
 					<div class="form-label">
 						<label for="userAddress">주소</label>
 					</div>
 					<div class="form-content">
-						<input id="userAddress" type="text" name="userAddress">
+						<input id="userAddress" type="text" name="userAddress" placeholder="서울특별시 종로구 창경궁로 254">
+						<input type="button" class="btn-address" onclick="addressSearch()" value="주소 찾기"><br>
+						
+					</div>
+					
+					<div class="form-label">
+						<label for="userAddress">상세 주소</label>
 					</div>
 					<div class="form-content">
-						<hr>
+						<input type="text" name="detailAddress" id="detailAddress" placeholder="(동, 호수)">
+						<input type="text" name="extraAddress" id="extraAddress" placeholder="">
+					</div>
+					
+					<hr class="spacing">
+					<div class="form-content">
 						<div class="form-buttons">
 						<button class="btn-cancel"
 							onclick="window.location.href='/evenapp/signup'">취소</button>
@@ -98,7 +110,7 @@
 			</div>
 		</div>
 	</div>
-
+<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/signup.js"></script>
 </html>

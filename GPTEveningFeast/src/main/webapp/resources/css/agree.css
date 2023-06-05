@@ -1,10 +1,17 @@
 @charset "UTF-8";
 
+.top-area {
+	margin-bottom: 52px;
+}
+
 .innercon {
 	position: relative;
-	max-width: 702px;
+	max-width: 680px;
 	margin: auto;
-	padding: 0 20px;
+}
+
+.wrap {
+	width: 560px;
 }
 
 h3 {
@@ -17,7 +24,7 @@ h3 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 662px;
+	width: 680px;
 	border: 1px solid #DBD9D6;
 	padding: 20px;
 	margin-top: 26px;
@@ -45,7 +52,7 @@ h3 {
 }
 
 .agree-box {
-	width: 560.86px;
+	width: 560px;
 	height: 678px;
 	flex-direction: column;
 	display: flex;
@@ -83,10 +90,11 @@ hr {
 	font-size: 32px;
 	line-height: 44px;
 	display: flex;
-	align-items: center;
+	width: 560px; align-items : center;
 	letter-spacing: -0.375px;
 	color: #101010;
 	margin: 31px 0px 41px 0px;
+	align-items: center;
 }
 
 .btn-box {
@@ -94,7 +102,7 @@ hr {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0px 20px 40px 20px;
+	padding: 0px 0px 40px 0px;
 }
 
 .btn-next, .btn-cancel {
@@ -124,6 +132,10 @@ input[type="checkbox"] {
 
 label {
 	cursor: pointer;
+}
+
+.member {
+	width: 560px;
 }
 
 input[type="checkbox"]+label {
