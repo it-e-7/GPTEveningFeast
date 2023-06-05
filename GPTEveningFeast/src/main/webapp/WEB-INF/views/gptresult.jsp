@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GPT 추천 레시피</title>
+<link rel="stylesheet" href="/evenapp/resources/css/gptresult.css">
 </head>
 <body>
 
@@ -19,22 +20,42 @@
 	</div>
 
 	<div class="content-wrapper">
+	<div class="gpt-result-title-wrapper">
 		<p>GPT가 요리를 완성했어요 !</p>
-		<h2>GPT의 추천 레시피</h2>
-		<h2>${ GPTResult.menu }</h2>
-
-		<span>
-			<h4>준비 재료</h4> <c:forEach items="${ GPTResult.ingredients }"
-				var="ingredient">
-				<p>${ ingredient }</p>
+		<h1>GPT의 추천 레시피</h1>
+		<h1>${ GPTResult.menu }</h1>
+	</div>
+	<div class="gpt-result-container">
+	<div class="mbox">
+		<div class="nav-button-wrapper">
+			<span class="nav-button active" onclick="clickIngredient()" id="ingred-nav">재료</span>
+			<span class="nav-button" onclick="clickRecipe()" id="recipe-nav">조리방법</span>
+		</div>
+		<div class="ingredient-wrapper">
+			<ul>
+			<h2>준비 재료</h2>
+			<c:forEach items="${ GPTResult.ingredients }" var="ingredient">
+				<li>
+				<img src="resources/img/ico-checklist.png" style="margin-right: 11px;">
+				${ fn:replace(ingredient, "=", " ") }
+				</li>
 			</c:forEach>
-		</span>
-
-		<c:forEach items="${ GPTResult.recipe }" var="line">
-			<p>${ line }</p>
-		</c:forEach>
-
-		<hr>
+			</ul>
+		</div>
+		
+		<div class="recipe-wrapper">
+			<ul>
+			<c:forEach items="${ GPTResult.recipe }" var="line" varStatus="status">
+				<li>
+				<h2>STEP${ status.count }</h2>
+				${ line }
+				</li>
+			</c:forEach>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div class="gpt-product-list-container">
 		<button onclick="cartGPT()">관련상품 장바구니 담기</button>
 		<p>관련상품 ${ fn:length(productResult) }건</p>
 		
@@ -55,6 +76,7 @@
 				</span></li>
 			</c:forEach>
 		</ul>
+	</div>
 	</div>
 </body>
 <script src="/evenapp/resources/js/gptresult.js"></script>

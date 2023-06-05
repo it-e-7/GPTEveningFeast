@@ -43,6 +43,7 @@
 	display: none;
 	position: absolute;
 	top: 100%;
+	z-index: 9999;
 }
 
 .nav-right-menu-wrapper {
