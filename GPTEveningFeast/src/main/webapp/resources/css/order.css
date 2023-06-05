@@ -1,0 +1,434 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
+	font-weight: 400;
+/* 	font-size: 15px; */
+	line-height: 1.6;
+	color: #767572;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+dl {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+dl, dd {
+	margin: 0;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.product-list.nothumb > li {
+    margin: 7px 0 0 0;
+    width: 100%;
+}
+
+#contents {
+	position: relative;
+	padding: 44px 0 120px;
+	width: 100%;
+	min-height: calc(100% - 360px);
+	z-index: 10;
+}
+
+#contents>.innercon {
+	position: relative;
+	margin: 0 auto;
+	width: 1204px;
+}
+
+#contents h2 {
+	color: #101010;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.conarea {
+	position: relative;
+	margin-top: 44px;
+}
+
+.conarea .leftarea {
+	float: left;
+	width: 800px;
+	overflow: hidden;
+}
+
+.product-list.nothumb {
+    margin-bottom: 40px;
+}
+
+.product-list.nothumb .txt-ti {
+    display: inline;
+    padding-right: 0;
+    line-height: 24px;
+    color: #101010;
+    font-size: 18px;
+}
+
+.product-list .txt-ti {
+    margin-top: 15px;
+    height: 50px;
+    font-weight: 400;
+}
+
+.product-field .cont > div {
+    position: relative;
+    padding: 28px 0 12px 160px;
+}
+
+.product-field .ti {
+    position: absolute;
+    left: 0;
+    top: 26px;
+    color: #101010;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.innercon > fieldset > legend {
+	color: #101010;
+	margin-bottom: 10px;
+}
+
+.conarea .rightarea {
+	position: static;
+	float: right;
+	margin-bottom: 48px;
+	inset: 20px auto auto 864px;
+	width: 340px;
+	background-color: #fff;
+	z-index: 2;
+	display: block;
+}
+
+.rightarea .price-field {
+	padding-bottom: 0;
+	border: 1px solid #ff6913;
+	border-bottom: 0;
+}
+
+.rightarea .agree-field {
+	padding-bottom: 0;
+	background-color: #f8f8f8;
+	border: 1px solid #ff6913;
+	border-top: 0;
+}
+
+.rightarea .btn-order {
+	width: 100%;
+}
+
+.btn.fill.orange {
+	color: #fff;
+	background-color: #ff6913;
+}
+
+.btn.big {
+	height: 56px;
+	line-height: 54px;
+	font-size: 18px;
+}
+
+.btn.orange {
+	color: #ff6913;
+	border: 1px solid #ff6913;
+}
+
+.rightarea .price-field dl.orderprice {
+	margin-top: 20px;
+}
+
+.rightarea .price-field dl {
+	display: table;
+	width: 100%;
+	padding: 0 24px;
+	padding-right: 34px;
+	margin-top: 20px;
+	margin: 0;
+}
+
+.order .rightarea .price-field dl dd strong {
+	position: relative;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 200;
+}
+
+.rightarea .price-field dl dd strong em {
+	font-size: 20px;
+	font-weight: 700;
+	font-family: "Roboto";
+	display: inline-block;
+	font-style: normal;
+	letter-spacing: -0.03em;
+}
+
+.rightarea .price-field dl dd {
+	line-height: 32px;
+	display: table-cell;
+	color: #101010;
+	text-align: right;
+	vertical-align: top;
+	margin-inline-start: 40px;
+}
+
+.rightarea .price-field dl dt {
+	line-height: 32px;
+	display: table-cell;
+	color: #454545;
+	font-size: 18px;
+	vertical-align: top;
+	word-break: break-all;
+}
+
+.rightarea .price-field dl.plus dd strong {
+	padding-left: 15px;
+}
+
+.rightarea .price-field dl ~ dl.total {
+	margin-top: 16px;
+}
+
+.rightarea .price-field dl.total {
+	margin-top: 20px;
+	border-top: 1px solid #e7e7e7;
+}
+
+.rightarea .price-field dl.total dt {
+	line-height: 67px;
+	color: #ff6913;
+	font-weight: 600;
+	display: table-cell;
+	font-size: 18px;
+	vertical-align: top;
+	word-break: break-all;
+}
+
+.rightarea .price-field dl.total dd strong em {
+	font-size: 24px;
+	font-weight: 700;
+	font-family: "Roboto";
+	display: inline-block;
+	font-style: normal;
+	letter-spacing: -0.03em;
+	color: #ff6913;
+}
+
+.rightarea .price-field dl.total dd strong {
+	font-size: 18px;
+	font-weight: 200;
+	position: relative;
+	display: inline-block;
+	line-height: 67px;
+	color: #ff6913;
+	text-align: right;
+	vertical-align: top;
+}
+
+.rightarea .agree-field .list {
+	padding: 17px 24px 19px;
+}
+
+.rightarea .agree-field .list li {
+	position: relative;
+	margin-top: 3px;
+	font-size: 13px;
+	color: #767572;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
+	line-height: 1.6;
+}
+
+.agree-field .contarea.agreewrap {
+	position: relative;
+	border-top: 1px solid #e7e7e7;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.agree-field .allagree span {
+	margin: 20px auto;
+	text-align: center;
+	width: 100%;
+	font-size: 13px;
+	color: #101010;
+	font-weight: 600;
+}
+
+.toggle .toggle-ti {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+}
+
+.toggle {
+	position: relative;
+}
+
+.delivery-field .cont {
+	padding-bottom: 60px;
+	width: 100%;
+}
+
+.delivery-field .addrinfo {
+	position: relative;
+	padding: 19px 0 19px 160px;
+}
+
+.delivery-field .addrinfo>strong {
+	position: absolute;
+	left: 0;
+	top: 19px;
+	font-weight: 400;
+}
+
+.addrinfo span>strong {
+	position: relative;
+	padding-right: 25px;
+	font-weight: 400;
+}
+
+.addrinfo span {
+	display: block;
+	color: #454545;
+}
+
+.addrinfo .addr {
+	margin-top: 2px;
+	color: #454545;
+	font-weight: 600;
+}
+
+.addrinfo .arrow {
+	position: relative;
+	display: block;
+	padding-right: 24px;
+	width: 100%;
+	line-height: 24px;
+	color: #454545;
+	text-align: left;
+}
+
+.innercon legend.tit>em {
+	margin-left: 6px;
+	line-height: 1;
+	color: #ff6913;
+	font-size: 24px;
+	font-weight: 700;
+	font-family: "Roboto";
+}
+
+.innercon legend.tit {
+	display: block;
+	padding: 15px 0 17px;
+	width: 100%;
+	color: #101010;
+	font-size: 24px;
+	border-top: 2px solid #767572;
+}
+
+.product-list>strong.txt-ti {
+	display: inline;
+	padding-right: 0;
+	line-height: 24px;
+	color: #101010;
+	font-size: 18px;
+}
+
+.product-list.nothumb>li {
+	margin: 7px 0 0 0;
+	width: 100%;
+	font-size: 0;
+}
+
+.product-list.nothumb .txt-num strong {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+em {
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: -0.03em;
+}
+.product-list.nothumb .txt-num em {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.delivery-field .addrinfo .addr {
+    margin-top: 6px;
+}
+
+.pay-field input[type="radio"]:checked + span .icon.hpointpay {
+    background-position: 0 -470px;
+}
+.icon {
+    display: inline-block;
+    text-align: left;
+    text-indent: -9999px;
+    background: url(/evenapp/resources/img/icon.png) no-repeat 0 0;
+}
+.icon.hpointpay {
+    margin-top: -3px;
+    width: 70px;
+    height: 29px;
+    background-position: 0 -502px;
+    vertical-align: top;
+}
+
+.rightarea .btn-order em {
+    margin-left: 8px;
+    color: #ffd2b8;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.rightarea .btn-order .txt-price {
+    margin-right: 7px;
+    color: #ffd2b8;
+    font-size: 18px;
+    font-weight: 540;
+}

@@ -1,11 +1,20 @@
 function successOrder() {
-	ajax({
-		url : '/evenapp/order/success',
-		type : 'POST',
-		success : function(response) {
-			window.location.href = '/evenapp/order/ordersuccess';
-		}
-	});
+	
+	const agreeButton = $('#agreeAll').is(":checked");
+	
+	if (agreeButton){
+		ajax({
+			url : '/evenapp/order/success',
+			type : 'POST',
+			success : function(response) {
+				window.location.href = '/evenapp/order/ordersuccess';
+			}
+		});
+	}
+	else {
+		const msg = $('.talk').text();
+		alert(msg);
+	}
 }
 
 function moveOrderList() {
@@ -20,6 +29,7 @@ function moveOrderList() {
 }
 
 function getOrderList() {
+	console.log("getOrderList");
 	const orders = $(".order-list-wrapper");
 	
 	orders.each(function(index, order) {
@@ -41,5 +51,15 @@ function getOrderList() {
 }
 
 $(document).ready(function() {
+	console.log("구매 완료 페이지");
 	getOrderList();
+	
+	const price = +$('.orderprice strong em').text().replace(/,/g, '').replace('원', '');
+	const deliCharge = price > 50000 ? 0 : 3500;
+	const totalPrice = price + deliCharge;
+	$('.plus strong em').text(deliCharge.toLocaleString());
+	$('.total strong em').text(totalPrice.toLocaleString());
+	$('.txt-price em').text(totalPrice.toLocaleString());
+	
+	
 });

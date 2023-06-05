@@ -19,60 +19,100 @@
 			<%@ include file="/WEB-INF/views/headernav.jsp"%>
 		</div>
 	</div>
-
-	<div class="content-wrapper">
-		<div class="product-detail-container">
-			<img src="${productDetail.productImgUrl}" />
-			<div class="detail-quantity-btn-wrapper">
-				<div>
-					<div>
-						<p>${productDetail.productName}</p>
-						<p>${productDetail.productPrice}</p>
-					</div>
-					<div>
-						<div class="quantity-selector">
-							<p id="product_name">${productDetail.productName}</p>
-							<input type="hidden" id="product_id"
-								value="${productDetail.productId}">
-							<div class="quantity-price-wrapper">
-								<span>
-									<button onclick="decrement()">-</button> <input
-									id="product_cnt" type="number" value="1" min="1"
-									name="product_count" disabled>
-									<button onclick="increment()">+</button>
-								</span>
-								<p id="product_price">
-									<fmt:formatNumber value="${productDetail.productPrice}"
-										pattern="#,###" />
-									원
-								</p>
-							</div>
+	<div id="contents">
+		<div class="innercon">
+			<section class="proinfo-area">
+				<div class="propic">
+					<div class="propicbig">
+						<div class="zoomWrapper" style="height: 624px; width:520px;">
+							<img data-zoom-image="${productDetail.productImgUrl}"
+								src="${productDetail.productImgUrl}" 
+								style="position: absolute;"/>
 						</div>
 					</div>
 				</div>
-				<div class="price-btn-wrapper">
-					<p id="total_price">
-						<fmt:formatNumber value="${productDetail.productPrice}"
-							pattern="#,###" />
-						원
-					</p>
+				<div class="proinfo">
+					<h2>
+						<strong>${productDetail.productName}</strong>
+						<small></small>
+					</h2>
 					
-					<div class="btn-wrapper">
-						<button onclick="cart('${productDetail.productId}')">장바구니</button>
-						<button onclick="quickOrder()">바로구매</button>
+					<div class="price" id="price_section">
+						<span class="txt-price">
+							<strong>
+								<em>${productDetail.productPrice}</em>
+								원
+							</strong>
+						</span>
+					</div>
+					<div class="detailinfo">
+						<dl>
+							<dt>상품선택</dt>
+							<dd>
+								<div class="optionarea" id="top_optionarea">
+									<div class="optionls">
+										<div>
+											<strong class="txt-ti">
+												${productDetail.productName}
+											</strong>
+											<div class="ea-area">
+												<input type="number" id="product_cnt" value="1" min="1"
+														name="product_count" readonly>
+												<button type="button" class="btn-down" onclick="decrement()">-</button> 
+												<button type="button" class="btn-up" onclick="increment()">+</button>
+											</div>
+											<span class="txt-price">
+												<em>
+													<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" />
+												</em>
+												원
+											</span>
+										</div>
+									</div>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="buybutton" id="top_buybutton">
+						<p class="txt-total">
+							총 금액 
+							<strong>
+								<em>
+									<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" />
+								</em>
+								원
+							</strong>
+						</p>
+						<div class="btns">
+							<button type="button" class="btn orange bigger btn-buy" 
+									onclick="cart('${productDetail.productId}')">장바구니</button>
+							<button type="button" class="btn fill orange bigger btn-buy" 
+									onclick="quickOrder()">바로구매</button>
+						</div>
 					</div>
 				</div>
+			</section>
+		
+		<!-- 페이지 윗 부분
+		 -->
+		
+			<div class="product-detail-container">
+					<input type="hidden" id="product_id"
+						value="${productDetail.productId}">
+			</div>
+	
+			<div action="/product/${productDetail.productId}" method="get">
+			<%-- 	<img src="${productDetail.productImgUrl}" /> --%>
+				<br>
+				${productDetail.productName}<br>
+				<p class="product-one-price">
+					<fmt:formatNumber value="${productDetail.productPrice}"
+						pattern="#,###" />
+					원
+				</p>
+				<br> ${productDetail.detail}
 			</div>
 		</div>
-
-	<div action="/product/${productDetail.productId}" method="get">
-		<img src="${productDetail.productImgUrl}" /><br>
-		${productDetail.productName}<br> 
-		<p class="product-one-price">
-			<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" /> 원
-		</p><br>
-
-		${productDetail.detail}
 	</div>
 </body>
 <script src="/evenapp/resources/js/productdetail.js"></script>

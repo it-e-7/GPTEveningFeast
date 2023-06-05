@@ -27,11 +27,14 @@ function cart(productId) {
 
 function calculateTotalPrice(){
     let price = +$('.product-one-price').text().replace(/,/g, '').replace('원', '');
-    console.log(price);
     let count = +$('#product_cnt').val();
     let total = price * count;
-    $('#total_price').text(total.toLocaleString() + '원');
-    $('#product_price').text(total.toLocaleString() + '원');
+    $('.txt-total em').text(total.toLocaleString());
+    $('.options .txt-price em').text(total.toLocaleString());
+    
+    const test = $('.options .txt-price em').text();
+    console.log(test);
+   
 }
 
 function quickOrder() {
@@ -39,9 +42,10 @@ function quickOrder() {
 	const cart = []
 	
     product.productId = $('#product_id').val();
+	console.log(product.productId);
     product.productCnt = +$('#product_cnt').val();
-    product.productName = $('#product_name').text();
-    const price = +$('#total_price').text().replace(/,/g, '').replace('원', '');
+    product.productName = $('.options .txt-ti').text();
+    const price = +$('.txt-total em').text().replace(/,/g, '').replace('원', '');
     cart.push(product);
 	  
 	ajax({
@@ -51,7 +55,6 @@ function quickOrder() {
         data: JSON.stringify({cart:cart, productPrice:price}),
         success: function(response) {
         	if (response="success") {
-	            console.log(response);
 	            window.location.href = '/evenapp/order';
         	}
         }
