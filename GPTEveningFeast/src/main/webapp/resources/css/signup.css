@@ -1,23 +1,19 @@
 @charset "UTF-8";
 
 .top-area {
-	margin-bottom: 50px;
+	margin-bottom: 173px;
 }
 
 .innercon {
 	position: relative;
 	width: 100%;
 	padding: 0 20px;
+	margin-bottom: 173px;
 }
 
 h3 {
 	margin-bottom: 20px;
 	font-size: 1.5em;
-}
-.terms h3 {
-	font-weight: 100;
-	font-size: 32px;
-	line-height: 44px;
 }
 
 .linearea {
@@ -25,9 +21,9 @@ h3 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
+	width: 680px;
 	border: 1px solid #DBD9D6;
-	padding: 20px;
+	padding: 20px 40px;
 	box-sizing: border-box;
 }
 
@@ -35,7 +31,7 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	width: 580px;
+	width: 560px;
 	text-align: left;
 	margin-bottom: 40px;
 	font-weight: 300;
@@ -62,12 +58,12 @@ h3 {
 	word-break: keep-all;
 	word-wrap: break-word;
 }
-.line{
+
+.line {
 	width: 520px;
 	border-top: 0.571429px solid #E7E7E7;
-	
-	
 }
+
 #btn {
 	display: block;
 	width: 100%;
@@ -80,6 +76,7 @@ h3 {
 
 .member {
 	text-align: left;
+	width: 560px;
 }
 
 #logo {
@@ -89,14 +86,16 @@ h3 {
 
 strong {
 	display: block;
-	margin-top: 24px;
+	margin: 24px 0px 24px 0px;
 	color: #101010;
 	font-size: 18px;
 	font-weight: 400;
 }
+
 .checkbox {
-	display:flex;
+	display: flex;
 }
+
 input[type="checkbox"] {
 	display: none;
 }

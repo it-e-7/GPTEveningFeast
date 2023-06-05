@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+.top-area {
+	margin-bottom: 173px;
+}
+
+.innercon {
+	position: relative;
+	width: 440px;
+	margin-bottom: 127px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 31px;
+	line-height: 51px;
+	/* or 165% */
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: -0.375px;
+	color: #101010;
+	margin-bottom: 12px;
+}
+
+p {
+	font-weight: 100;
+	font-size: 15px;
+	line-height: 24px;
+	/* or 160% */
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: -0.375px;
+	color: #767572;
+	margin-bottom: 37px;
+}
+
+.linearea {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 680px;
+	border: 1px solid #DBD9D6;
+	padding: 20px 40px;
+	box-sizing: border-box;
+}
+
+.inst {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 560px;
+	text-align: left;
+	margin-bottom: 40px;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.6;
+	color: #454545;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+.terms {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 520px;
+	text-align: left;
+	margin: 0px 60px 60px 60px;
+	font-weight: 100;
+	font-size: 15px;
+	line-height: 1.6;
+	color: #454545;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+.line {
+	width: 520px;
+	border-top: 0.571429px solid #E7E7E7;
+}
+
+.btn-signup {
+	width: 440px;
+	height: 56px;
+	background: #767572;
+	border: 1px solid #767572;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 54px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: -0.45px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+}
+
+.btn-signin {
+	box-sizing: border-box;
+	width: 440px;
+	height: 56px;
+	background: #101010;
+	border: 1px solid #101010;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 54px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: -0.45px;
+	color: #FFFFFF;
+}
+
+.btn-wrap {
+	width: 440px;
+	height: 120px;
+	display: flex;
+	flex-direction: column;
+	align-content: end;
+	border: none;
+}
+
+.input-section {
+	display: flex;
+	height: 56px;
+	width: 438px;
+	background: #FFFFFF;
+	border: 1px solid #DBD9D6;
+	background: #FFFFFF;
+	margin-bottom: 12px;
+}
+
+.user-icon {
+	height: 21px;
+	margin-left: 26px;
+}
+
+.pw-icon {
+	height: 21px;
+	margin-left: 26px;
+}
+
+.member {
+	text-align: left;
+	width: 560px;
+}
+
+#logo {
+	display: block;
+	margin-top: 20px;
+}
+
+strong {
+	display: block;
+	margin: 24px 0px 24px 0px;
+	color: #101010;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.checkbox {
+	display: flex;
+}
+
+input[type="text"], input[type="password"] {
+	height: 56px;
+	width: 412px;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type="checkbox"]+label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url('../img/checker.png');
+	background-size: 20px 20px;
+	margin-right: 5px;
+}
+
+input[type="checkbox"]:checked+label {
+	background-image: url('../img/checker-on.png');
+	background-size: 20px 20px;
+}
+
+.signin-icon {
+	width: 21px;
+	height: auto;
+}
+
+.icon-center{
+	width: 56px;
+	height: 56px;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
