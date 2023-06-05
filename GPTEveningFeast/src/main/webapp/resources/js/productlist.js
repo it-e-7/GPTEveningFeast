@@ -50,7 +50,7 @@ function scrollList() {
 							</em> 
 							원
 						</strong>
-						<button class="cart-btn" onclick="cartFromList(${ product.productId })">
+						<button class="cart-btn" onclick="cartFromList('${ product.productId }')">
 						</button>
 					</span>
 				</li>`));
