@@ -7,6 +7,47 @@ a {
 	text-decoration: none;
 }
 
+body {
+	position: relative;
+	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
+	font-weight: 400;
+	/*     font-size: 15px; */
+	line-height: 1.6;
+	color: #767572;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+label {
+	color: #767572;
+	position: relative;
+	display: inline-block;
+	padding-left: 30px;
+	min-height: 22px;
+	color: #454545;
+	user-select: none;
+	cursor: pointer;
+	line-height: 22px;
+	font-size: 15px;
+	vertical-align: top;
+}
+
+fieldset {
+	display: block;
+	margin-inline-start: 2px;
+	margin-inline-end: 2px;
+	padding-block-start: 0.35em;
+	padding-inline-start: 0.75em;
+	padding-inline-end: 0.75em;
+	padding-block-end: 0.625em;
+	min-inline-size: min-content;
+	border-width: 2px;
+	border-style: groove;
+	border-color: rgb(192, 192, 192);
+	border-image: initial;
+}
+
 .productContainer {
 	display: flex;
 	align-items: flex-start;
@@ -23,7 +64,7 @@ a {
 	flex-direction: column;
 	justify-content: space-between;
 	min-height: 124px;
-	width: 650px;
+	width: 760px;
 	padding: 32px 0 12px 10px;
 	float: left;
 	vertical-align: top;
@@ -60,11 +101,22 @@ a {
 	float: right;
 }
 
-.all-cart-container {
+#contents {
 	padding-top: 50px;
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
+	position: relative;
+	padding: 44px 0 120px;
+	z-index: 10;
+	min-height: calc(100% - 360px);
+}
+
+#contents .innercon {
+	padding-right: 404px;
+	position: relative;
+	margin: 0 auto;
+	width: 1204px;
 }
 
 .top-text {
@@ -80,10 +132,13 @@ a {
 	margin-right: 20px;
 }
 
-.riget-area {
-	display: flex;
-	flex-direction: column;
-	padding-top: 70px;
+.right-area {
+	width: 340px;
+	background-color: #fff;
+	z-index: 2;
+	position: absolute;
+	inset: 71px 0px auto auto;
+	border: 1px #ff6913 solid;
 }
 
 .info {
@@ -103,15 +158,15 @@ a {
 }
 
 .purchaseButton {
-    height: 42px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 15px;
-    background-color: #fff;
-    vertical-align: top;
-    color: #ff6913;
-    border: 1px solid #ff6913;
-    padding: 0 18px;
+	height: 42px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 15px;
+	background-color: #fff;
+	vertical-align: top;
+	color: #ff6913;
+	border: 1px solid #ff6913;
+	padding: 0 18px;
 }
 
 .txt-price {
@@ -127,90 +182,139 @@ a {
 	justify-content: space-between;
 }
 
-.product-price-text {
-	display: table-cell;
-	line-height: 39px;
-	color: #454545;
-	font-size: 18px;
+.btn {
+	display: inline-block;
+	position: relative;
+	padding: 0 12px;
+	height: 42px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	background-color: #fff;
 	vertical-align: top;
-	word-break: break-all;
-	width: 156.853px;
-	height: 40.424px;
 }
 
-.orderButton {
+.order .rightarea .btn-order {
+	width: 100%;
+}
+
+.btn.fill.orange {
 	color: #fff;
 	background-color: #ff6913;
+}
+
+.btn.bigger {
 	height: 64px;
 	line-height: 62px;
 	font-size: 18px;
 	font-weight: 600;
 }
 
-.product-price-text-box {
-	display: flex;
-	justify-content: space-around;
+.btn.orange {
+	border: 1px solid #ff6913;
 }
 
-.price-box {
-	border: 1px #ff6913 solid;
-	margin: 0;
-	padding: 0;
+.nodata:before {
+	content: "";
 	display: block;
-	margin-inline-start: 2px;
-	margin-inline-end: 2px;
-	padding-block-start: 0.35em;
-	padding-inline-start: 0.75em;
-	padding-inline-end: 0.75em;
-	padding-block-end: 0.625em;
-	min-inline-size: min-content;
+	margin: 0 auto 15px;
+	width: 80px;
+	height: 80px;
+	background: url(/evenapp/resources/img/icon.png) no-repeat -400px 0;
 }
 
-.product-price-num {
+.nodata {
+	position: relative;
+	color: #767572;
+	text-align: center;
+	padding: 120px 0 159px;
+	border-bottom: 1px solid #e7e7e7;
+}
+
+.right-area .price-field {
+	border: 0px #ff6913 solid;
+}
+
+.right-area .price-field dl.orderprice {
+	margin-top: 20px;
+}
+
+.right-area .price-field dl {
+	display: table;
+	width: 100%;
+	padding: 0 24px;
+}
+
+.right-area .price-field dl dt {
+	display: table-cell;
+	line-height: 39px;
+	color: #454545;
+	font-size: 18px;
+	vertical-align: top;
+	word-break: break-all;
+}
+
+.right-area .price-field dl dd {
+	display: table-cell;
+	line-height: 39px;
+	color: #101010;
+	text-align: right;
+	vertical-align: top;
+}
+
+.right-area .price-field dl dd strong {
+	position: relative;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.right-area .price-field dl dd strong em {
 	font-size: 20px;
 	font-weight: 700;
 	font-family: "Roboto";
-	/* 	width: 72.087px;
-    height: 40.424px; */
 }
 
-.orderprice {
-	margin-top: 20px;
-	display: table;
-	width: 100%;
-	padding: 0 24px;
+em {
+	display: inline-block;
+	font-style: normal;
+	letter-spacing: -0.03em;
 }
 
-.total {
-	margin-top: 0;
+.right-area .price-field dl.total {
 	border-top: 1px solid #e7e7e7;
-	display: table;
-	width: 100%;
-	padding: 0 24px;
+	/* margin-top: 0; */
+}
+
+.right-area .price-field dl.total dt {
 	line-height: 80px;
 	color: #ff6913;
 	font-weight: 600;
 }
 
-.total .product-price-text {
-    border-top: 1px solid #e7e7e7;
-    line-height: 80px;
-    color: #ff6913;
-    font-weight: 600;
+.right-area .price-field dl.total dd {
+	line-height: 80px;
+	color: #ff6913;
 }
 
-label {
-	color: #767572;
-	position: relative;
-	display: inline-block;
-	padding-left: 30px;
-	min-height: 22px;
-	color: #454545;
-	user-select: none;
-	cursor: pointer;
-	line-height: 22px;
-	font-size: 15px;
-	vertical-align: top;
+.right-area .price-field dl.total dd strong {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.right-area .price-field dl.total dd strong em {
+	font-size: 24px;
+}
+
+.right-area .btn-order {
+	width: 100%;
+}
+
+.right-area .price-field .txt {
+	padding: 10px 20px 18px 24px;
+	color: #aea7a2;
+	font-size: 11px;
 }
 
 input[id="allCheck"] {
@@ -240,27 +344,27 @@ input[id="item-check-box"] {
 }
 
 .tit {
-    display: block;
-    width: 100%;
-    border-top: 2px solid #767572;
-    padding: 15px 0 17px;
-    color: #101010;
-    font-size: 24px;
+	display: block;
+	width: 100%;
+	border-top: 2px solid #767572;
+	padding: 15px 0 17px;
+	color: #101010;
+	font-size: 24px;
 }
 
 .tit em {
-    margin-left: 6px;
-    line-height: 1;
-    color: #ff6913;
-    font-size: 24px;
-    font-weight: 700;
-    font-family: "Roboto";
-    display: inline-block;
-    font-style: normal;
-    letter-spacing: -0.03em;
+	margin-left: 6px;
+	line-height: 1;
+	color: #ff6913;
+	font-size: 24px;
+	font-weight: 700;
+	font-family: "Roboto";
+	display: inline-block;
+	font-style: normal;
+	letter-spacing: -0.03em;
 }
 
 .cont {
-    display: block;
-    border-bottom: 2px solid #767572;
+	display: block;
+	border-bottom: 2px solid #767572;
 }

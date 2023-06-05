@@ -155,12 +155,11 @@
 									모든 내용을 확인 하였으며 결제에 동의합니다.
 								</span>
 							</label>
-							<span class="talk" hidden>결제진행을 위해 아래 항목에 동의 해 주세요.</span>
+							<span class="talk" hidden>결제진행을 위해 아래 항목에 동의해 주세요.</span>
 						</div>
 					</fieldset>
 					
 					<button class="btn fill big orange btn-order" onclick="successOrder()">
-<%-- 						<c:out value="${fn:length(preOrderProduct)}" /> --%>
 						<span class="txt-price">
 							총 
 							<em id="expSumAmt">
@@ -174,5 +173,6 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>

@@ -70,7 +70,6 @@
 													<em>${vo.productCnt}</em>
 													개
 												</strong>
-											
 											</span>
 										</li>
 										</c:forEach>
@@ -140,12 +139,10 @@
 					<a href="/evenapp" class="btn fill big lightgray">쇼핑하기</a>
 					<a href="javascript:moveOrderList(${fn:length(productList)})"
 						class="btn fill big orange">주문 내역 보기
-<%-- 						<button onclick="moveOrderList(${fn:length(productList)})">
-						</button> --%>
 					</a>
 			</div>
-			
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>
