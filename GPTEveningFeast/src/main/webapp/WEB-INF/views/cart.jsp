@@ -23,6 +23,7 @@
 
 	<div id="contents">
 		<div class="innercon">
+
 			<div class="left-area">
 				<h1 class="top-text">장바구니</h1>
 

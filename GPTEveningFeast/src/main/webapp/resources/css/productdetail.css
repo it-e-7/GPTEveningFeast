@@ -1,44 +1,330 @@
-.product-detail-container {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
-.product-detail-container img {
-	width: 520px;
+a {
+    text-decoration: none;
+    color: #101010;
+    outline: none;
 }
 
-.quantity-selector {
-	display: flex;
-	flex-direction: column;
+em {
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: -0.03em;
 }
 
-.quantity-price-wrapper {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
+button {
+    cursor: pointer;
+    border: none;
+    font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
+    padding: 0;
+    letter-spacing: -0.025em;
+    background-color: transparent;
+    outline: none;
 }
 
-.detail-quantity-btn-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	flex: 1;
+#contents {
+    position: relative;
+    padding: 44px 0 120px;
+    width: 100%;
+    min-height: calc(100% - 424px);
+    z-index: 10;
 }
 
-#product_name {
-	width: 100%;
+#contents > .innercon {
+    position: relative;
+    margin: 0 auto;
+    width: 1204px;
 }
 
-.price-btn-wrapper {
-	width: 100%;
-	text-align: right;
+.proinfo-area {
+    position: relative;
+    padding-bottom: 80px;
 }
 
-.btn-wrapper: {
-	
+.propic {
+    position: relative;
+    float: left;
+    margin-right: 80px;
+    width: 520px;
 }
 
-.detailcont {
-	width: 840px;
+.propic .propicbig {
+    position: relative;
+    width: 520px;
+}
+
+.propic .propicbig img {
+    width: 520px;
+    height: 624px;
+}
+
+.propic + .proinfo {
+    float: left;
+    width: 604px;
+}
+
+.proinfo {
+    position: relative;
+}
+
+#contents h2 {
+    color: #101010;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.proinfo h2 {
+    padding-top: 9px;
+}
+
+.proinfo h2 strong {
+    display: block;
+    line-height: 40px;
+    color: #101010;
+    font-size: 28px;
+}
+
+.proinfo .price {
+    position: relative;
+    margin-top: 31px;
+    padding-bottom: 23px;
+    font-size: 0;
+    border-bottom: 1px solid #aea7a2;
+    z-index: 1;
+}
+
+.proinfo .price .txt-price {
+    display: inline-block;
+    margin-top: 13px;
+    line-height: 1;
+    color: #101010;
+    font-size: 24px;
+}
+
+.proinfo .price .txt-price strong em {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.proinfo .detailinfo {
+    margin-top: -1px;
+}
+
+.proinfo .detailinfo dl dt {
+    display: inline-block;
+    padding: 18px 0 17px;
+    width: 120px;
+    line-height: 24px;
+    color: #454545;
+    font-size: 15px;
+    vertical-align: top;
+    border-top: 1px solid #e7e7e7;
+}
+
+.proinfo .detailinfo dl dd {
+    position: relative;
+    display: inline-block;
+    padding: 18px 0 17px;
+    width: 484px;
+    min-height: 32px;
+    line-height: 24px;
+    color: #454545;
+    font-size: 15px;
+    vertical-align: top;
+    border-top: 1px solid #e7e7e7;
+}
+
+.optionarea {
+    margin-top: -1px;
+}
+
+.optionarea .optionls > div:first-child {
+    margin-top: 0;
+}
+
+.optionarea .optionls > div {
+    position: relative;
+    margin-top: -1px;
+    padding: 11px 16px 61px;
+    border: 1px solid #e7e7e7;
+    background-color: #f8f8f8;
+}
+
+.optionarea .optionls .txt-ti {
+    display: block;
+    padding-right: 0;
+    line-height: 24px;
+    color: #454545;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.optionarea .optionls .ea-area {
+    position: absolute;
+    bottom: 16px;
+    margin-top: 13px;
+    width: 92px;
+}
+
+.ea-area {
+    display: inline-block;
+    height: 32px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.optionarea .optionls .ea-area input {
+    background-color: #fff;
+    border: 1px solid #e7e7e7;
+}
+
+.ea-area input[readonly] {
+    -webkit-text-fill-color: #454545;
+}
+
+.ea-area input {
+    padding: 0 32px;
+    width: 100%;
+    height: 32px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: "Roboto";
+    text-align: center;
+    vertical-align: top;
+}
+
+input[readonly] {
+    color: #aea7a2;
+    background: #f3f3f3;
+}
+
+.optionarea .optionls .ea-area .btn-down {
+    left: 1px;
+}
+.optionarea .optionls .ea-area button {
+    top: 1px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: none;
+}
+.ea-area [class^=btn] {
+    position: absolute;
+    line-height: 30px;
+    text-align: left;
+    text-indent: -9999px;
+}
+
+.optionarea .optionls .ea-area .btn-up {
+    right: 1px;
+}
+
+.ea-area [class^=btn]:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(/evenapp/resources/img/btn.png) no-repeat 0 0;
+}
+
+.ea-area .btn-down:after {
+    background-position: -300px -100px;
+    background-color: transparent;
+}
+
+.ea-area .btn-up:after {
+    background-position: -350px -100px;
+    background-color: transparent;
+}
+
+.optionarea .optionls .txt-price {
+    position: absolute;
+    bottom: 21px;
+    right: 15px;
+    color: #101010;
+    font-size: 15px;
+}
+
+.optionarea .optionls .txt-price em {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Roboto";
+}
+
+.buybutton {
+    position: relative;
+    padding-left: 120px;
+}
+
+.buybutton .txt-total {
+    text-align: right;
+    color: #101010;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.buybutton .txt-total strong {
+    display: inline-block;
+    margin-left: 38px;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.buybutton .txt-total strong em {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Roboto";
+}
+
+.buybutton .btns {
+    position: relative;
+    margin-top: 17px;
+}
+.btns {
+    display: block;
+    text-align: center;
+    font-size: 0;
+}
+
+.btns > .btn:first-child {
+    margin-left: 0;
+}
+
+.btn.bigger {
+    height: 64px;
+    line-height: 62px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.btn.orange {
+    color: #ff6913;
+    border: 1px solid #ff6913;
+}
+.btns > .btn {
+    margin: 0 4px;
+    width: calc(50% - 4px);
+}
+.btn {
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+    text-align: center;
+    background-color: #fff;
+    vertical-align: top;
+}
+
+.btn.fill.orange {
+    color: #fff;
+    background-color: #ff6913;
+}
+.btns > .btn:last-child {
+    margin-right: 0;
 }
