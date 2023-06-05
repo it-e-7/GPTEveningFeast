@@ -27,6 +27,19 @@ ajax({
 
 updateCartCount();
 
+const forms = $('.search-form input[type="text"]');
+forms.each((index, form) => {
+	form.addEventListener("focus", function(e) {
+		const btn = form.closest('form').querySelector('.search-btn');
+		btn.classList.add('active');
+	});
+	
+	form.addEventListener("blur", function(e) {
+		const btn = form.closest('form').querySelector('.search-btn');
+		btn.classList.remove('active');
+	});
+});
+
 function updateCartCount() {
 	ajax({
 		url: "/evenapp/cart/count",

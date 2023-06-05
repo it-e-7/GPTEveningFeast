@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<script src="/evenapp/resources/js/headernav.js"></script>
 <link rel="stylesheet" href="/evenapp/resources/css/headernav.css">
 
 <div class="gpt-loading-modal-wrapper">
@@ -42,4 +41,6 @@
 		</a>
 	</div>
 </div>
+
+<script src="/evenapp/resources/js/headernav.js"></script>
 
