@@ -20,6 +20,7 @@
 		</div>
 	</div>
 	
+	<div class="content-wrapper">
 	<div id="contents">
 		<div class="innercon">
 			<section class="proinfo-area">
@@ -118,6 +119,8 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/productdetail.js"></script>
 </html>

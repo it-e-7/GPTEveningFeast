@@ -315,7 +315,7 @@ input[readonly] {
     display: inline-block;
     margin-left: 38px;
     font-size: 24px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .buybutton .txt-total strong em {

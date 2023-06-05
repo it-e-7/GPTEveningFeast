@@ -24,6 +24,7 @@
 		</div>
 	</div>
 	
+	<div class="content-wrapper">
 	<div id="contents">
 	<div class="innercon">
 			<h2>주문완료</h2>
@@ -142,6 +143,7 @@
 					</a>
 			</div>
 		</div>
+	</div>
 	</div>
 	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
