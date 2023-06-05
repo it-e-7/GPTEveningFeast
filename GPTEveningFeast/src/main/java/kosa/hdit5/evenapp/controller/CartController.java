@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
@@ -73,6 +74,25 @@ public class CartController {
 			return ResponseEntity.internalServerError().body(e.getMessage());
 		}
 		
+	}
+	
+	@Auth
+	@GetMapping(value="count")
+	@ResponseBody
+	public String getCartCountHandler(@SessionAttribute UserVO signinUser) {
+		
+		String userId = signinUser.getUserId();
+		
+		try {
+			String count = service.getCartCount(userId);
+			
+			return count;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
+		}
 	}
 
 }

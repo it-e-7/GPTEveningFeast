@@ -121,4 +121,6 @@ h2 {
     border-radius: 48px;
     cursor:pointer;
     margin-right: 8px;
+    background: url(/evenapp/resources/img/cart_grey.png) no-repeat;
+    background-position: center center;
 }

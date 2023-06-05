@@ -35,15 +35,22 @@
 
 		<ul class="product-list-container" data-offset="1">
 			<c:forEach var="product" items="${ productList }">
-				<li><a href="/evenapp/product/${ product.productId }"> <img
-						src="${ product.productImgUrl }" class="product-list-img">
-						<p class="product-name">${ product.productName }</p> <span
-						class="product-price"> <strong> <em> <fmt:formatNumber
-										value="${ product.productPrice }" pattern="#,###" />
-							</em> 원
+				<li id="${ product.productId }">
+					<a href="/evenapp/product/${ product.productId }"> 
+					<img src="${ product.productImgUrl }" class="product-list-img">
+						<p class="product-name">${ product.productName }</p> 
+					</a>
+					<span class="product-price">
+						<strong> 
+							<em>
+								<fmt:formatNumber value="${ product.productPrice }" pattern="#,###" />
+							</em> 
+							원
 						</strong>
+						<button class="cart-btn" onclick="cartFromList('${ product.productId }')">
+						</button>
 					</span>
-				</a></li>
+				</li>
 			</c:forEach>
 		</ul>
 	</div>

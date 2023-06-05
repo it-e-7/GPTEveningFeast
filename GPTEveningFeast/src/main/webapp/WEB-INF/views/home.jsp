@@ -6,6 +6,7 @@
 <html>
 <head>
 <title>Home</title>
+<link rel="stylesheet" href="/evenapp/resources/css/home.css">
 </head>
 <body>
 	<div class="top-area">
@@ -16,35 +17,30 @@
 	</div>
 
 	<div class="content-wrapper">
-		<div>
+		<div class="recommend-product-wrapper">
 			<h2>오늘의 추천 상품</h2>
-			<table>
-				<tr>
-					<c:forEach var="vo" items="${random}" varStatus="status">
-						<c:if test="${status.count <= 3}">
-
-							<td><a href="/evenapp/product/${vo.productId}">
-									<table>
-
-										<tr>
-											<td><img src="${vo.productImgUrl}" alt="이미지"></td>
-										</tr>
-										<tr>
-											<td class="ellipsis">${vo.productName}</td>
-										</tr>
-										<tr>
-											<td class="ellipsis"><fmt:formatNumber
-													value="${vo.productPrice}" pattern="#,###" />원</td>
-										</tr>
-
-									</table>
-							</a></td>
-
-							<!-- VO 객체의 속성 -->
-						</c:if>
-					</c:forEach>
-				</tr>
-			</table>
+			<ul class="random-list">
+				<c:forEach var="product" items="${random}" varStatus="status">
+					<c:if test="${status.count <= 3}">
+						<li id="${ product.productId }">
+							<a href="/evenapp/product/${ product.productId }"> 
+								<img src="${ product.productImgUrl }" class="product-list-img">
+								<p class="product-name">${ product.productName }</p> 
+							</a>
+							<span class="product-price">
+								<strong> 
+									<em>
+										<fmt:formatNumber value="${ product.productPrice }" pattern="#,###" />
+									</em> 
+									원
+								</strong>
+								<button class="cart-btn" onclick="cartFromList('${ product.productId }')">
+								</button>
+							</span>
+						</li>
+					</c:if>
+				</c:forEach>
+			</ul>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/footer.jsp"%>

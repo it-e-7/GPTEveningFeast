@@ -67,22 +67,6 @@ function scrollList() {
 	
 }
 
-function cartFromList(productId) {
-	const productCnt = 1;
-	
-	ajax({
-		url: '/evenapp/cart',
-		type: 'POST',
-		data: {
-			productId,
-			productCnt,
-		},
-		success: function(response) {
-			alert("장바구니에 담겼습니다");
-		}
-	});
-}
-
 //현재 스크롤 위치 저장
 let lastScroll = 0;
 

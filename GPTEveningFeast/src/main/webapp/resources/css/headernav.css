@@ -189,3 +189,21 @@
 .search-btn .active {
 	background:url(/evenapp/resources/img/search_active.png) no-repeat;"
 }
+
+.cart-count {
+	position: absolute;
+    top: -5px;
+    right: -8px;
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    text-indent: 0;
+    font-weight: 700;
+    font-family: "Roboto";
+    background-color: #ff6913;
+    border-radius: 24px;
+    z-index: 1;
+}
