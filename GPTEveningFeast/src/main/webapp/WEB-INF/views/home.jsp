@@ -88,6 +88,7 @@
 			</ul>
 		</div>
 	</div>
-	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
+
 </html>
