@@ -88,6 +88,7 @@ html {
 body {
 	position: relative;
 	min-height: 100%;
+	height: 1000px;
 }
 
 a {
@@ -141,15 +142,15 @@ dl, ul, ol, menu, li {
 }
 
 footer {
-	position: absolute;
+	/* position: relative; */
+	height: 350px;
+	position: relative;
+	transform: translateY(-100%);
 	bottom: 0;
 	width: 100%;
-	height: 400px;
+	height: 350px;
 	background-color: black;
 	color: white;
-	padding-top: 0px !important;
-	border-top-style: solid !important;
-	border-top-width: 150px !important;
 }
 
 /* 상세페이지 - 상품 수량 버튼 */

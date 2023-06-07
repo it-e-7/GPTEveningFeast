@@ -26,7 +26,7 @@ h3 {
 	margin-bottom: 12px;
 }
 
-p {
+.login-text {
 	font-weight: 100;
 	font-size: 15px;
 	line-height: 24px;
@@ -100,7 +100,6 @@ p {
 	align-items: center;
 	letter-spacing: -0.45px;
 	color: #FFFFFF;
-	margin-bottom: 10px;
 }
 
 .btn-signin {
@@ -117,6 +116,7 @@ p {
 	align-items: center;
 	letter-spacing: -0.45px;
 	color: #FFFFFF;
+	margin-bottom: 10px;
 }
 
 .btn-wrap {
@@ -202,11 +202,12 @@ input[type="checkbox"]:checked+label {
 	height: auto;
 }
 
-.icon-center{
+.icon-center {
 	width: 56px;
 	height: 56px;
 	display: flex;
 	align-content: center;
 	align-items: center;
 	justify-content: center;
+	display: flex;
 }
