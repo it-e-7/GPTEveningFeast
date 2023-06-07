@@ -23,7 +23,7 @@
 	<div class="gpt-result-title-wrapper">
 		<p>GPT가 요리를 완성했어요 !</p>
 		<h1>GPT의 추천 레시피</h1>
-		<h1>${ GPTResult.menu }</h1>
+		<h1 id="menu-name">${ GPTResult.menu }</h1>
 	</div>
 	<div class="gpt-result-container">
 	<div class="mbox">
@@ -81,4 +81,5 @@
 	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/gptresult.js"></script>
+<script src="/evenapp/resources/js/kakao.js"></script>
 </html>
