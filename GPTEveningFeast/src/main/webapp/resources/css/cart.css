@@ -7,16 +7,6 @@ a {
 	text-decoration: none;
 }
 
-body {
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 1.6;
-	color: #767572;
-	letter-spacing: -0.025em;
-	word-break: keep-all;
-	word-wrap: break-word;
-}
-
 label {
 	color: #767572;
 	position: relative;
@@ -63,7 +53,7 @@ fieldset {
 	justify-content: space-between;
 	min-height: 124px;
 	width: 760px;
-	padding: 32px 0 12px 10px;
+	padding: 12px 0 12px 10px;
 	float: left;
 	vertical-align: top;
 	padding-right: 50px;
@@ -365,4 +355,41 @@ input[id="item-check-box"] {
 .cont {
 	display: block;
 	border-bottom: 2px solid #767572;
+}
+
+.ea-area .total-price {
+	font-weight: 700;
+    color: #101010;
+    margin-left: 14px;
+}
+
+.ea-area button {
+	display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 13px 13px;
+    border: 1px solid #e7e7e7;
+	
+}
+
+.ea-area .btn-down {
+	background: url(/evenapp/resources/img/minus.png) no-repeat 0 0;
+    background-position: center center;
+    background-color: transparent;
+}
+
+.ea-area .btn-up {
+	background: url(/evenapp/resources/img/plus.png) no-repeat 0 0;
+    background-position: center center;
+    background-color: transparent;
+}
+
+.content-wrapper {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.6;
+	color: #767572;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
 }

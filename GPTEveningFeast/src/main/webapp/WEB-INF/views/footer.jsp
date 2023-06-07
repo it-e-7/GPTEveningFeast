@@ -20,7 +20,7 @@
 			</div>
 		</div>
 
-		<div class="info">
+		<div class="footer-info-container">
 			<div class="logo-wrapper">
 				<img src="/evenapp/resources/img/footer-logo.png" class="logo-image">
 			</div>

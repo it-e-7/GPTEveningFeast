@@ -39,7 +39,7 @@ footer {
 	color: #FFFFFF;
 }
 
-.info {
+.footer-info-container {
 	height: 340px;
 	width: 1200px;
 	display: flex;
@@ -66,7 +66,7 @@ footer {
 	align-content: center;
 }
 
-p {
+footer p {
 	font-weight: 100;
 	font-size: 14px;
 	line-height: 24px;

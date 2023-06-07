@@ -97,9 +97,9 @@ public class OrderController {
 		
 		List<CartVO> pre = (List<CartVO>) session.getAttribute("preOrderProduct");
 		
-		if (pre.isEmpty()) {
-			return "redirect:/order/orders";
-		}		
+		if (pre == null) {
+			return "redirect:/cart";
+		}
 		
 		return "order";
 	}
