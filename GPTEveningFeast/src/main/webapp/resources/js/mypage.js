@@ -1,0 +1,1 @@
+$(`a[href="${location.pathname}"]`).css('color', '#ff6913');

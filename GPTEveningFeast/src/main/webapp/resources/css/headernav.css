@@ -47,11 +47,16 @@
 	display: none;
 	position: absolute;
 	top: 100%;
+	z-index: 9999;
 }
 
 .nav-right-menu-wrapper {
 	display: flex;
     gap: 10px;
+}
+
+.nav-right-menu-wrapper a {
+	position: relative;
 }
 
 .category-btn-wrapper {
@@ -174,10 +179,6 @@
     border: 1px solid #303030;
 }
 
-.search-form input[type="text"]:focus .search-btn {
-    background:url(/evenapp/resources/img/search_active.png) no-repeat;"
-}
-
 .search-btn {
 	position: absolute;
 	top: 8px;
@@ -190,7 +191,7 @@
 	background:url(/evenapp/resources/img/search.png) no-repeat;"
 }
 
-.search-btn .active {
+.search-btn.active {
 	background:url(/evenapp/resources/img/search_active.png) no-repeat;"
 }
 

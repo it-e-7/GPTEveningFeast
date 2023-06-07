@@ -1,0 +1,38 @@
+.my-page-wrapper {
+	display: flex;
+	flex-direction: row;
+	padding: 44px 0 0 0;
+}
+
+.left-nav-bar {
+	display: flex;
+	flex-direction: column;
+	width: 240px;
+}
+
+.left-nav-bar h2 {
+	font-size: 32px;
+	padding-bottom: 6px;
+}
+
+.left-nav-bar h4 {
+	font-size: 18px;
+	padding-top: 28px;
+}
+
+.left-nav-bar li {
+	line-height: 28px;
+}
+
+.left-nav-bar a {
+	font-size: 15px;
+	color: #767572;
+}
+
+.left-nav-bar a:hover {
+	color: #ff6913;
+}
+
+.my-page-content-wrapper {
+	width: 960px;
+}
