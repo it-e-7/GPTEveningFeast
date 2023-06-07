@@ -54,6 +54,7 @@
 			</c:forEach>
 		</ul>
 	</div>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/productlist.js"></script>
 </html>

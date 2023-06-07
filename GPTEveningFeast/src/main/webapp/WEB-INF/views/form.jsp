@@ -82,7 +82,7 @@
 						<label for="userAddress">주소</label>
 					</div>
 					<div class="form-content">
-						<input id="userAddress" type="text" name="userAddress" placeholder="서울특별시 종로구 창경궁로 254">
+						<input id="userAddress" type="text" name="userAddress" placeholder="서울특별시 종로구 창경궁로 254" readonly>
 						<input type="button" class="btn-address" onclick="addressSearch()" value="주소 찾기"><br>
 						
 					</div>
