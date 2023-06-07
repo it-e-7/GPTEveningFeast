@@ -91,3 +91,14 @@
 	color: #454545;
 	font-weight: 700;
 }
+
+.no-data {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 0 160px 0;
+    margin-top: 24px;
+	border-top: 1px solid #747572;
+	border-bottom: 1px solid #e7e7e7;
+}

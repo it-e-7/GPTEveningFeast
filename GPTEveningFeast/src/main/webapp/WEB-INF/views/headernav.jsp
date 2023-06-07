@@ -27,14 +27,14 @@
 	</div>
 	<div class="search-form-gpt">
 		<form action="gpt" method="post" class="search-form" onsubmit="loadingGPT()">
-			<input type="text" placeholder="GPT 검색" name="searchParam"> 
+			<input type="text" placeholder="GPT 검색" name="searchParam" required> 
 			<input type="submit" class="search-btn" value="">
 		</form>
 	</div>
 	<div class="nav-right-menu-wrapper">
 		<div>
-			<form action="search" method="get" class="search-form">
-				<input type="text" placeholder="기본 검색" name="searchParam">
+			<form action="search" method="get" class="search-form" onsubmit="search()">
+				<input type="text" placeholder="기본 검색" name="searchParam" required>
 				<input type="submit" class="search-btn" value="">
 			</form>
 		</div>

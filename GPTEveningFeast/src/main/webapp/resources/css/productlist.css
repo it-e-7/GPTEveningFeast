@@ -124,3 +124,14 @@ h2 {
     background: url(/evenapp/resources/img/cart_grey.png) no-repeat;
     background-position: center center;
 }
+
+.no-data {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 120px 0 160px 0;
+    margin: 24px 0;
+	border-bottom: 1px solid #e7e7e7;
+}

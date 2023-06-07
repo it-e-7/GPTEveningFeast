@@ -28,7 +28,7 @@
 	</select>
 
 	<select id="selectGPTProduct" resultType="Product">
-		<foreach collection="array" item="name" separator="UNION ALL">
+		<foreach collection="array" item="name" separator="UNION">
 			<![CDATA[
 				SELECT *
 				FROM "Product"

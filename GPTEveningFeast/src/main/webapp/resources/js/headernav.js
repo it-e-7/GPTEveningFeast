@@ -52,6 +52,11 @@ function updateCartCount() {
 	});
 }
 
+function search() {
+	
+}
+
 function loadingGPT() {
 	$(".gpt-loading-modal-wrapper").css("display", "block");
+	$("body").toggleClass("scroll-lock");
 }

@@ -1,4 +1,4 @@
-*, *:before, *:after {
+.content-wrapper *, *:before, *:after {
     box-sizing: border-box;
 }
 

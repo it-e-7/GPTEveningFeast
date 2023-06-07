@@ -1,4 +1,4 @@
-input[type="text"], input[type="password"], input[type="date"] {
+.my-page-content-wrapper input[type="text"], input[type="password"], input[type="date"] {
 	background: #FFFFFF;
 	border: 1px solid #DBD9D6;
 	height: 56px;
