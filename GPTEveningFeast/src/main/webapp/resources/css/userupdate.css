@@ -1,0 +1,78 @@
+input[type="text"], input[type="password"], input[type="date"] {
+	background: #FFFFFF;
+	border: 1px solid #DBD9D6;
+	height: 56px;
+	box-sizing: border-box;
+	font-style: normal;
+	font-weight: 350;
+	font-size: 15px;
+	line-height: 54px;
+	/* or 360% */
+	display: flex;
+	align-items: center;
+	color: #101010;
+}
+
+input[type="button"] {
+	width: 96px;
+	height: 56px;
+	right: 0px;
+	bottom: 0px;
+	background: #454545;
+	border: 1px solid #454545;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 54px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	letter-spacing: -0.325px;
+	color: #FFFFFF;
+	margin-left: 4px;
+}
+
+button {
+	box-sizing: border-box;
+	width: 276.43px;
+	height: 56px;
+	border: 1px solid #101010;
+	background-color: #101010;
+	color: white;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 54px;
+	margin: 22px 0 0 100px;
+}
+
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	padding: 44px 21px;
+	gap: 14px;
+}
+
+.pw-input-wrapper input{
+	width: 460px;
+	margin-top: 8px;
+}
+
+input[id="userAddress"] {
+	width: 360px;
+}
+
+.add-input-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.form-content {
+	display: flex;
+}
+
+input[name="detailAddress"], input[name="extraAddress"] {
+	width: 225px;
+	margin-right: 10px;
+}
