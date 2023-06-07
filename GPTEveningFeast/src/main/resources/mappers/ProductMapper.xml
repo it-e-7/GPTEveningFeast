@@ -32,7 +32,7 @@
 			<![CDATA[
 				SELECT *
 				FROM "Product"
-				WHERE ("product_name" LIKE '%' || #{name} || '%') AND ROWNUM <= 3
+				WHERE ("label" LIKE '% ' || #{name} || ' %') AND ROWNUM <= 3
 			]]>
 		</foreach>
 	</select>

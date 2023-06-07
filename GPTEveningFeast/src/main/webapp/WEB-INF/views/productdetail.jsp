@@ -19,6 +19,8 @@
 			<%@ include file="/WEB-INF/views/headernav.jsp"%>
 		</div>
 	</div>
+	
+	<div class="content-wrapper">
 	<div id="contents">
 		<div class="innercon">
 			<section class="proinfo-area">
@@ -40,13 +42,15 @@
 					<div class="price" id="price_section">
 						<span class="txt-price">
 							<strong>
-								<em>${productDetail.productPrice}</em>
+								<em>
+									<fmt:formatNumber value="${productDetail.productPrice}" pattern="#,###" />
+								</em>
 								원
 							</strong>
 						</span>
 					</div>
 					<div class="detailinfo">
-						<dl>
+						<dl style="display: flex; flex-direction: row;">
 							<dt>상품선택</dt>
 							<dd>
 								<div class="optionarea" id="top_optionarea">
@@ -74,6 +78,8 @@
 						</dl>
 					</div>
 					<div class="buybutton" id="top_buybutton">
+						<input type="hidden" class="product-one-price" 
+								value="${productDetail.productPrice}">
 						<p class="txt-total">
 							총 금액 
 							<strong>
@@ -93,27 +99,28 @@
 				</div>
 			</section>
 		
-		<!-- 페이지 윗 부분
-		 -->
+		<!-- 페이지 윗 부분   -->
 		
-			<div class="product-detail-container">
-					<input type="hidden" id="product_id"
-						value="${productDetail.productId}">
-			</div>
-	
-			<div action="/product/${productDetail.productId}" method="get">
-			<%-- 	<img src="${productDetail.productImgUrl}" /> --%>
-				<br>
-				${productDetail.productName}<br>
-				<p class="product-one-price">
-					<fmt:formatNumber value="${productDetail.productPrice}"
-						pattern="#,###" />
-					원
-				</p>
-				<br> ${productDetail.detail}
+			<div class="prodetailcont" style="min-height: 363px;">
+				<input type="hidden" id="product_id" value="${productDetail.productId}">
+				<div class="prodetail-area">
+					<div class="tab-menu protabs"
+						 style="position: absolute; inset: 0px auto auto 0px;">
+						 <div class="active" style="width: 25%;">
+						 	<span>상세정보</span>
+						 </div>
+					</div>
+					<section id="p_proDetail" class="tab-contents prodetail active">
+						 	<div class="detailcont" action="/product/${productDetail.productId}" method="get">
+								${productDetail.detail}
+							</div>
+					</section>
+				</div>
 			</div>
 		</div>
 	</div>
+	</div>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/productdetail.js"></script>
 </html>

@@ -21,6 +21,7 @@
 		</div>
 	</div>
 
+	<div class="content-wrapper">
 	<div id="contents">
 		<div class="innercon">
 
@@ -141,6 +142,7 @@
 					onclick="moveToOrder()">주문하기 ${fn:length(cartInfo)}</button>
 			</div>
 		</div>
+	</div>
 	</div>
 	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>

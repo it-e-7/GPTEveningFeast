@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+
+body {
+    font-size: 15px;
+    color: #767572;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
 a {
     text-decoration: none;
     color: #101010;
@@ -14,14 +22,35 @@ em {
     letter-spacing: -0.03em;
 }
 
-button {
-    cursor: pointer;
-    border: none;
-    font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+ button {
     padding: 0;
-    letter-spacing: -0.025em;
     background-color: transparent;
     outline: none;
+}
+
+p {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 #contents {
@@ -111,6 +140,7 @@ button {
 
 .proinfo .detailinfo {
     margin-top: -1px;
+    padding-top: 195px;
 }
 
 .proinfo .detailinfo dl dt {
@@ -205,6 +235,7 @@ input[readonly] {
 .optionarea .optionls .ea-area .btn-down {
     left: 1px;
 }
+
 .optionarea .optionls .ea-area button {
     top: 1px;
     width: 30px;
@@ -275,7 +306,7 @@ input[readonly] {
     display: inline-block;
     margin-left: 38px;
     font-size: 24px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .buybutton .txt-total strong em {
@@ -327,4 +358,152 @@ input[readonly] {
 }
 .btns > .btn:last-child {
     margin-right: 0;
+}
+
+.prodetailcont {
+    position: relative;
+}
+
+.prodetail-area {
+    position: relative;
+    float: left;
+    width: 840px;
+}
+
+.protabs {
+    width: 1200px;
+    height: 71px;
+    border-top: 2px solid #454545;
+    background-color: #fff;
+    text-align: center;
+    z-index: 2;
+}
+
+.tab-menu {
+    font-size: 0;
+    border-bottom: 1px solid #dbd9d6;
+}
+
+.protabs div.active {
+    border-bottom: none;
+}
+.protabs div {
+    margin: 0;
+}
+.tab-menu div.active {
+    color: #ff6913;
+    font-weight: 600;
+    z-index: 1;
+}
+.tab-menu div {
+    position: relative;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.protabs div.active span {
+    line-height: 65px;
+    border-bottom: 3px solid #ff6913;
+}
+.protabs div span {
+    display: inline-block;
+}
+
+.tab-contents.active {
+    display: block;
+    padding-top: 112px;
+    width: 1200px;
+}
+
+.prodetail {
+    position: relative;
+}
+
+.detailcont {
+    width: 100%;
+    margin: auto;
+    max-width: 840px;
+}
+
+.productdetail + .productdetail {
+    margin-top: 70px;
+}
+
+.productdetail img {
+    max-width: 100% !important;
+}
+
+.productdetail .contbox .ptitle {
+    margin-left: 0;
+    margin-right: 0;
+}
+.ptitle.big {
+    margin-top: 36px;
+    color: #101010;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.productdetail .contbox .ptxt {
+    margin-left: 0;
+    margin-right: 0;
+}
+.ptxt.default {
+    margin-top: 8px;
+    line-height: 36px;
+    color: #101010;
+    font-size: 20px;
+}
+
+.ptitle.middle {
+    margin-top: 36px;
+    color: #101010;
+    font-size: 28px;
+}
+
+p.desc {
+    margin-top: 28px;
+    line-height: 36px;
+    color: #767572;
+    font-size: 20px;
+    text-indent: -11px;
+}
+
+.ptxt.checklist li:first-child {
+    margin-top: 0;
+}
+
+.ptxt.checklist li {
+    position: relative;
+    padding-left: 60px;
+    color: #101010;
+    font-size: 20px;
+}
+
+.productdetail .contbox {
+    padding: 0 50px;
+}
+
+.proinfo-area:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.ptitle.small {
+    margin-top: 11px;
+    color: #454545;
+    font-size: 24px;
+}
+
+.ptxt {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.ptitle {
+    margin-left: 50px;
+    margin-right: 50px;
 }

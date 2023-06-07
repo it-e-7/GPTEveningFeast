@@ -8,10 +8,8 @@ a {
 }
 
 body {
-	position: relative;
-	font-family: "NotoSansKR", sans-serif, Malgungothic, "맑은고딕", Dotum, "돋움";
 	font-weight: 400;
-	/*     font-size: 15px; */
+	font-size: 15px;
 	line-height: 1.6;
 	color: #767572;
 	letter-spacing: -0.025em;

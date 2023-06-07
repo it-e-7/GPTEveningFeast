@@ -27,6 +27,7 @@
 		</div>
 	</div>
 
+	<div class="content-wrapper">
 	<div id=contents>
 		<div class="innercon">
 			<h2>주문하기</h2>
@@ -172,6 +173,7 @@
 				</section>
 			</div>
 		</div>
+	</div>
 	</div>
 	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>

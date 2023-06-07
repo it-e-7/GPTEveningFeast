@@ -29,13 +29,13 @@ function cart(productId) {
 }
 
 function calculateTotalPrice(){
-    let price = +$('.product-one-price').text().replace(/,/g, '').replace('원', '');
+    let price = +$('.product-one-price').val();
     let count = +$('#product_cnt').val();
     let total = price * count;
     $('.txt-total em').text(total.toLocaleString());
-    $('.options .txt-price em').text(total.toLocaleString());
+    $('.optionls .txt-price em').text(total.toLocaleString());
     
-    const test = $('.options .txt-price em').text();
+    const test = $('.optionls .txt-price').text();
     console.log(test);
    
 }
@@ -45,11 +45,11 @@ function quickOrder() {
 	const cart = []
 	
     product.productId = $('#product_id').val();
-	console.log(product.productId);
     product.productCnt = +$('#product_cnt').val();
-    product.productName = $('.options .txt-ti').text();
+    product.productName = $('.proinfo h2 strong').text();
     const price = +$('.txt-total em').text().replace(/,/g, '').replace('원', '');
     cart.push(product);
+    console.log(cart);
 	  
 	ajax({
         url: '/evenapp/order/quick',
