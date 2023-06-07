@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/evenapp/resources/css/mypage.css" />
 </head>
 <body>
 	<div class="top-area">
@@ -13,19 +17,32 @@
 			<%@ include file="/WEB-INF/views/headernav.jsp"%>
 		</div>
 	</div>
-	<h1>마이페이지</h1>
 
+	<div class="content-wrapper">
+		<div class="my-page-wrapper">
+			<div class="left-nav-bar">
+				<h2>마이페이지</h2>
 
-	<a href="/evenapp/order/orders">
-		<h3>주문관리</h3>
-	</a>
+				<h4>주문 관리</h4>
+				<ul>
+					<li>
+						<a href="/evenapp/order/orders">주문 내역</a>
+					</li>
+				</ul> 
+				<h4>나의 정보</h4>
+				<ul>
+					<li>
+						<a href="/evenapp/update">회원정보 변경</a>
+					</li>
+				</ul>
+			</div>
 
-
-	<a href="/evenapp/update">
-		<h3>나의 정보</h3>
-	</a>
-
-
+			<div class="my-page-content-wrapper">
+				<h1>마이 페이지</h1>
+			</div>
+		</div>
+	</div>
 
 </body>
+<script src="/evenapp/resources/js/mypage.js"></script>
 </html>

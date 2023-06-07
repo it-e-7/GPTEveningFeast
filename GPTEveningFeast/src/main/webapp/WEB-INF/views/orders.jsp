@@ -12,7 +12,8 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
 	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
 	crossorigin="anonymous"></script>
-<script src="/evenapp/resources/js/order.js"></script>
+<link rel="stylesheet" href="/evenapp/resources/css/mypage.css" />
+<link rel="stylesheet" href="/evenapp/resources/css/orders.css" />
 </head>
 <body>
 	<div class="top-area">
@@ -22,44 +23,88 @@
 		</div>
 	</div>
 
-	<h1>주문목록</h1>
+	<div class="content-wrapper">
+		<div class="my-page-wrapper">
+			<div class="left-nav-bar">
+				<h2>마이페이지</h2>
 
+				<h4>주문 관리</h4>
+				<ul>
+					<li><a href="/evenapp/order/orders">주문 내역</a></li>
+				</ul>
+				<h4>나의 정보</h4>
+				<ul>
+					<li><a href="/evenapp/update">회원정보 변경</a></li>
+				</ul>
+			</div>
 
-	<p>결제완료</p>
-	<c:set var="prevDate" value="" />
-	<c:set var="orderCount" value="0" />
+			<div class="my-page-content-wrapper">
+				<p style="font-size: 23px;">주문목록</p>
 
-	<c:forEach var="vo" items="${orderList}" varStatus="loop">
-		<c:if test="${vo.date != prevDate}">
+				<c:set var="prevOrderId" value="" />
+				<c:set var="orderCount" value="0" />
 
-			<c:if test="${not loop.first}">
-				<p>일반배송 ${orderCount}건</p>
-								결제금액
-				<p class="order-list-total-price">
-					<fmt:formatNumber value="${price}" pattern="#,###" /> 원
-				</p>
-				</div>
-			</c:if>
+				<c:forEach var="vo" items="${orderList}" varStatus="loop">
+					<c:if test="${vo.orderId != prevOrderId}">
 
-			<div class="order-list-wrapper">
-				<p>주문날짜 ${vo.date}</p>
-			<c:set var="orderCount" value="0" />
-				
-		</c:if>
-		<div class="order-product-wrapper">
-			<img src="${vo.productImgUrl}">
-			<p>${vo.productName}</p>
-			<p class="order-list-price">
-				<fmt:formatNumber value="${vo.productPrice}" pattern="#,###" />
-				원
-			</p>
-			<p class="order-list-cnt">${vo.productCnt}개</p>
+						<c:if test="${not loop.first}">
+			</div>
+			<div class="order-info-wrapper">
+				<p style="color: #454545;">일반배송 ${orderCount}건</p>
+				<p style="font-size: 23px; padding-top: 12px; color: #454545;">결제완료</p>
+			</div>
 		</div>
-		<c:set var="prevDate" value="${vo.date}" />
-		<c:set var="orderCount" value="${orderCount + 1}" />
-	</c:forEach>
+		
+		<div class="order-footer">
+		<p>주문번호 ${vo.orderId}</p>
+		<div class="order-price-wrapper">
+			<p style="font-weight: 700;">결제금액</p>
+			<p class="order-list-total-price">
+				<fmt:formatNumber value="${price}" pattern="#,###" />
+				
+			</p>
+		</div>
+		</div>
+	</div>
+	</c:if>
 
-	<p>주문번호 ${orderList[0].orderId}</p>
+	<div class="order-list-wrapper">
+		<p class="order-date">${ vo.date }</p>
+		<c:set var="orderCount" value="0" />
+		<div class="order-list-info-wrapper">
+			<div class="order-product-list-wrapper">
+
+				</c:if>
+				<a href="/evenapp/product/${ vo.productId }">
+					<div class="order-product-wrapper">
+
+						<img src="${vo.productImgUrl}">
+						<div class="product-info-wrapper">
+							<p style="font-size: 18px; color: #767572;">${vo.productName}</p>
+							<span class="product-price-wrapper">
+								<p class="order-list-price">
+									<fmt:formatNumber value="${vo.productPrice}" pattern="#,###" />
+									원
+								</p>
+								/
+								<p class="order-list-cnt">${vo.productCnt}개</p>
+							</span>
+						</div>
+
+					</div>
+				</a>
+				<c:set var="prevOrderId" value="${vo.orderId}" />
+				<c:set var="orderCount" value="${orderCount + 1}" />
+				</c:forEach>
+
+
+			</div>
+		</div>
+	</div>
+
+
 
 </body>
+<script src="/evenapp/resources/js/order.js"></script>
+<script src="/evenapp/resources/js/mypage.js"></script>
 </html>

@@ -56,8 +56,8 @@
 	</div>
 	</div>
 	<div class="gpt-product-list-container">
-		<button onclick="cartGPT()">관련상품 장바구니 담기</button>
-		<p>관련상품 ${ fn:length(productResult) }건</p>
+		<button onclick="cartGPT()" class="gpt-cart-btn">관련상품 장바구니 담기</button>
+		<p style="font-size: 24px;">관련상품 ${ fn:length(productResult) }건</p>
 		
 		<ul class="product-list-container">
 			<c:forEach items="${ productResult }" var="product">

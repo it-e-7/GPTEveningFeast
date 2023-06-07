@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>코사식품관 회원가입</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="/evenapp/resources/js/signup.js"></script>
 
 <link href="/evenapp/resources/css/main.css" rel="stylesheet" />
 <link href="/evenapp/resources/css/form.css" rel="stylesheet" />
