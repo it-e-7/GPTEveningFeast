@@ -88,6 +88,7 @@
 
 .product-list-img {
 	width: 286px;
+	min-height: 345px;
 }
 
 .product-name {
