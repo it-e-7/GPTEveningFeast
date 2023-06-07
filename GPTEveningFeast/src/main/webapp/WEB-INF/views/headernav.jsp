@@ -6,7 +6,10 @@
 
 <div class="gpt-loading-modal-wrapper">
 	<div class="gpt-loading-modal">
-		<img src="/evenapp/resources/img/cooking.gif">
+		<div>
+			<img src="/evenapp/resources/img/cooking_gpt.png" class="cook-gpt">
+			<img src="/evenapp/resources/img/cooking.gif">
+		</div>
 		<p>GPT가 요리중입니다 !</p>
 	</div>
 </div>

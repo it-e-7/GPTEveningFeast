@@ -30,6 +30,10 @@
 	width: 160px;
 }
 
+.gpt-loading-modal .cook-gpt{
+	width: 100px;
+}
+
 .header-nav-container {
 	position: relative;
 	display: flex;

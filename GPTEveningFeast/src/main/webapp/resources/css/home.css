@@ -26,49 +26,111 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    margin-top: 7px;
-    color: #101010;
-    font-size: 14px;
+	margin-top: 7px;
+	color: #101010;
+	font-size: 14px;
 }
 
 .product-name {
 	display: block;
 	margin-top: 10px;
-    width: 320px;
-    height: 40px;
-    color: #454545;
-    font-size: 20px;
-    font-weight: 400;
-    overflow: hidden;
-  	text-overflow: ellipsis;
-  	white-space: nowrap;
+	width: 320px;
+	height: 40px;
+	color: #454545;
+	font-size: 20px;
+	font-weight: 400;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .product-price strong {
 	display: inline-block;
-    margin-right: 7px;
-    padding-bottom: 8px;
-    font-weight: 400;
-    color: #000;
+	margin-right: 7px;
+	padding-bottom: 8px;
+	font-weight: 400;
+	color: #000;
 	font-size: 18px;
 }
 
 .product-price em {
 	color: #ff6913;
 	font-size: 32px;
-    font-weight: 700;
+	font-weight: 700;
 }
 
 .cart-btn {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    font-size: 0;
-    background-color: #fff;
-    border: 1px solid #dbd9d6;
-    border-radius: 48px;
-    cursor:pointer;
-    margin-right: 8px;
-    background: url(/evenapp/resources/img/cart_grey.png) no-repeat;
-    background-position: center center;
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	font-size: 0;
+	background-color: #fff;
+	border: 1px solid #dbd9d6;
+	border-radius: 48px;
+	cursor: pointer;
+	margin-right: 8px;
+	background: url(/evenapp/resources/img/cart_grey.png) no-repeat;
+	background-position: center center;
+}
+
+.swiper-container {
+	width: 1204px;
+	height: 540px;
+}
+
+.swiper-slide img {
+	object-fit: cover;
+	width: 1204px;
+	height: 540px;
+}
+
+.swiper-button-wrap {
+	position: absolute;
+	top: 380px;
+	display: flex;
+	align-content: end;
+	align-items: end;
+	justify-content: end;
+	width: 1200px;
+	height: 44px;
+	display: flex;
+}
+.swiper-button-prev::after {
+  display: none; /* 기본 화살표 숨기기 */
+  	height: 44px;
+  
+}
+.swiper-button-next::after{
+	height: 44px;
+	
+	display:none;
+}
+.swiper-button-prev {
+	height: 44px;
+	-moz-appearance: none; -webkit-appearance : none; appearance : none;
+	background: url('../img/left-button.png') no-repeat;
+	/* 원하는 이미지로 배경 설정 */
+	background-size: 50% auto; /* 배경 크기 조절 */
+	background-position: center;
+	-webkit-appearance: none;
+	appearance: none; /* 배경 위치 조절 */
+}
+
+.swiper-button-next {
+	height: 44px;
+	-moz-appearance: none; -webkit-appearance : none; appearance : none;
+	background: url('../img/right-button.png') no-repeat;
+	/* 원하는 이미지로 배경 설정 */
+	background-size: 50% auto; /* 배경 크기 조절 */
+	background-position: center;
+	-webkit-appearance: none;
+	appearance: none; /* 배경 위치 조절 */
+}
+
+.banner-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1200px;
+	margin: 0 auto;
 }

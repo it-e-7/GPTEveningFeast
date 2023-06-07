@@ -21,7 +21,7 @@
 	<div class="content-wrapper">
 		<div class="innercon">
 			<h3>로그인</h3>
-			<p>아이디와 패스워드를 입력해주세요</p>
+			<p class="login-text">아이디와 패스워드를 입력해주세요</p>
 
 			<div class="input-section">
 				<div class="icon-center">
@@ -39,8 +39,8 @@
 			</div>
 
 			<div class="btn-wrap">
-				<button onclick="window.location.href='/evenapp/signup'" class="btn-signup">회원가입</button>
 				<button onclick="clickSignin()" class="btn-signin">로그인</button>
+				<button onclick="window.location.href='/evenapp/signup'" class="btn-signup">회원가입</button>
 			</div>
 		</div>
 	</div>
