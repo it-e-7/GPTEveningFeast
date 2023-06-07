@@ -51,6 +51,10 @@
     gap: 10px;
 }
 
+.nav-right-menu-wrapper a {
+	position: relative;
+}
+
 .category-btn-wrapper {
 	display: flex;
 	flex-direction: row;

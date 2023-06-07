@@ -32,7 +32,7 @@ input[type="button"] {
 	margin-left: 4px;
 }
 
-button {
+.custom-btn {
 	box-sizing: border-box;
 	width: 276.43px;
 	height: 56px;

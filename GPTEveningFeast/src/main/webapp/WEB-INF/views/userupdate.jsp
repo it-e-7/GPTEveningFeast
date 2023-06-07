@@ -65,7 +65,7 @@
 						</div>
 					</div>
 
-					<button onclick="clickUpdate()">회원정보 변경</button>
+					<button onclick="clickUpdate()" class="custom-btn">회원정보 변경</button>
 				</div>
 			</div>
 		</div>
