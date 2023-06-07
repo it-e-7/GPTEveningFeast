@@ -44,14 +44,15 @@ function getOrderList() {
 			totalPrice += cntPrice;
 			product.querySelector(".order-list-price").innerText = cntPrice.toLocaleString() + " 원";	
 		}
-		
+		if(totalPrice < 50000) {
+			totalPrice += 3500;
+		}
 		order.querySelector(".order-list-total-price").innerText = totalPrice.toLocaleString() + " 원";
 	});
 	
 }
 
 $(document).ready(function() {
-	console.log("구매 완료 페이지");
 	getOrderList();
 	
 	const price = +$('.orderprice strong em').text().replace(/,/g, '').replace('원', '');

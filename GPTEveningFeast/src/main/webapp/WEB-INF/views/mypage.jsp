@@ -42,7 +42,7 @@
 			</div>
 		</div>
 	</div>
-
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/mypage.js"></script>
 </html>

@@ -63,17 +63,17 @@
 												</div>
 												<span class="info">
 													<div class="ea-area">
-														<button onclick="decrement(${loop.index})">-</button>
+														<button onclick="decrement(${loop.index})" class="btn-down"></button>
 														<input class="product_cnt" id="product_cnt_${loop.index}"
 															type="number" value="${vo.productCnt}" min="1"
 															name="product_count" readonly>
-														<button onclick="increment(${loop.index})">+</button>
+														<button onclick="increment(${loop.index})" class="btn-up"></button>
 														<p id="product_price_${loop.index}" hidden>
 															<fmt:formatNumber value="${vo.productPrice}"
 																pattern="#,###" />
 															원
 														</p>
-														<p id="total_price_${loop.index}">
+														<p id="total_price_${loop.index}" class="total-price">
 															<fmt:formatNumber
 																value="${vo.productPrice * vo.productCnt}"
 																pattern="#,###" />

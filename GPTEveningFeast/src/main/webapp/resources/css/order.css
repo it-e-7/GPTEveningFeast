@@ -4,15 +4,6 @@
 	box-sizing: border-box;
 }
 
-body {
-	font-weight: 400;
-	line-height: 1.6;
-	color: #767572;
-	letter-spacing: -0.025em;
-	word-break: keep-all;
-	word-wrap: break-word;
-}
-
 ul, ol {
     margin: 0;
     padding: 0;
@@ -427,4 +418,13 @@ em {
     color: #ffd2b8;
     font-size: 18px;
     font-weight: 540;
+}
+
+.content-wrapper {
+	font-weight: 400;
+	line-height: 1.6;
+	color: #767572;
+	letter-spacing: -0.025em;
+	word-break: keep-all;
+	word-wrap: break-word;
 }

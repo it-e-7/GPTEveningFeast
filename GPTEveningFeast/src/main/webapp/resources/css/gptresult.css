@@ -15,13 +15,20 @@
 }
 
 .gpt-result-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	padding: 40px 0 55px 0;
 	border-bottom: 2px solid #454545;
 }
 
+.gpt-kakao-img {
+	max-width: 1040px;
+	margin: 8px 0 60px 0;
+}
+
 .mbox {
-	width: 80%;
 	margin: 0 auto;
 }
 

@@ -6,6 +6,7 @@
 pom.properties
 database.properties
 config.properties
+kakao.js
 
 ### Eclipse ###
 .metadata

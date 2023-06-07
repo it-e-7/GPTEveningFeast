@@ -88,7 +88,6 @@ html {
 body {
 	position: relative;
 	min-height: 100%;
-	height: 1000px;
 }
 
 a {
@@ -130,7 +129,7 @@ dl, ul, ol, menu, li {
 	align-items: center;
 	width: 1200px;
 	margin: 0 auto;
-	padding-bottom: 350px;
+	padding-bottom: 450px;
 }
 
 .grey3 {
@@ -144,8 +143,7 @@ dl, ul, ol, menu, li {
 footer {
 	/* position: relative; */
 	height: 350px;
-	position: relative;
-	transform: translateY(-100%);
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 350px;
@@ -185,4 +183,9 @@ a {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+.scroll-lock {
+	overflow: hidden;
+	touch-action: none;
 }

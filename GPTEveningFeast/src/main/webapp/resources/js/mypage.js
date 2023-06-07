@@ -1,1 +1,1 @@
-$(`a[href="${location.pathname}"]`).css('color', '#ff6913');
+$(`.left-nav-bar a[href="${location.pathname}"]`).css('color', '#ff6913');

@@ -14,7 +14,7 @@
 
 <header>
 	<div class="header-wrapper">
-		<a href="/evenapp">
+		<a href="/evenapp" style="height: 32px;">
 			<img src="/evenapp/resources/img/logo.png" class="logo-img">
 		</a>
 		<span class="auth-menu-wrapper">
@@ -24,7 +24,7 @@
 				<a href="/evenapp/signup" class="grey1">회원가입</a>
 			</c:when>
 			<c:otherwise>
-				<p class="grey3">${user.userName }님환영합니다!</p> 
+				<p class="grey3">${user.userName }님 환영합니다!</p> 
 				<a href="/evenapp/signout">로그아웃</a>
 				<a href="/evenapp/mypage" class="grey1">마이페이지</a>
 			</c:otherwise>

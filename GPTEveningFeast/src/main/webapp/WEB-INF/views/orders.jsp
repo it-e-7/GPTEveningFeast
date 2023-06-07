@@ -41,13 +41,19 @@
 			<div class="my-page-content-wrapper">
 				<p style="font-size: 23px;">주문목록</p>
 
+				<c:if test="${ empty orderList }">
+					<div class="no-data">
+						<img src="/evenapp/resources/img/excmark.png">
+						<p>주문 내역이 없습니다.</p>
+					</div>
+				</c:if>
 				<c:set var="prevOrderId" value="" />
 				<c:set var="orderCount" value="0" />
 
 				<c:forEach var="vo" items="${orderList}" varStatus="loop">
 					<c:if test="${vo.orderId != prevOrderId}">
+					<c:if test="${not loop.first}">
 
-						<c:if test="${not loop.first}">
 			</div>
 			<div class="order-info-wrapper">
 				<p style="color: #454545;">일반배송 ${orderCount}건</p>
@@ -95,6 +101,28 @@
 				</a>
 				<c:set var="prevOrderId" value="${vo.orderId}" />
 				<c:set var="orderCount" value="${orderCount + 1}" />
+				
+				<c:if test="${loop.last}">
+
+			</div>
+			<div class="order-info-wrapper">
+				<p style="color: #454545;">일반배송 ${orderCount}건</p>
+				<p style="font-size: 23px; padding-top: 12px; color: #454545;">결제완료</p>
+			</div>
+		</div>
+		
+		<div class="order-footer">
+		<p>주문번호 ${vo.orderId}</p>
+		<div class="order-price-wrapper">
+			<p style="font-weight: 700;">결제금액</p>
+			<p class="order-list-total-price">
+				<fmt:formatNumber value="${price}" pattern="#,###" />
+				
+			</p>
+		</div>
+		</div>
+	</div>
+	</c:if>
 				</c:forEach>
 
 
