@@ -25,18 +25,7 @@
 
 	<div class="content-wrapper">
 		<div class="my-page-wrapper">
-			<div class="left-nav-bar">
-				<h2>마이페이지</h2>
-
-				<h4>주문 관리</h4>
-				<ul>
-					<li><a href="/evenapp/order/orders">주문 내역</a></li>
-				</ul>
-				<h4>나의 정보</h4>
-				<ul>
-					<li><a href="/evenapp/update">회원정보 변경</a></li>
-				</ul>
-			</div>
+			<%@ include file="/WEB-INF/views/mypagenav.jsp" %>
 
 			<div class="my-page-content-wrapper">
 				<p style="font-size: 23px;">주문목록</p>
@@ -131,7 +120,7 @@
 	</div>
 
 
-
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
 </body>
 <script src="/evenapp/resources/js/order.js"></script>
 <script src="/evenapp/resources/js/mypage.js"></script>

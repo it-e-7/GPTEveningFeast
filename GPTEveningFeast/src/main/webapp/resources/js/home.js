@@ -9,7 +9,7 @@ $(document).ready(function () {
         },
         loop: true,
         autoplay: {
-            delay: 5500,
+            delay: 2500,
             disableOnInteraction: false,
         },
     });

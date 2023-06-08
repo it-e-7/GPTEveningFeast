@@ -11,4 +11,17 @@
 	         VALUES (GPT_RESULT_SEQ.NEXTVAL, #{result.userId}, #{result.keyword}, #{result.menu}, #{ingredientsString}, #{recipeString}) 
 		]]>
 	</insert>
+	
+	<select id="selectAllGPTHistory" resultType="GPTHistory">
+		<![CDATA[
+		SELECT *
+		FROM(
+	         SELECT *
+	         FROM "GPTSearchResult"
+	         WHERE "user_id" = #{userId}
+	         ORDER BY "search_id" DESC
+	         )
+	    WHERE ROWNUM <= 10
+		]]>
+	</select>
 </mapper>
