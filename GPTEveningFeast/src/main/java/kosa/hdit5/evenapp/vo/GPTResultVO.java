@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class GPTResultVO {
 	
+	private String userId;
+	private String keyword;
 	private String menu;
 	private String[] recipe;
 	private Map<String, String> ingredients;

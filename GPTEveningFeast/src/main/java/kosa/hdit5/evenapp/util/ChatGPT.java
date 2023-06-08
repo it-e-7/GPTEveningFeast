@@ -126,9 +126,13 @@ public class ChatGPT {
 
 		// ingredients 배열 추출
 		Map<String, String> ingredientsArray = objectMapper.convertValue(ingredientsNode, Map.class);
-
+		
+		GPTResultVO vo = new GPTResultVO();
+		vo.setMenu(menu);
+		vo.setRecipe(recipeArray);
+		vo.setIngredients(ingredientsArray);
 		// Menu 객체 생성 및 반환
-		return new GPTResultVO(menu, recipeArray, ingredientsArray);
+		return vo;
 
 	}
 }

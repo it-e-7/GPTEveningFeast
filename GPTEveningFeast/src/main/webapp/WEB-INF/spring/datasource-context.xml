@@ -31,6 +31,7 @@
 				<value>classpath:mappers/CartMapper.xml</value>
 				<value>classpath:mappers/CategoryMapper.xml</value>
 				<value>classpath:mappers/OrderMapper.xml</value>
+				<value>classpath:mappers/GPTMapper.xml</value>
 			</list>
 		</property>
 	</bean>

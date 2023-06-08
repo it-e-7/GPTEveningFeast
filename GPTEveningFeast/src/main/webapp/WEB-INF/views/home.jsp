@@ -68,7 +68,7 @@
 	</div>
 	<div class="content-wrapper">
 		<div class="recommend-product-wrapper">
-			<h2>오늘의 추천 상품</h2>
+			<h2>추천 상품</h2>
 			<ul class="random-list">
 				<c:forEach var="product" items="${random}" varStatus="status">
 					<c:if test="${status.count <= 3}">

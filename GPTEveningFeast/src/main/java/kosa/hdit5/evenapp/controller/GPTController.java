@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kosa.hdit5.evenapp.interceptor.annotation.Auth;
 import kosa.hdit5.evenapp.service.CartService;
+import kosa.hdit5.evenapp.service.GPTService;
 import kosa.hdit5.evenapp.service.ProductService;
-import kosa.hdit5.evenapp.util.ChatGPT;
 import kosa.hdit5.evenapp.vo.GPTResultVO;
 import kosa.hdit5.evenapp.vo.ProductVO;
 import kosa.hdit5.evenapp.vo.UserVO;
@@ -24,13 +24,13 @@ import kosa.hdit5.evenapp.vo.UserVO;
 public class GPTController {
 	
 	@Autowired
-	ChatGPT GPTutil;
-	
-	@Autowired
 	ProductService productService;
 	
 	@Autowired
 	CartService cartService;
+	
+	@Autowired
+	GPTService gptService;
 
 	@GetMapping
 	public String gptSearchGetHandler() {
@@ -38,12 +38,11 @@ public class GPTController {
 	}
 	
 	@PostMapping
-	public String gptSearchPostHandler(@RequestParam("searchParam") String searchParam, Model model) {
-		
-		String json = GPTutil.setGPTQuery(searchParam);
+	public String gptSearchPostHandler(@RequestParam("searchParam") String searchParam, @SessionAttribute("signinUser") UserVO signinUser ,Model model) {
 		
 		try {
-			GPTResultVO result = GPTutil.getGPTApi(json);
+			String userId = signinUser.getUserId();
+			GPTResultVO result = gptService.searchToGPT(searchParam, userId);
 			model.addAttribute("GPTResult", result);
 			
 			String[] ingredients = result.getIngredients().keySet().toArray(new String[result.getIngredients().size()]);
