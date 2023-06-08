@@ -58,7 +58,7 @@ public class GPTServiceImpl implements GPTService{
 			String recipe = history.getRecipe();
 			recipe = recipe.substring(1, recipe.length() - 1);
 			List<String> recipeList = new ArrayList<String>();
-			for(String line : recipe.split("[0-9].")) {
+			for(String line : recipe.split("([0-9]. )")) {
 				if(!line.equals("")) {
 					recipeList.add(line.replaceAll(", $", ""));
 				}
