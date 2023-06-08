@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kosa.hdit5.evenapp.mapper.GPTMapper">
+
+	<insert id="insertGPTResult" parameterType="GPTResult">
+		<![CDATA[
+	         INSERT INTO "GPTSearchResult" ("search_id", "user_id", "keyword", "menu_name", "ingredients", "recipe") 
+	         VALUES (GPT_RESULT_SEQ.NEXTVAL, #{result.userId}, #{result.keyword}, #{result.menu}, #{ingredientsString}, #{recipeString}) 
+		]]>
+	</insert>
+</mapper>

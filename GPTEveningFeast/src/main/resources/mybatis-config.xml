@@ -24,6 +24,7 @@
 		<typeAlias alias="Section" type="kosa.hdit5.evenapp.vo.SectionVO" />
 		<typeAlias alias="Order" type="kosa.hdit5.evenapp.vo.OrderVO" />
 		<typeAlias alias="OrderProduct" type="kosa.hdit5.evenapp.vo.OrderProductVO" />
+		<typeAlias alias="GPTResult" type="kosa.hdit5.evenapp.vo.GPTResultVO" />
 	</typeAliases>
 
 
