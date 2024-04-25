@@ -40,11 +40,11 @@
 <img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/주문목록조회페이지.png" width="500"/>
 
 ### gpt 메뉴 추천
-<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt검색.png" width="500"/>
-<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/GPT요리중.png" width="500"/>
-<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt식사메뉴.png" width="500"/>
-<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt재료.png" width="500"/>
-<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt레시피.png" width="500"/>
+<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/GPT검색.PNG" width="500"/>
+<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/GPT요리중.PNG" width="500"/>
+<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt식사메뉴.PNG" width="500"/>
+<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt재료.PNG" width="500"/>
+<img src="https://github.com/it-e-7/GPTEveningFeast/blob/master/img/gpt레시피.PNG" width="500"/>
 
 
 
